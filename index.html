@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BitStarz Survey Bonus</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0f172a;
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+
+  <section class="min-h-screen flex flex-col justify-center items-center px-6">
+    <div class="bg-gray-900 p-8 rounded-xl shadow-2xl max-w-md w-full">
+      <h1 class="text-2xl md:text-3xl font-bold text-center mb-6">Are You a Real High Roller?</h1>
+      <p class="text-gray-400 text-center mb-6">Answer just 3 questions to unlock your crypto bonus. No email required.</p>
+
+      <form id="surveyForm" class="space-y-4">
+        <div>
+          <label class="block mb-2">1. Do you gamble regularly?</label>
+          <select class="w-full p-2 rounded text-gray-900" required>
+            <option>Yes, weekly</option>
+            <option>Sometimes</option>
+            <option>Rarely</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block mb-2">2. What do you prefer?</label>
+          <select class="w-full p-2 rounded text-gray-900" required>
+            <option>Crypto slots</option>
+            <option>Live dealer games</option>
+            <option>Sports betting</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block mb-2">3. How much would you like to start with?</label>
+          <select class="w-full p-2 rounded text-gray-900" required>
+            <option>$100+</option>
+            <option>$500+</option>
+            <option>$1000+</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full mt-6 bg-green-500 hover:bg-green-600 py-2 rounded-full font-semibold transition duration-300">
+          Unlock My Bonus
+        </button>
+      </form>
+    </div>
+
+    <div class="mt-6 text-sm text-center text-gray-400">
+      Join our Telegram community: <a href="https://t.me/higrollerchat" class="text-green-400 hover:underline">@higrollerchat</a>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("surveyForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      window.location.href = "https://bzstarz.com/bf46e4ea0";
+    });
+  </script>
+
+</body>
+</html>

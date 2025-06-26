@@ -3,39 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Claim Your 200 Free Spins</title>
+  <title>Quick Survey</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
       background-color: #0f172a;
     }
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
-<body class="text-white font-sans">
-
-  <section class="text-center py-10 px-4">
-    <h1 class="text-3xl font-bold mb-4">Quick Question:</h1>
-    <p class="text-lg mb-6">Do you play online slots?</p>
-    <div class="space-x-4">
-      <button class="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full">Yes</button>
-      <button class="bg-gray-600 hover:bg-gray-700 px-6 py-2 rounded-full">No</button>
+<body class="text-white font-sans flex items-center justify-center min-h-screen">
+  <div class="text-center px-4">
+    <div id="question-block" class="bg-gray-800 p-6 rounded-2xl shadow-xl max-w-md w-full">
+      <h1 class="text-2xl font-bold mb-4">Do you want to discover a casino with instant payouts, VIP perks, cashback & huge promos?</h1>
+      <button onclick="showReward()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition duration-300">Yes</button>
     </div>
-  </section>
 
-  <section class="text-center mt-10 px-4">
-    <p class="text-xl mb-4">Unlock your reward: <strong>200 Free Spins</strong></p>
-
-    <!-- ВСТАВКА БАННЕРА -->
-    <div class="flex justify-center">
-      <script type="text/javascript" src="https://bzstarz.com/sources/b54f622d2.js"></script>
+    <div id="reward-block" class="hidden mt-6 fade-in">
+      <div class="bg-green-600 text-white p-4 rounded-lg shadow-xl mb-4">
+        <h2 class="text-xl font-bold">Here are your 200 Free Spins upon registration!</h2>
+      </div>
+      <div class="flex justify-center">
+        <script type="text/javascript" src="https://bzstarz.com/sources/b54f622d2.js"></script>
+      </div>
     </div>
-    <!-- КОНЕЦ ВСТАВКИ -->
-  </section>
+  </div>
 
-  <section class="text-center mt-12">
-    <p class="text-sm text-gray-400">Join our Telegram</p>
-    <a href="https://t.me/higrollerchat" class="text-green-400 hover:underline">@higrollerchat</a>
-  </section>
-
+  <script>
+    function showReward() {
+      document.getElementById('question-block').style.display = 'none';
+      const reward = document.getElementById('reward-block');
+      reward.classList.remove('hidden');
+      reward.classList.add('fade-in');
+    }
+  </script>
 </body>
 </html>

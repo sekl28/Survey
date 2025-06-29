@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Us – Learn about the team and mission behind GambleGuide, your trusted casino & betting review aggregator. Expertise, transparency, and a commitment to responsible gambling.">
+  <title>About Us – GambleGuide Team & Mission</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="branding"><a href="index.html">GambleGuide</a></div>
+      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#top-casinos">Casinos</a></li>
+          <li><a href="index.html#top-sports">Sports Betting</a></li>
+          <li><a href="index.html#top-affiliates">Affiliates</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </header>
+  <main>
+    <article class="about-page">
+      <h1>About GambleGuide</h1>
+      <p>Welcome to <strong>GambleGuide</strong> – your trusted source for comprehensive casino and betting site reviews. Our mission is simple: to help players around the world find the best and safest online gambling platforms, through unbiased reviews and up-to-date information.</p>
+      <p>Our team consists of experienced gamblers and industry experts who have spent years in the iGaming field. We use our expertise to analyze each site’s features, bonuses, game offerings, customer service, and more. We personally test each platform featured on our site to ensure our reviews are accurate and insightful.</p>
+      <p><strong>Why Trust Us?</strong> Transparency and integrity are the core values of GambleGuide. Unlike some review sites, we are not owned by any casino or betting company. We maintain editorial independence and always prioritize the player’s perspective. Our reviews highlight not just the strengths of each site, but also any drawbacks, so you can make an informed decision. We also update our content regularly (this site is constantly refreshed for 2025 and beyond) to reflect the latest bonuses, policy changes, or new features.</p>
+      <p><strong>Responsible Gambling:</strong> We advocate for responsible gambling practices. All our recommended sites are licensed and include tools for setting limits or self-exclusion. We also provide links to support organizations on our Responsible Gambling page. Gambling should be fun, and we encourage our readers to play within their means and seek help if needed.</p>
+      <p><strong>Contact Us:</strong> Have questions, suggestions, or feedback? We’d love to hear from you. Reach out via our <a href="contact.html">contact form</a> (or email us at support@gambleguide.com) and our team will respond as soon as possible. We value our community and are always open to improving our services based on your input.</p>
+      <p>Thank you for choosing GambleGuide as your guide in the world of online casinos and betting. We hope our site helps you discover exciting platforms and enhances your online gambling experience – safely and enjoyably.</p>
+    </article>
+  </main>
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About Us</a> | 
+      <a href="#">Contact</a> | 
+      <a href="#">Terms &amp; Conditions</a> | 
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Responsible Gambling</a>
+    </div>
+    <div class="footer-copy">
+      <p>© 2025 GambleGuide. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function(){
+      document.querySelector('.main-nav').classList.toggle('open');
+    });
+    document.querySelector('.theme-toggle').addEventListener('click', function(){
+      document.body.classList.toggle('dark-mode');
+      this.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>

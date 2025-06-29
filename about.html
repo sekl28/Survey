@@ -381,5 +381,28 @@
     </div>
   </main>
   <a href="https://bzstarz.com/b65d7bc9d" class="sticky-cta">Join BitStarz</a>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.scroll-section').forEach(function (el) {
+        el.classList.add('visible');
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.scroll-section').forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
 </body>
 </html>

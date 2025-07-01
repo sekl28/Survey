@@ -3,43 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VIP BitStarz Offer</title>
+  <title>Become a VIP at BitStarz</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      background: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
     }
-    .vip-block {
-      max-width: 420px;
+    .container {
+      max-width: 480px;
       margin: 40px auto;
-      background: #111;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+      padding: 20px;
+      background-color: #111;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
     }
-    .vip-block h2 {
+    .title {
+      font-size: 22px;
       color: #ffc107;
-      font-size: 20px;
       margin-bottom: 10px;
     }
-    .vip-block p {
-      margin: 10px 0;
+    .subtitle {
       font-size: 15px;
-      line-height: 1.5;
+      color: #ccc;
+      margin-bottom: 20px;
     }
-    .vip-block .benefits {
+    .checklist {
       margin: 15px 0;
     }
-    .vip-block .benefits p::before {
-      content: "✔ ";
+    .checklist li {
+      list-style: none;
+      margin-bottom: 10px;
+      font-size: 15px;
+      position: relative;
+      padding-left: 28px;
+    }
+    .checklist li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      top: 0;
       color: #00ffae;
     }
-    .vip-block .quote {
+    .quote {
+      font-style: italic;
       background: #222;
       padding: 12px;
-      margin: 15px 0;
-      font-style: italic;
-      font-size: 14
+      margin: 20px 0;
+      border-left: 3px solid #00ffae;
+      color: #bbb;
+      font-size: 14px;
+    }
+    .cta-button {
+      display: block;
+      text-align: center;
+      background-color: #00ffc2;
+      color: #000;
+      padding: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 20px 0;
+      box-shadow: 0 0 10px #00ffc2;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .cta-button:hover {
+      background-color: #00e2ad;
+      box-shadow: 0 0 14px #00ffc2;
+    }
+    .limited {
+      font-size: 13px;
+      color: #ff4e4e;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">🔥 Become a VIP at BitStarz</div>
+    <div class="subtitle">Fast payouts, verified wins, and zero limits – join the elite community of high-rollers.</div>
+    <ul class="checklist">
+      <li>Instant crypto withdrawals</li>
+      <li>No max cashout limits</li>
+      <li>24/7 VIP support</li>
+    </ul>
+    <div class="quote">“No casino comes close. Fastest payouts I’ve ever seen.” – <strong>Michael R.</strong></div>
+    <a href="https://bzstarz.com/b65d7bc9d" class="cta-button">Join BitStarz Now</a>
+    <div class="limited">🔴 Limited offer – Don’t miss your VIP bonus!</div>
+  </div>
+</body>
+</html>

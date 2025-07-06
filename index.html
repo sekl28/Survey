@@ -1,131 +1,43 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BitStarz - Türkiye Ayrıcalığı</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BitStarz Türkiye</title>
   <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.6; }
-    a { text-decoration: none; }
-    /* Hero */
-    .hero {
-      background: url('https://source.unsplash.com/1600x900/?turkey,istanbul') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      color: #fff;
-      text-align: center;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-    }
-    .hero-content {
-      z-index: 1;
-      max-width: 600px;
-    }
-    .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
-    .btn-primary {
-      display: inline-block;
-      background: #f39c12;
-      color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-size: 1rem;
-      transition: background .3s;
-    }
-    .btn-primary:hover { background: #e67e22; }
-    /* Features */
-    .features { padding: 4rem 1rem; background: #f8f8f8; }
-    .features .container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 2rem; }
-    .feature-item { background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; }
-    .feature-item h3 { margin-bottom: 1rem; font-size: 1.2rem; }
-    /* VIP */
-    .vip { padding: 4rem 1rem; }
-    .vip .container { max-width: 1000px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; }
-    .vip-text { flex: 1; }
-    .vip-text h2 { font-size: 2rem; margin-bottom: 1rem; }
-    .vip-text ul { list-style: disc inside; }
-    .vip-text ul li { margin-bottom: 0.5rem; }
-    .vip-image { flex: 1; text-align: center; }
-    .vip-image img { max-width: 100%; border-radius: 10px; }
-    /* Bonus */
-    .bonus { background: #e74c3c; color: #fff; padding: 4rem 1rem; text-align: center; }
-    .bonus h2 { font-size: 2rem; margin-bottom: 1rem; }
-    .bonus p { font-size: 1.1rem; margin-bottom: 2rem; }
-    /* Footer */
-    footer { padding: 2rem 1rem; text-align: center; background: #333; color: #fff; }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:sans-serif;color:#222}
+    a{display:inline-block;text-decoration:none;color:#fff;background:#f39c12;padding:0.8rem 1.5rem;border-radius:30px;transition:0.3s}
+    a:hover{background:#e67e22}
+    section{padding:2rem 1rem;text-align:center}
+    .hero{background:linear-gradient(135deg,#f06,#4a90e2);color:#fff}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+    .features div{background:#fafafa;padding:1rem;border-radius:8px;}
+    ul{list-style:none;text-align:left;padding-left:1rem}
   </style>
 </head>
 <body>
-  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>BitStarz Türkiye: Maksimum Kazanç için Oynayın!</h1>
-      <p>Hızlı ödemeler ve eşsiz VIP programıyla kazancınızı katlayın.</p>
-      <a href="https://bzstarz.com/b1d333966" class="btn-primary">5 BTC veya 180 FS Bonusu Al</a>
-    </div>
+    <h1>🔥 BitStarz Türkiye</h1>
+    <p>Hızlı ödemeler, benzersiz VIP & devasa BONUS!</p>
+    <a href="https://bzstarz.com/b1d333966">5 BTC veya 180 FS Al!</a>
   </section>
-
-  <!-- Features -->
   <section class="features">
-    <div class="container">
-      <div class="feature-item">
-        <h3>Hızlı Ödemeler</h3>
-        <p>Her miktar, 10 dakika içinde hesabınızda.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Güvenlik & Güvenilirlik</h3>
-        <p>Modern koruma protokolleri ve çoklu imza teknolojisi.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Geniş Oyun Seçeneği</h3>
-        <p>Slotlar, rulet, canlı casino ve daha fazlası.</p>
-      </div>
-      <div class="feature-item">
-        <h3>7/24 Destek</h3>
-        <p>Profesyonel yardım, günün her saati yanınızda.</p>
-      </div>
-    </div>
+    <div>⏱️ <strong>10dk Ödeme</strong><br>Her miktar anında.</div>
+    <div>🔒 <strong>Güvenlik</strong><br>Çoklu imza & SSL.</div>
+    <div>🎰 <strong>Oyun Çeşitliliği</strong><br>Slot, canlı casino.</div>
+    <div>📞 <strong>7/24 Destek</strong><br>Hızlı çözüm.</div>
   </section>
-
-  <!-- VIP Program -->
-  <section class="vip">
-    <div class="container">
-      <div class="vip-text">
-        <h2>VIP Programı: Eşsiz Bonuslarla</h2>
-        <ul>
-          <li>Özel haftalık cashback</li>
-          <li>Kişisel hesap yöneticisi</li>
-          <li>Yükseltilmiş çekim limitleri</li>
-          <li>Öncelikli destek hizmeti</li>
-          <li>Özel turnuvalar ve çekilişler</li>
-        </ul>
-      </div>
-      <div class="vip-image">
-        <img src="https://source.unsplash.com/600x400/?vip,casino" alt="BitStarz VIP" />
-      </div>
-    </div>
+  <section>
+    <h2>✨ VIP Ayrıcalıkları</h2>
+    <ul>
+      <li>🚀 Haftalık cashback</li>
+      <li>👤 Kişisel yönetici</li>
+      <li>💸 Yüksek çekim limiti</li>
+      <li>⭐ Öncelikli destek</li>
+    </ul>
+    <a href="https://bzstarz.com/b1d333966">BONUSU KAÇIRMA!</a>
   </section>
-
-  <!-- Bonus -->
-  <section class="bonus">
-    <h2>5 BTC veya 180 FS Bonusu</h2>
-    <p>Şimdi katılın, en büyük avantajı yakalayın!</p>
-    <a href="https://bzstarz.com/b1d333966" class="btn-primary">Bonusu Al</a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 BitStarz. Tüm Hakları Saklıdır.</p>
-    <p><a href="https://bitstarz.com/terms" style="color: #fff;">Şartlar & Koşullar</a> | <a href="https://bitstarz.com/privacy" style="color: #fff;">Gizlilik Politikası</a></p>
-  </footer>
+  <footer style="font-size:0.8rem;color:#666;padding:1rem">©2025 BitStarz • <a href="https://bitstarz.com/terms" style="color:#666;background:none;padding:0">Şartlar</a> | <a href="https://bitstarz.com/privacy" style="color:#666;background:none;padding:0">Gizlilik</a></footer>
 </body>
 </html>

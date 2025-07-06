@@ -1,71 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Binance Stole My Money — Join the Fight</title>
-  <meta name="description" content="Binance froze my Bitcoin wallet with $30,000 inside. I'm not the only one. Join the global campaign against their silence and injustice." />
-  <meta name="keywords" content="Binance frozen funds, Binance scam, crypto justice, Bitcoin locked, Binance complaints" />
-  <meta property="og:title" content="Binance Stole My Money — Join the Fight" />
-  <meta property="og:description" content="$30,000 locked in my Binance account. No answers. No justice. Help expose the truth." />
-  <meta property="og:image" content="https://yourdomain.com/images/og-banner.jpg" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta name="theme-color" content="#b30000" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binance удерживает €30,000 – Международная кампания</title>
+  <meta name="description" content="Binance незаконно заморозил мои средства на сумму €30,000. Я начинаю международную кампанию, чтобы добиться справедливости и вернуть деньги себе и другим жертвам.">
+  <meta name="keywords" content="Binance мошенничество, Binance заблокировал, Binance scam, Binance заморозка средств, Binance жалоба, Binance юрист">
+  <meta name="author" content="Пострадавший от Binance">
+  <meta property="og:title" content="Binance удерживает €30,000 – Международная кампания">
+  <meta property="og:description" content="Я запускаю кампанию против Binance. Они удерживают мои €30,000. Стань частью расследования и борьбы за правду.">
+  <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta name="theme-color" content="#8B0000">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fafafa;
+      color: #222;
+    }
+    header {
+      background-color: #8B0000;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 { font-size: 2rem; margin: 0 0 1rem 0; }
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    section { margin-bottom: 2.5rem; }
+    h2 { color: #8B0000; }
+    .budget, .plan, .cta, .form-section {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .cta a {
+      display: inline-block;
+      padding: 0.8rem 1.4rem;
+      background: #8B0000;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    form button {
+      background: #8B0000;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .counter-box {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 1rem;
+      background: #ffeaea;
+      border: 2px solid #8B0000;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="hero">
-      <h1>Binance заморозил мой биткоин на $30,000</h1>
-      <p>Я не один. Присоединяйся к глобальной кампании против несправедливости.</p>
-      <a href="#join" class="cta-button">Я тоже пострадал</a>
-    </div>
+    <h1>Binance удерживает мои €30,000</h1>
+    <p>Я начал международную кампанию, чтобы остановить их. Это касается нас всех.</p>
   </header>
 
-  <section class="story">
-    <h2>Моя история</h2>
-    <p>Внезапно мой кошелёк на Binance был заморожен. Без объяснений. Поддержка молчит. Затем пришли 19 транзакций на сумму ~$30,000 — и всё исчезло. Я пытался получить ответ, но тщетно. Теперь я не просто борюсь за себя. Я борюсь за всех нас.</p>
-  </section>
+  <div class="container">
+    <section class="counter-box">
+      🛑 Уже сообщили о себе: <span id="counter">164 пострадавших</span>
+    </section>
 
-  <section class="counter">
-    <h2>📍 Уже собрано жалоб: <strong id="counter">168</strong></h2>
-    <p>Каждая история важна. Мы собираем коллективное дело против Binance.</p>
-    <a href="#form" class="cta-secondary">Оставить свою жалобу</a>
-  </section>
+    <section class="intro">
+      <h2>Моя история</h2>
+      <p>Binance заблокировал мой биткоин-кошелек. Внутри оказалось более €30,000. На запросы поддержки — тишина. Ситуация стала хуже, когда на замороженный адрес поступили еще 19 транзакций. Binance отказывается отправлять средства, требуя невозможное: транзакции, отправленные с внешней платформы, не могут быть возвращены. Я не единственный. Я запускаю структурированную международную кампанию, чтобы добиться справедливости.</p>
+    </section>
 
-  <section class="plan">
-    <h2>План действий</h2>
-    <ol>
-      <li>Собираем заявления от пострадавших</li>
-      <li>Запускаем сайты по ключевым странам</li>
-      <li>Подаём иски и заявления в прокуратуру и финансовые органы</li>
-      <li>Запускаем массовую TikTok и YouTube кампанию</li>
-      <li>Публикуем разоблачения в топ-СМИ</li>
-    </ol>
-  </section>
+    <section class="budget">
+      <h2>Расходы на кампанию</h2>
+      <ul>
+        <li>Создание 4 сайтов на ключевые GEO: <strong>€3,600</strong></li>
+        <li>SEO-оптимизация и структура: <strong>€2,300</strong></li>
+        <li>Покупка 4 доменов: <strong>€80</strong></li>
+      </ul>
+      <p>Всего уже инвестировано: <strong>€5,980</strong>. Я намерен <strong>публично делиться</strong> всеми расходами. На 2025 год я закладываю бюджет в размере <strong>€150,000</strong> (10% моего дохода), чтобы довести кампанию до конца.</p>
+    </section>
 
-  <section class="form" id="form">
-    <h2>📨 Ты тоже пострадал?</h2>
-    <p>Оставь свою историю — она будет добавлена к коллективному иску и использована в медиа.</p>
-    <form action="https://yourbackend.com/submit" method="post">
-      <input type="text" name="name" placeholder="Имя / Псевдоним" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="story" placeholder="Опиши свою ситуацию (дата, сумма, статус)" required></textarea>
-      <button type="submit">Отправить</button>
-    </form>
-  </section>
+    <section class="plan">
+      <h2>Планы кампании</h2>
+      <ul>
+        <li>🔹 Покупка SEO-ссылок и размещение на элитных площадках, включая Forbes и национальные СМИ</li>
+        <li>🔹 Анализ медиа и запуск статей в странах с высоким влиянием Binance (Франция, Италия, Бразилия, Турция)</li>
+        <li>🔹 Наем юристов в каждой из этих стран для подачи индивидуальных заявлений в полицию от имени пострадавших</li>
+        <li>🔹 Массовые жалобы в регулирующие органы, выдавшие лицензии Binance</li>
+        <li>🔹 Если реакции не будет — запуск жалоб уже на самих регуляторов за игнорирование очевидных нарушений</li>
+        <li>🔹 Запуск рекламы по всем каналам: TikTok, Telegram, Reddit, Instagram</li>
+        <li>🔹 Основная цель рекламы — стимулировать массовое <strong>выведение средств с Binance</strong> и продажу BNB</li>
+        <li>🔹 Создание публичной Reddit-ветки и продвижение истории через глобальные трафик-источники</li>
+      </ul>
+    </section>
 
-  <section class="social">
-    <h2>📢 Поддержи кампанию</h2>
-    <ul>
-      <li><a href="https://t.me/yourgroup" target="_blank">Telegram-группа</a></li>
-      <li><a href="https://twitter.com/yourhandle" target="_blank">Twitter</a></li>
-      <li><a href="https://www.instagram.com/yourhandle" target="_blank">Instagram</a></li>
-    </ul>
-  </section>
+    <section class="cta">
+      <h2>Я трачу свои честно заработанные деньги</h2>
+      <p>Моя цель — не только вернуть свои средства, но и спасти тысячи людей от будущих потерь. Binance — крупнейшая биржа в мире, и именно поэтому она должна быть вдвойне ответственной. Если они решили удерживать деньги безнаказанно — мы покажем, что это будет стоить им репутации.</p>
+      <a href="#form">Присоединиться к кампании</a>
+    </section>
 
-  <footer>
-    <p>© 2025 Binance Victims Collective. Вся информация публикуется в интересах пострадавших.</p>
-  </footer>
+    <section class="form-section" id="form">
+      <h2>Сообщить о своей ситуации</h2>
+      <p>Если ваши средства были заморожены или Binance отказался их вернуть — расскажите об этом. Мы собираем жалобы для коллективных обращений и медиа-расследований.</p>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Имя или псевдоним" required>
+        <input type="email" name="email" placeholder="Email для связи" required>
+        <textarea name="story" placeholder="Опишите вашу ситуацию: дата, сумма, как всё произошло" rows="5" required></textarea>
+        <button type="submit">Отправить жалобу</button>
+      </form>
+    </section>
+
+    <footer>
+      <p style="margin-top:2rem;text-align:center;color:#888;font-size:0.9rem">© 2025 Международная Кампания Против Binance. Вся информация публикуется в интересах пострадавших. Присоединяйтесь, чтобы добиться справедливости вместе.</p>
+    </footer>
+  </div>
 </body>
 </html>

@@ -2,257 +2,408 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <title>Model Agency – Главная</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VIP Модельное Агентство</title>
   <style>
-    :root {
-      --main-bg: #0e0e0e;
-      --accent: #d4af37;
-      --text-color: #f5f5f5;
-      --font: 'Segoe UI', sans-serif;
-    }
-
     body {
       margin: 0;
-      font-family: var(--font);
-      background-color: var(--main-bg);
-      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
       line-height: 1.6;
     }
-
     header {
-      background-color: #000;
-      padding: 20px 40px;
+      background: #000;
+      color: #fff;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
-    header h1 {
-      color: var(--accent);
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    nav ul {
+      list-style: none;
       margin: 0;
-      font-size: 28px;
-    }
-
-    nav a {
-      color: var(--text-color);
-      text-decoration: none;
-      margin-left: 25px;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    .hero {
-      background: url('https://images.unsplash.com/photo-1551907234-2513c5a2c5c5?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
-      height: 90vh;
+      padding: 0;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-      color: white;
+      gap: 15px;
     }
-
-    .hero h2 {
-      font-size: 48px;
+    nav ul li {
       margin: 0;
-      text-shadow: 2px 2px 8px black;
+      padding: 0;
     }
-
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a.cta-button {
+      background: #D4AF37;
+      color: #000;
+      padding: 8px 15px;
+      border-radius: 4px;
+    }
+    /* Hero Section */
+    .hero {
+      background: url('hero.jpg') no-repeat center center/cover;
+      position: relative;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    /* Dark overlay for better text contrast over hero image */
+    .hero::before {
+      content: "";
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .hero-content {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
     .hero p {
-      font-size: 22px;
-      max-width: 600px;
-      margin-top: 20px;
-      text-shadow: 1px 1px 6px black;
+      font-size: 1.2em;
+      margin-bottom: 30px;
     }
-
-    .cta-button {
-      margin-top: 30px;
-      padding: 15px 40px;
-      background-color: var(--accent);
-      color: black;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      border-radius: 30px;
-      transition: background 0.3s;
+    .hero .cta-button {
+      font-size: 1.1em;
+      text-transform: uppercase;
+      font-weight: bold;
     }
-
-    .cta-button:hover {
-      background-color: #c29b2c;
-    }
-
+    /* Section styles */
     section {
       padding: 60px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
     }
-
-    .section-title {
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
       text-align: center;
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: var(--accent);
+      text-transform: uppercase;
+      color: #D4AF37;
     }
-
-    .features {
+    /* About Us Section (light background) */
+    #about {
+      background: #f9f9f9;
+      color: #000;
+    }
+    #about .content {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 20px;
     }
-
-    .feature {
-      flex: 1 1 calc(33% - 40px);
-      background-color: #1a1a1a;
-      margin: 20px;
-      padding: 30px;
-      border-radius: 12px;
-      transition: transform 0.3s;
+    #about img {
+      max-width: 100%;
+      flex: 1 1 300px;
+      border-radius: 10px;
     }
-
-    .feature:hover {
-      transform: translateY(-5px);
+    #about .text {
+      flex: 1 1 300px;
     }
-
-    .feature h3 {
-      color: var(--accent);
+    /* How It Works Section (dark background) */
+    #how-it-works {
+      background: #000;
+      color: #fff;
+    }
+    #how-it-works ol {
+      counter-reset: step;
+      margin: 0;
+      padding-left: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    #how-it-works li {
       margin-bottom: 15px;
+      font-size: 1.1em;
+      line-height: 1.4;
     }
-
-    .feature p {
-      color: #ccc;
+    #how-it-works li::before {
+      counter-increment: step;
+      content: "Шаг " counter(step) ". ";
+      color: #D4AF37;
+      font-weight: bold;
     }
-
-    .form-section {
-      background-color: #111;
-      padding: 60px 20px;
-      border-top: 1px solid #333;
-      border-bottom: 1px solid #333;
+    /* Guarantees Section (dark background) */
+    #guarantees {
+      background: #111;
+      color: #fff;
     }
-
-    form {
-      max-width: 600px;
+    #guarantees ul {
+      max-width: 800px;
+      margin: 0 auto;
+      list-style: none;
+      padding: 0;
+    }
+    #guarantees li {
+      margin: 10px 0;
+      padding-left: 25px;
+      position: relative;
+      font-size: 1.1em;
+    }
+    #guarantees li::before {
+      content: "✔";
+      color: #D4AF37;
+      position: absolute;
+      left: 0;
+    }
+    /* Reviews Section (light background, testimonial cards) */
+    #reviews {
+      background: #f9f9f9;
+      color: #000;
+    }
+    #reviews .testimonials {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .testimonial {
+      background: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      flex: 1 1 300px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .testimonial p {
+      margin: 0;
+    }
+    .testimonial .author {
+      margin-top: 10px;
+      font-style: italic;
+      text-align: right;
+      color: #555;
+    }
+    /* Application Form Section (dark background) */
+    #apply {
+      background: #000;
+      color: #fff;
+    }
+    #apply form {
+      max-width: 500px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
     }
-
-    form label {
-      margin-bottom: 5px;
-      color: var(--accent);
+    #apply label {
+      margin: 10px 0 5px;
+      font-weight: bold;
     }
-
-    form input, form textarea {
-      padding: 12px;
-      margin-bottom: 20px;
+    #apply input, #apply textarea {
+      padding: 10px;
+      margin-bottom: 15px;
       border: none;
-      border-radius: 6px;
-      background-color: #1f1f1f;
-      color: white;
-      font-size: 16px;
+      border-radius: 4px;
     }
-
-    form button {
-      background-color: var(--accent);
-      color: black;
-      padding: 15px;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
+    #apply input[type="submit"] {
+      background: #D4AF37;
+      color: #000;
+      font-weight: bold;
       cursor: pointer;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
     }
-
-    form button:hover {
-      background-color: #c29b2c;
+    #apply input[type="submit"]:hover {
+      background: #c49b35;
     }
-
-    footer {
-      background-color: #000;
-      padding: 40px 20px;
+    /* Contact Section (light background) */
+    #contact {
+      background: #f9f9f9;
+      color: #000;
+    }
+    #contact .contact-info {
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
-      font-size: 14px;
-      color: #999;
-      border-top: 1px solid #333;
+      font-size: 1.1em;
     }
-
-    @media (max-width: 900px) {
-      .feature {
-        flex: 1 1 100%;
+    #contact .contact-info p {
+      margin: 5px 0;
+    }
+    /* Footer */
+    footer {
+      background: #000;
+      color: #777;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    footer a {
+      color: #777;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
       }
-
-      .hero h2 {
-        font-size: 36px;
+      .logo {
+        margin-bottom: 10px;
       }
-
+      nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8em;
+      }
       .hero p {
-        font-size: 18px;
+        font-size: 1em;
+      }
+      #about .content {
+        flex-direction: column;
+      }
+      #about img, #about .text {
+        max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header with logo and navigation menu -->
   <header>
-    <h1>EHOVIP Models</h1>
+    <div class="logo">AgencyName</div>
     <nav>
-      <a href="#about">О нас</a>
-      <a href="#benefits">Преимущества</a>
-      <a href="#apply">Заявка</a>
+      <ul>
+        <li><a href="#about">О нас</a></li>
+        <li><a href="#how-it-works">Как это работает</a></li>
+        <li><a href="#guarantees">Гарантии</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#contact">Контакты</a></li>
+        <li><a href="#apply" class="cta-button">Стать моделью</a></li>
+      </ul>
     </nav>
   </header>
 
+  <!-- Hero Section: Big visual, tagline, and call-to-action -->
   <section class="hero">
-    <h2>Стань звездой с нами</h2>
-    <p>Мы бесплатно продвигаем девушек в Instagram, TikTok и Twitch. Контракты, легальность, доверие.</p>
-    <button class="cta-button" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Подать заявку</button>
+    <div class="hero-content">
+      <h1>Стань моделью и зарабатывай от $100 в первый день</h1>
+      <p>Присоединяйтесь к элитному агентству: обучение, продвижение и гарантированный доход с первого дня.</p>
+      <a href="#apply" class="cta-button">Подать заявку</a>
+    </div>
   </section>
 
-  <section id="benefits">
-    <h2 class="section-title">Почему выбирают нас</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>Бесплатное продвижение</h3>
-        <p>Мы инвестируем в рекламу и рост твоих подписчиков — ты не платишь ничего.</p>
-      </div>
-      <div class="feature">
-        <h3>Полнейшая легальность</h3>
-        <p>Работаем по контракту. Уважение к модели, прозрачные условия и поддержка.</p>
-      </div>
-      <div class="feature">
-        <h3>Долгосрочное партнёрство</h3>
-        <p>Наша цель — сделать тебя знаменитой и монетизировать твой образ на высоком уровне.</p>
+  <!-- About Us Section: Company info, mission, team photo -->
+  <section id="about">
+    <div class="content">
+      <img src="team.jpg" alt="Наша команда">
+      <div class="text">
+        <h2>О нас</h2>
+        <p>Мы — профессиональное модельное агентство, которое помогает талантливым девушкам зарабатывать на платформах OnlyFans и в стриминге. Наша миссия — превратить ваше время онлайн в стабильный высокий доход.</p>
+        <p>Более 5 лет на рынке, свыше 1000 моделей по всему миру доверяют нам и получают поддержку опытной команды. Мы ценим конфиденциальность и нацелены на успех каждой модели.</p>
       </div>
     </div>
   </section>
 
-  <section class="form-section" id="apply">
-    <h2 class="section-title">Подай заявку</h2>
+  <!-- How It Works Section: Step-by-step process -->
+  <section id="how-it-works">
+    <h2>Как это работает</h2>
+    <ol>
+      <li><strong>Оставьте заявку.</strong> Заполните короткую форму на сайте или свяжитесь с нами – это займет не более минуты.</li>
+      <li><strong>Получите ответ.</strong> Наш менеджер свяжется с вами в течение 24 часов, ответит на вопросы и проведёт небольшое интервью.</li>
+      <li><strong>Заключите договор.</strong> Мы оформим официальное сотрудничество, обеспечив прозрачные условия и конфиденциальность ваших данных.</li>
+      <li><strong>Пройдите обучение.</strong> Вы получаете бесплатное обучение и советы по продвижению. Персональный менеджер поможет настроить аккаунты и начать работу.</li>
+      <li><strong>Начните зарабатывать.</strong> Вы выходите на платформы и получаете первый доход уже в первый день. Мы обеспечим поддержку 24/7 на каждом этапе вашей карьеры.</li>
+    </ol>
+  </section>
+
+  <!-- Guarantees Section: Trust and safety guarantees -->
+  <section id="guarantees">
+    <h2>Наши гарантии</h2>
+    <ul>
+      <li>Гарантированный заработок $100 в первый день – иначе мы выплатим эту сумму вам сами.</li>
+      <li>Полная анонимность и конфиденциальность: никто не узнает о вашей работе без вашего согласия.</li>
+      <li>Поддержка 24/7 от персонального менеджера и нашей команды.</li>
+      <li>Еженедельные выплаты на удобный вам способ (банк, электронный кошелёк и т.д.).</li>
+      <li>Бесплатное обучение и продвижение: помогаем набрать аудиторию и увеличивать ваш доход.</li>
+    </ul>
+  </section>
+
+  <!-- Testimonials Section: Success stories from models -->
+  <section id="reviews">
+    <h2>Отзывы наших моделей</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>“Сотрудничаю с <strong>AgencyName</strong> уже 6 месяцев и зарабатываю более $2000 в месяц. Команда – супер, всегда помогает и поддерживает!”</p>
+        <p class="author">— Алина, 21 год</p>
+      </div>
+      <div class="testimonial">
+        <p>“Благодаря агентству я смогла уйти с офисной работы и полностью посвятить себя стримингу. Первый доход получила уже в первый день, как и обещали!”</p>
+        <p class="author">— Екатерина, 24 года</p>
+      </div>
+      <div class="testimonial">
+        <p>“Сначала я сомневалась, но сейчас у меня более 5000 подписчиков и стабильный высокий доход. Рекомендую всем, кто хочет начать карьеру модели онлайн.”</p>
+        <p class="author">— Марина, 19 лет</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Section: Signup form for new models -->
+  <section id="apply">
+    <h2>Подать заявку</h2>
+    <p style="text-align:center; max-width:600px; margin:0 auto 20px;">
+      Заполните форму, и наш менеджер свяжется с вами в течение 24 часов. Ваши данные надёжно защищены.
+    </p>
     <form action="#" method="post">
       <label for="name">Имя</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="age">Возраст</label>
-      <input type="number" id="age" name="age" required>
-
-      <label for="telegram">Telegram</label>
-      <input type="text" id="telegram" name="telegram" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Расскажи о себе</label>
-      <textarea id="message" name="message" rows="5"></textarea>
-
-      <button type="submit">Отправить</button>
+      <input type="text" id="name" name="name" required placeholder="Ваше имя">
+      
+      <label for="contact">Контакт (телефон или Telegram)</label>
+      <input type="text" id="contact" name="contact" required placeholder="Ваш телефон или @username в Telegram">
+      
+      <!-- Если предпочтительнее e-mail:
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="Ваш e-mail"> -->
+      
+      <label for="message">Расскажите о себе (необязательно)</label>
+      <textarea id="message" name="message" placeholder="Напишите пару слов о себе, опыте или задайте вопрос" rows="3"></textarea>
+      
+      <input type="submit" value="Отправить заявку">
+      <p style="font-size: 0.9em; text-align:center; margin-top:10px;">
+        Нажимая «Отправить заявку», вы соглашаетесь с нашей <a href="#">политикой конфиденциальности</a>.
+      </p>
     </form>
   </section>
 
+  <!-- Contact Section: All contact methods and info -->
+  <section id="contact">
+    <h2>Контакты</h2>
+    <div class="contact-info">
+      <p><strong>Телефон:</strong> +7 (900) 123-45-67</p>
+      <p><strong>E-mail:</strong> <a href="mailto:info@agencyname.com">info@agencyname.com</a></p>
+      <p><strong>Telegram:</strong> <a href="https://t.me/AgencyNameBot" target="_blank">@AgencyNameBot</a></p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/agencyname" target="_blank">@agencyname</a></p>
+      <p><strong>Адрес офиса:</strong> г. Москва, ул. Примерная, д. 1</p>
+    </div>
+  </section>
+
+  <!-- Footer: Legal links and company info -->
   <footer>
-    © 2025 EHOVIP Models — Все права защищены. | Связь: @ehovipmodel | ehovipmodel@gmail.com
+    <p>&copy; 2025 AgencyName. Все права защищены.</p>
+    <p>ООО «AgencyName». <a href="#">Пользовательское соглашение</a> | <a href="#">Политика конфиденциальности</a></p>
   </footer>
 
 </body>

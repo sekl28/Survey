@@ -34,18 +34,35 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 100px 20px;
-      background: url('https://images.unsplash.com/photo-1610900277035-dad94393c0f4') center/cover no-repeat;
+      padding: 120px 20px 100px;
+      background: url('https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
       color: white;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
     }
     .hero h1 {
-      font-size: 48px;
+      font-size: 50px;
       font-weight: 700;
       margin-bottom: 20px;
     }
     .hero p {
       font-size: 20px;
       max-width: 600px;
+      margin: 0 auto;
     }
     .cta-btn {
       margin-top: 30px;
@@ -94,9 +111,11 @@
   </header>
 
   <section class="hero">
-    <h1>Jouw carrière begint hier</h1>
-    <p>Word model bij ons en laat jouw unieke uitstraling schitteren op sociale media en fashioncampagnes.</p>
-    <a href="word-model.html" class="cta-btn">Word model</a>
+    <div class="hero-content">
+      <h1>Jij bent het gezicht van morgen</h1>
+      <p>Sluit je aan bij hét fashionbureau dat talent ontdekt, ontwikkelt en de wereld instuurt. Professioneel. Persoonlijk. Gedreven.</p>
+      <a href="word-model.html" class="cta-btn">Word model</a>
+    </div>
   </section>
 
   <section class="intro">

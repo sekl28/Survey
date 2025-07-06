@@ -1,207 +1,254 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Eho VIP Model – Premium Modellenbureau</title>
-<meta name="description" content="Word het gezicht van morgen. Gratis promotie op Instagram, TikTok & Twitch met Eho VIP Model. Persoonlijke coaching, 0 euro investering, 24/7 support.">
+<meta name="description" content="Word het gezicht van morgen. Gratis promotie op Instagram, TikTok & Twitch met Eho VIP Model. Persoonlijke coaching, 0 euro investering, bewezen succesverhalen."/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* ---------- root & helpers ---------- */
+/* --------------- Root & Base --------------- */
 :root{
- --gold:#d4af37;--purple:#8e44ad;--bg:#000;--card:#111;--muted:#999;
- --radius:10px;--shadow:0 8px 24px rgba(0,0,0,.6);
+ --gold:#d4af37;--purple:#8a2be2;--bg:#000;--card:#111;--radius:12px;
+ --shadow:0 8px 30px rgba(0,0,0,.6);--muted:#aaa;--transition:.4s;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,sans-serif;background:var(--bg);color:#fff;line-height:1.6;scroll-behavior:smooth}
-h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700}
-h2{font-size:2.2rem;margin-bottom:.4em;text-align:center;position:relative}
-h2::after{content:"";display:block;width:60px;height:3px;margin:.5em auto 0;background:var(--gold)}
-a{color:var(--gold);text-decoration:none}
-img{max-width:100%;display:block;border-radius:var(--radius)}
-.btn{display:inline-block;padding:.75em 1.8em;border-radius:50px;font-weight:600;transition:.3s}
-.btn-primary{background:var(--gold);color:#000}
-.btn-primary:hover{background:#b9972a;transform:scale(1.05)}
-/* ---------- navbar ---------- */
-nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,.8)}
-.nav-wrap{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:.7rem 1rem}
-.logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold);letter-spacing:.05em}
-nav ul{display:flex;gap:1.2rem;list-style:none}
-nav a{font-size:.95rem;color:#fff;transition:.3s}
-nav a:hover{color:var(--gold)}
-/* ---------- hero ---------- */
-.hero{height:100vh;background:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&w=1920&q=80') center/cover fixed no-repeat;display:flex;align-items:center;justify-content:center;position:relative;text-align:center}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.8) 10%,rgba(0,0,0,.3) 90%)}
-.hero-inner{position:relative;max-width:700px;padding:0 1rem}
-.hero h1{font-size:3rem;margin-bottom:.5em}
-.hero p{font-size:1.25rem;margin-bottom:1.5em;color:#ccc}
-/* ---------- sections ---------- */
-section{padding:4rem 1rem}
+body{font-family:Inter,sans-serif;background:var(--bg);color:#fff;scroll-behavior:smooth;line-height:1.6}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;color:#fff}
+section{padding:4rem 1.2rem}
 .container{max-width:1200px;margin:auto}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;margin-top:2.5rem}
-.card{background:var(--card);border-radius:var(--radius);padding:2rem 1.4rem;text-align:center;box-shadow:var(--shadow);transition:.4s opacity,.4s transform;opacity:0;transform:translateY(40px)}
-.card.appear{opacity:1;transform:translateY(0)}
-.card i{font-size:2rem;color:var(--gold);margin-bottom:.8rem}
-.card h3{margin:.4rem 0 .2rem;font-size:1.15rem}
-/* ---------- gallery ---------- */
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:2rem}
-.gallery-grid img{aspect-ratio:3/4;object-fit:cover;transition:.4s transform}
-.gallery-grid img:hover{transform:scale(1.05)}
-/* ---------- form ---------- */
-.form-wrapper{max-width:500px;margin:0 auto}
+/* --------------- Navbar --------------- */
+nav{position:fixed;top:0;width:100%;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.7)}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1rem}
+.logo{font-size:1.5rem;color:var(--gold)}
+nav ul{display:flex;gap:1rem;list-style:none}
+nav a{color:#fff;font-size:.95rem;transition:var(--transition)}
+nav a:hover{color:var(--gold)}
+@media(max-width:680px){nav ul{gap:.6rem;font-size:.85rem}}
+/* --------------- HERO --------------- */
+.hero{height:100vh;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&w=1600&q=80') center/cover no-repeat;animation:zoom 22s ease-in-out infinite;transform-origin:center}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.85) 10%,rgba(0,0,0,.2))}
+@keyframes zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.hero-inner{position:relative;z-index:2;max-width:800px;margin:auto;text-align:center;padding:0 1rem;top:50%;transform:translateY(-50%)}
+.hero h1{font-size:3rem;margin-bottom:.4em}
+.hero p{font-size:1.3rem;color:#ddd;margin-bottom:1.5em}
+.btn{display:inline-block;padding:.9rem 2.1rem;border-radius:50px;font-weight:600;text-transform:uppercase;transition:var(--transition)}
+.btn-primary{background:var(--gold);color:#000}
+.btn-primary:hover{background:#c19b31;transform:translateY(-3px)}
+/* --------------- Section Titles --------------- */
+.section-title{position:relative;text-align:center;margin-bottom:0.5em;font-size:2.2rem}
+.section-title::after{content:"";display:block;width:70px;height:3px;background:var(--gold);margin:.6em auto 0}
+/* --------------- Feature Cards --------------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.7rem;margin-top:3rem}
+.card{background:var(--card);border-radius:var(--radius);padding:2rem 1.5rem;text-align:center;box-shadow:var(--shadow);transition:var(--transition);opacity:0;transform:translateY(40px)}
+.card.appear{opacity:1;transform:none}
+.card i{font-size:2rem;color:var(--gold);margin-bottom:.7rem}
+.card h3{font-size:1.2rem;margin-bottom:.3rem}
+.card:hover{transform:translateY(-6px)}
+/* --------------- KPI bar --------------- */
+.kpi-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:3rem}
+.kpi{flex:1 1 200px;text-align:center}
+.kpi h3{font-size:2rem;color:var(--gold)}
+.kpi span{display:block;font-size:.9rem;color:var(--muted);text-transform:uppercase;margin-top:.3rem}
+/* --------------- Gallery --------------- */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:2.5rem}
+.gallery-grid img{aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius);transition:var(--transition);opacity:0;transform:scale(.9)}
+.gallery-grid img.appear{opacity:1;transform:scale(1)}
+.gallery-grid img:hover{transform:scale(1.06)}
+/* --------------- Success Stories --------------- */
+.success-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2.5rem}
+.testimonial{background:var(--card);padding:1.5rem;border-radius:var(--radius);box-shadow:var(--shadow);opacity:0;transform:translateY(40px);transition:var(--transition)}
+.testimonial.appear{opacity:1;transform:none}
+.testimonial header{display:flex;align-items:center;gap:1rem;margin-bottom:.8rem}
+.testimonial img{width:60px;height:60px;border-radius:50%;object-fit:cover}
+.testimonial h4{margin:0;font-size:1rem}
+.testimonial small{color:var(--muted);font-size:.8rem}
+.testimonial p{font-size:.95rem;color:#ddd;margin-top:.5rem}
+/* --------------- FAQ --------------- */
+.faq{max-width:800px;margin:3rem auto 0}
+.faq-item{border-bottom:1px solid #333;padding:1.2rem 0}
+.faq-item summary{font-weight:600;cursor:pointer;position:relative;padding-right:20px}
+.faq-item summary::marker{display:none}
+.faq-item summary::after{content:"+";position:absolute;right:0;top:0;color:var(--gold);font-weight:700}
+.faq-item[open] summary::after{content:"–"}
+.faq-item p{margin-top:.7rem;color:#ddd;font-size:.95rem}
+/* --------------- Form --------------- */
 form{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
-label{font-weight:600;font-size:.9rem}
-input[type=text],input[type=email],input[type=number]{width:100%;padding:.75em;border:1px solid #444;border-radius:6px;background:#000;color:#fff}
+input[type=text],input[type=email],input[type=number]{padding:.8rem;border:1px solid #555;background:#000;color:#fff;border-radius:6px;font-size:1rem}
 input::placeholder{color:#666}
 input:focus{outline:none;border-color:var(--gold)}
-.checkbox{display:flex;align-items:center;font-size:.85rem;gap:.5rem}
+.checkbox{display:flex;align-items:center;font-size:.9rem;gap:.6rem}
 .checkbox input{accent-color:var(--gold);transform:translateY(1px)}
-/* ---------- contact ---------- */
+/* --------------- Contact --------------- */
 .contact-info{text-align:center;margin-top:2rem}
+.contact-info p{margin:.3rem 0}
 .socials{margin-top:.8rem;display:flex;justify-content:center;gap:1rem}
-.socials a{color:var(--gold);font-size:1.4rem;transition:.3s}
+.socials a{color:var(--gold);font-size:1.5rem;transition:var(--transition)}
 .socials a:hover{color:#fff;transform:scale(1.2)}
-/* ---------- footer ---------- */
-footer{background:#111;text-align:center;font-size:.85rem;padding:1.5rem 1rem;color:var(--muted)}
-footer a{color:var(--gold)}
-/* ---------- animations ---------- */
-@media(prefers-reduced-motion:no-preference){
- .fade{opacity:0;transform:translateY(30px);transition:.6s}
- .fade.show{opacity:1;transform:none}
-}
-/* ---------- responsive ---------- */
-@media(max-width:600px){
- h1{font-size:2.2rem}
- h2{font-size:1.7rem}
+/* --------------- Footer --------------- */
+footer{background:#111;text-align:center;padding:1.8rem 1rem;font-size:.85rem;color:var(--muted)}
+footer a{color:var(--gold);text-decoration:none}
+footer a:hover{text-decoration:underline}
+/* --------------- Responsive --------------- */
+@media(max-width:620px){
+ .hero h1{font-size:2.2rem}
  .hero p{font-size:1.1rem}
- nav ul{gap:.7rem}
+ nav ul{display:none}
 }
 </style>
-<!-- FontAwesome (icons CDN) -->
 <script src="https://kit.fontawesome.com/0c4e5e2439.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+<!-- ===== NAV ===== -->
 <nav>
-  <div class="nav-wrap">
-     <div class="logo">Eho VIP</div>
-     <ul>
-       <li><a href="#why">Waarom wij?</a></li>
-       <li><a href="#works">Werkwijze</a></li>
-       <li><a href="#gallery">Galerie</a></li>
-       <li><a href="#signup">Aanmelden</a></li>
-       <li><a href="#contact">Contact</a></li>
-     </ul>
-  </div>
+ <div class="nav-wrap">
+  <div class="logo">Eho VIP Model</div>
+  <ul>
+   <li><a href="#about">Over ons</a></li>
+   <li><a href="#why">Voordelen</a></li>
+   <li><a href="#gallery">Galerie</a></li>
+   <li><a href="#success">Succes</a></li>
+   <li><a href="#signup">Aanmelden</a></li>
+  </ul>
+ </div>
 </nav>
 
+<!-- ===== HERO ===== -->
 <header class="hero">
-  <div class="hero-inner">
-     <h1 class="fade">Word het gezicht van morgen</h1>
-     <p class="fade" style="transition-delay:.15s">Gratis promotie &amp; persoonlijke coaching op Instagram, TikTok &amp; Twitch</p>
-     <a href="#signup" class="btn btn-primary fade" style="transition-delay:.3s">Meld je gratis aan</a>
-  </div>
+ <div class="hero-inner">
+  <h1 class="fade">Word het gezicht van morgen</h1>
+  <p class="fade" style="transition-delay:.1s">Gratis promotie &amp; coaching op Instagram, TikTok &amp; Twitch</p>
+  <a href="#signup" class="btn btn-primary fade" style="transition-delay:.2s">Meld je gratis aan</a>
+ </div>
 </header>
 
-<!-- WHY CHOOSE -->
-<section id="why">
+<!-- ===== ABOUT / KPI ===== -->
+<section id="about">
  <div class="container">
-   <h2 class="fade">Waarom kiezen voor Eho VIP Model</h2>
-   <div class="cards">
-     <div class="card"><i class="fas fa-user-tie"></i><h3>Persoonlijke Manager</h3><p>Je eigen coach die 24/7 klaarstaat.</p></div>
-     <div class="card"><i class="fas fa-piggy-bank"></i><h3>0 Euro Investering</h3><p>Wij investeren in jou, niet andersom.</p></div>
-     <div class="card"><i class="fas fa-graduation-cap"></i><h3>Exclusieve Training</h3><p>Snelle groei door insider‑tips &amp; masterclasses.</p></div>
-     <div class="card"><i class="fas fa-shield-alt"></i><h3>Juridische Zekerheid</h3><p>Duidelijke contracten &amp; veilige uitbetalingen.</p></div>
-   </div>
- </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section id="works" style="background:#111">
- <div class="container">
-  <h2 class="fade">Hoe werkt het</h2>
-  <div class="cards">
-    <div class="card"><i class="fas fa-file-signature"></i><h3>1. Aanmelden</h3><p>Vul het formulier in en verstuur.</p></div>
-    <div class="card"><i class="fas fa-comments"></i><h3>2. Online intake</h3><p>Korte video‑call met je manager.</p></div>
-    <div class="card"><i class="fas fa-handshake"></i><h3>3. Contract</h3><p>Transparante overeenkomst &amp; doelplan.</p></div>
-    <div class="card"><i class="fas fa-rocket"></i><h3>4. Live &amp; Verdien</h3><p>Start promotie, ontvang inkomsten.</p></div>
+  <h2 class="section-title fade">Over ons</h2>
+  <p class="fade" style="max-width:800px;margin:0 auto">Eho VIP Model is sinds 2019 hét toonaangevende digitale modellenbureau van Nederland. We combineren klassieke modellen­expertise met cutting‑edge influencer‑marketing om ambitieuze talenten razendsnel te laten groeien.</p>
+  <div class="kpi-bar fade">
+   <div class="kpi"><h3>150+</h3><span>actieve modellen</span></div>
+   <div class="kpi"><h3>€1.2M</h3><span>uitbetaald in 2024</span></div>
+   <div class="kpi"><h3>5 jr</h3><span>ervaring</span></div>
+   <div class="kpi"><h3>24/7</h3><span>support</span></div>
   </div>
  </div>
 </section>
 
-<!-- GALLERY -->
+<!-- ===== WHY ===== -->
+<section id="why" style="background:#111">
+ <div class="container">
+  <h2 class="section-title fade">Waarom kiezen voor Eho VIP Model</h2>
+  <div class="cards">
+   <div class="card"><i class="fas fa-user-tie"></i><h3>Persoonlijke Manager</h3><p>Een dedicated coach begeleidt jouw content, deals &amp; groei.</p></div>
+   <div class="card"><i class="fas fa-piggy-bank"></i><h3>0 Euro Investering</h3><p>Wij investeren eerst in jou – verdienmodel = revenue‑share.</p></div>
+   <div class="card"><i class="fas fa-shield-alt"></i><h3>Veilig &amp; Legaal</h3><p>Transparant contract, snelle uitbetalingen, AVG‑proof.</p></div>
+   <div class="card"><i class="fas fa-rocket"></i><h3>Snelle Groei</h3><p>AI‑analyse + trend‑marketing voor viraal bereik in weken.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
 <section id="gallery">
  <div class="container">
-  <h2 class="fade">Galerie</h2>
+  <h2 class="section-title fade">Galerie</h2>
   <div class="gallery-grid">
-    <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Model backstage" class="fade">
-    <img src="https://images.pexels.com/photos/1488313/pexels-photo-1488313.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Runway" class="fade">
-    <img src="https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Make‑up session" class="fade">
-    <img src="https://images.pexels.com/photos/994517/pexels-photo-994517.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fashion portrait" class="fade">
+   <img src="https://images.unsplash.com/photo-1512207849371-6e3c18a4ba41?auto=format&w=800&q=80" alt="Backstage glamour" class="fade">
+   <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&w=800&q=80" alt="Catwalk vibes" class="fade">
+   <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&w=800&q=80" alt="Creative portrait" class="fade">
+   <img src="https://images.unsplash.com/photo-1515723401225-756a52ac7141?auto=format&w=800&q=80" alt="Studio fashion shoot" class="fade">
   </div>
  </div>
 </section>
 
-<!-- SIGN‑UP -->
-<section id="signup" class="signup">
+<!-- ===== SUCCESS STORIES ===== -->
+<section id="success" style="background:#111">
  <div class="container">
-  <h2 class="fade">Aanmeldingsformulier</h2>
-  <div class="form-wrapper fade">
+  <h2 class="section-title fade">Succes­verhalen</h2>
+  <div class="success-grid">
+   <article class="testimonial">
+    <header><img src="https://images.unsplash.com/photo-1517840545246-24220cfff5f2?auto=format&w=200&q=80" alt="Isabelle"><div><h4>Isabelle&nbsp;– 22</h4><small>TikTok • 800k volgers</small></div></header>
+    <p>“Binnen 3 maanden na start verdien ik €4 500 per maand. Het team regelt samenwerkingen &amp; sponsordeals – ik kan me focussen op content!”</p>
+   </article>
+   <article class="testimonial">
+    <header><img src="https://images.unsplash.com/photo-1492462543947-040389c4a66e?auto=format&w=200&q=80" alt="Laura"><div><h4>Laura&nbsp;– 24</h4><small>Instagram • 650k volgers</small></div></header>
+    <p>“Eho VIP gaf mij de kans om van hobby naar full‑time model te gaan. No‑upfront‑fees, alleen winst­deling – super transparant.”</p>
+   </article>
+   <article class="testimonial">
+    <header><img src="https://images.unsplash.com/photo-1509966538871-5fdfb914bb14?auto=format&w=200&q=80" alt="Nina"><div><h4>Nina&nbsp;– 20</h4><small>Twitch • 1M fans</small></div></header>
+    <p>“Van 0 naar partner in 6 weken. De content‑strategie + 24/7 support maken het verschil. Elke week uitbetaling op m’n bank.”</p>
+   </article>
+  </div>
+  <div style="text-align:center;margin-top:2rem">
+    <a href="#signup" class="btn btn-primary">Word de volgende case</a>
+  </div>
+ </div>
+</section>
+
+<!-- ===== SIGNUP ===== -->
+<section id="signup">
+ <div class="container">
+  <h2 class="section-title fade">Aanmelden</h2>
+  <div style="max-width:550px;margin:auto" class="fade">
    <form>
-     <label>Naam
-       <input type="text" name="naam" placeholder="Voor- en achternaam" required>
-     </label>
-     <label>Leeftijd
-       <input type="number" name="leeftijd" min="18" placeholder="18+" required>
-     </label>
-     <label>Telegram-gebruikersnaam
-       <input type="text" name="telegram" placeholder="@jouwusername" required>
-     </label>
-     <label>E‑mailadres
-       <input type="email" name="email" placeholder="jij@mail.com" required>
-     </label>
-     <div class="checkbox">
-       <input type="checkbox" required>
-       <span>Ik accepteer de <a href="#">voorwaarden</a></span>
-     </div>
-     <button class="btn btn-primary" type="submit">Start nu gratis</button>
+     <input type="text" placeholder="Naam" required>
+     <input type="number" placeholder="Leeftijd (18+)" min="18" required>
+     <input type="text" placeholder="Telegram‑gebruikersnaam" required>
+     <input type="email" placeholder="E‑mailadres" required>
+     <label class="checkbox"><input type="checkbox" required>Ik accepteer de <a href="#">voorwaarden</a></label>
+     <button type="submit" class="btn btn-primary">Start nu gratis</button>
    </form>
   </div>
+  <!-- FAQ -->
+  <details class="faq-item fade" style="max-width:650px;margin:3rem auto 0">
+    <summary>Is mijn privacy gegarandeerd?</summary>
+    <p>Ja. We publiceren niets zonder jouw toestemming. Alle data valt onder AVG.</p>
+  </details>
+  <details class="faq-item fade" style="max-width:650px;margin:auto">
+    <summary>Hoe snel kan ik verdienen?</summary>
+    <p>Gemiddeld binnen de eerste week; exacte inkomsten hangen af van content‑frequentie.</p>
+  </details>
+  <details class="faq-item fade" style="max-width:650px;margin:auto">
+    <summary>Zit ik ergens aan vast?</summary>
+    <p>Je tekent een transparant contract. Geen verborgen kosten – wij verdienen pas als jij verdient.</p>
+  </details>
  </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ===== CONTACT ===== -->
 <section id="contact" style="background:#111">
  <div class="container">
-   <h2 class="fade">Contact</h2>
-   <div class="contact-info fade">
-     <p><i class="fas fa-envelope"></i> <a href="mailto:contact@ehovipmodel.com">contact@ehovipmodel.com</a></p>
-     <p><i class="fab fa-telegram-plane"></i> <a href="https://t.me/ehovipmodel" target="_blank">@ehovipmodel</a></p>
-     <div class="socials">
-       <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-       <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-       <a href="#" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
-     </div>
+  <h2 class="section-title fade">Contact</h2>
+  <div class="contact-info fade">
+   <p><i class="fas fa-envelope"></i> <a href="mailto:contact@ehovipmodel.com">contact@ehovipmodel.com</a></p>
+   <p><i class="fab fa-telegram-plane"></i> <a href="https://t.me/ehovipmodel" target="_blank">@ehovipmodel</a></p>
+   <div class="socials">
+    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
    </div>
+  </div>
  </div>
 </section>
 
 <footer>
- Wij werken 100% legaal en met officiële overeenkomsten.<br>
- © 2025 Eho VIP Model &nbsp;|&nbsp; <a href="#">Privacybeleid</a> &nbsp;|&nbsp; <a href="#">Algemene voorwaarden</a>
+ © 2025 Eho VIP Model&nbsp;| <a href="#">Privacybeleid</a> | <a href="#">Algemene voorwaarden</a>
 </footer>
 
-<!-- Intersection Observer: fade‑ins -->
+<!-- Intersection Observer -->
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
- const faders=[...document.querySelectorAll('.fade'),...document.querySelectorAll('.card')];
- const opts={threshold:.25,rootMargin:'0px 0px -50px'};
- const io=new IntersectionObserver((ent,obs)=>{
-  ent.forEach(e=>{
-    if(e.isIntersecting){e.target.classList.add('show','appear');obs.unobserve(e.target);}
-  });
- },opts);
- faders.forEach(el=>io.observe(el));
+ const appearEls=[...document.querySelectorAll('.fade'),
+                  ...document.querySelectorAll('.card'),
+                  ...document.querySelectorAll('.gallery-grid img'),
+                  ...document.querySelectorAll('.testimonial')];
+ const io=new IntersectionObserver((e,o)=>e.forEach(ent=>{
+  if(ent.isIntersecting){ent.target.classList.add('appear','show');o.unobserve(ent.target);}
+ }),{threshold:.25});
+ appearEls.forEach(el=>io.observe(el));
 });
 </script>
 </body>

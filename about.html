@@ -3,248 +3,443 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>EHO VIP Model • Gratis Promotie Nederland</title>
+  <title>EHO VIP Model • Gratis Promotie voor Modellen in Nederland</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* --------------- RESET & BASE --------------- */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Montserrat', sans-serif; color:#222; background:#fafafa; line-height:1.6;}
-    a { color:inherit; text-decoration:none;}
-    img { max-width:100%; display:block; }
-    .container { max-width:1200px; margin:0 auto; padding:0 20px;}
-    h1,h2,h3 { font-family:'Playfair Display', serif; color:#111;}
-    h1 { font-size:3rem; letter-spacing:2px;}
-    button, .btn { cursor:pointer; display:inline-block; padding:12px 28px; border:none; border-radius:4px; background:#000; color:#fff; font-weight:600; transition:background .3s;}
-    button:hover, .btn:hover { background:#333;}
+    /* ————————————————————————— RESET + BASE ————————————————————————— */
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #222;
+      background: #f9f9f9;
+      line-height: 1.6;
+    }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; color:#111; margin-bottom:20px; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { display:block; max-width:100%; }
 
-    /* ------------ HEADER / NAV ------------ */
-    header { position:fixed; top:0; width:100%; background:rgba(255,255,255,0.9); box-shadow:0 2px 4px rgba(0,0,0,0.1); z-index:1000;}
-    .nav-wrap { display:flex; justify-content:space-between; align-items:center; height:70px; }
-    .nav-wrap .logo { font-size:1.4rem; font-weight:700;}
-    nav ul { display:flex; gap:25px; }
-    nav li { list-style:none; }
-    nav a { font-size:0.9rem; text-transform:uppercase; font-weight:500;}
-    nav a.cta { background:#000; color:#fff; padding:10px 20px; border-radius:4px; }
+    /* ————————————————————————— HEADER ————————————————————————— */
+    header {
+      position: fixed;
+      top:0; left:0; right:0;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .nav-wrap { max-width: 1200px; margin: auto; display:flex; align-items:center; justify-content:space-between; padding:20px; }
+    .logo { font-size:1.6rem; font-weight:700; letter-spacing:1px; }
+    nav ul { display:flex; gap:30px; }
+    nav li {}
+    nav a { font-weight:600; text-transform:uppercase; font-size:0.9rem; padding:8px 12px; transition:color .3s; }
+    nav a:hover { color: #333; }
+    a.cta { background:#000; color:#fff; border-radius:4px; }
 
-    /* ------------ HERO + PARALLAX ------------ */
+    /* mobile menu */
+    .burger { display:none; font-size:1.8rem; cursor:pointer; }
+    @media(max-width:900px){
+      nav ul { display:none; position:absolute; top:70px; left:0; right:0; background:#fff; flex-direction:column; gap:0; }
+      nav ul.open { display:flex; }
+      nav li { border-bottom:1px solid #ddd; }
+      .burger { display:block; }
+    }
+
+    /* ————————————————————————— HERO ————————————————————————— */
     .hero {
-      position:relative; height:100vh; display:flex; align-items:center; justify-content:center;
+      position: relative; height:100vh;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; padding:0 20px;
       overflow:hidden;
     }
     .hero::before {
-      content:''; position:absolute; top:0; left:0; width:100%; height:100%;
-      background:url('https://images.unsplash.com/photo-1631926147587-2b1ac00e0a9d?ixlib=rb-4.0') center/cover no-repeat;
-      transform:translateZ(-1px) scale(1.3); z-index:-2;
+      content:''; position:absolute; inset:0;
+      background: url('https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?crop=entropy&cs=tinysrgb&fit=crop&h=800&w=1200') center/cover no-repeat;
+      transform: scale(1.2);
+      filter: brightness(0.6);
+      z-index:-1;
     }
-    .hero::after {
-      content:''; position:absolute; top:0; left:0; width:100%; height:100%;
-      background:rgba(0,0,0,0.4); z-index:-1;
-    }
-    .hero-content { text-align:center; color:#fff; max-width:800px; padding:0 20px; }
-    .hero-content h1 { margin-bottom:10px; font-size:3.2rem; }
+    .hero-content { max-width:800px; color:#fff; }
+    .hero-content h1 { font-size:3rem; margin-bottom:20px; line-height:1.2; }
     .hero-content p { font-size:1.2rem; margin-bottom:30px; }
-    .hero-content .btn { font-size:1rem;}
+    .hero-content .btn { padding:15px 30px; font-size:1rem; }
 
-    /* ------------ SECTIONS ------------ */
-    section { padding:100px 0; }
-    .about .team-grid, .services .grid, .gallery .grid { display:grid; gap:30px; }
-    .about .team-grid { grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); }
-    .services .grid { grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
-    .gallery .grid { grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); }
+    /* ————————————————————————— CONTENIDO SECTIONS ————————————————————————— */
+    .container { max-width: 1200px; margin: auto; padding:120px 20px; }
 
-    .card {
-      background:#fff; border-radius:8px; overflow:hidden;
-      box-shadow:0 4px 16px rgba(0,0,0,0.1);
+    /* ————————————————————————— ABOUT ————————————————————————— */
+    #about p { max-width:800px; margin:auto 0 40px; font-size:1.05rem; }
+    .team-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:30px;
+    }
+    .team-card {
+      background:#fff; border-radius:8px;
+      overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);
       transition:transform .3s;
     }
-    .card:hover { transform:translateY(-6px); }
-    .card img { height:200px; object-fit:cover; }
+    .team-card:hover { transform:translateY(-8px); }
+    .team-card img { width:100%; height:auto; }
+    .team-card div { padding:20px; }
+    .team-card h4 { margin-bottom:8px; font-size:1.2rem; }
+    .team-card p { font-size:0.95rem; color:#555; }
 
-    .gallery .card { position:relative; }
-    .gallery .overlay {
-      position:absolute; inset:0; background:rgba(0,0,0,0.6);
+    /* ————————————————————————— SERVICES ————————————————————————— */
+    .services-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+    .service-card {
+      position:relative;
+      height:320px;
+      overflow:hidden;
+      border-radius:8px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.08);
+      transition:transform .3s;
+    }
+    .service-card:hover { transform:translateY(-6px); }
+    .service-card img {
+      width:100%; height:100%;
+      object-fit:cover;
+      transition:transform .5s;
+    }
+    .service-card:hover img { transform:scale(1.1); }
+    .service-card .overlay {
+      position:absolute; bottom:0; left:0; right:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      padding:20px; color:#fff;
+    }
+    .service-card .overlay h3 { margin-bottom:8px; }
+    .service-card .overlay p { font-size:0.95rem; }
+
+    /* ————————————————————————— GALLERY ————————————————————————— */
+    .gallery-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+    .gallery-card {
+      position:relative;
+      overflow:hidden;
+      border-radius:8px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    }
+    .gallery-card img {
+      width:100%;
+      height:280px;
+      object-fit:cover;
+      transition:transform .5s;
+    }
+    .gallery-card:hover img { transform:scale(1.05); }
+    .gallery-card .overlay {
+      position:absolute; inset:0;
+      background:rgba(0,0,0,0.5);
       color:#fff; display:flex; align-items:center; justify-content:center;
       opacity:0; transition:opacity .3s;
+      text-align:center; padding:20px;
     }
-    .gallery .card:hover .overlay { opacity:1; }
+    .gallery-card:hover .overlay { opacity:1; }
 
-    .faq-item { margin-bottom:20px; }
+    /* ————————————————————————— STEPS ————————————————————————— */
+    .steps-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      margin-top:40px;
+    }
+    .step-card {
+      background:#fff; padding:30px;
+      border-radius:8px; text-align:center;
+      box-shadow:0 4px 16px rgba(0,0,0,0.08);
+      transition:transform .3s;
+    }
+    .step-card:hover { transform:translateY(-6px); }
+    .step-card h4 { margin-bottom:12px; }
+    .step-card p { font-size:0.95rem; color:#555; }
+
+    /* ————————————————————————— FAQ ————————————————————————— */
+    .faq-item { margin-bottom:24px; }
     .faq-question {
-      background:#eee; padding:15px 20px; border-radius:4px;
-      font-weight:500; cursor:pointer;
+      background:#eee; padding:18px 24px;
+      border-radius:4px; font-weight:600;
+      cursor:pointer; position:relative;
     }
-    .faq-answer { display:none; padding:15px 20px; background:#fff; border-left:4px solid #000; }
+    .faq-question::after {
+      content:'+';
+      position:absolute; right:20px;
+      font-size:1.3rem;
+      transition:transform .3s;
+    }
+    .faq-answer {
+      display:none; padding:18px 24px;
+      background:#fff; border-left:4px solid #000;
+      margin-top:8px; font-size:0.95rem; line-height:1.5;
+    }
+    .faq-item.open .faq-question::after {
+      transform:rotate(45deg);
+    }
+    .faq-item.open .faq-answer {
+      display:block;
+    }
 
-    .signup-section {
-      display:flex; justify-content:center;
+    /* ————————————————————————— FORM ————————————————————————— */
+    .signup-form {
+      background:#fff; padding:50px;
+      border-radius:8px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.1);
+      max-width:500px; margin:40px auto 0;
     }
-    .signup-section form {
-      background:#fff; padding:40px; border-radius:8px;
-      max-width:500px; width:100%; box-shadow:0 8px 24px rgba(0,0,0,0.1);
+    .signup-form h2 {
+      margin-bottom:24px; text-align:center;
     }
-    .signup-section label { display:block; margin-bottom:15px; font-weight:500; }
-    .signup-section input {
-      width:100%; padding:12px; margin-top:5px; border:1px solid #ccc;
-      border-radius:4px;
+    .signup-form label {
+      display:block; margin-bottom:16px;
+      font-weight:500;
+    }
+    .signup-form input {
+      width:100%; padding:12px;
+      border:1px solid #ccc; border-radius:4px;
+      margin-top:6px;
+    }
+    .signup-form .btn {
+      width:100%; margin-top:20px;
     }
 
+    /* ————————————————————————— FOOTER ————————————————————————— */
     footer {
-      background:#000; color:#fff; padding:40px 0; text-align:center;
+      background:#000; color:#fff;
+      padding:40px 20px;
+      text-align:center;
+      margin-top:60px;
     }
+    footer a { color:#fff; font-weight:600; }
+    footer p { font-size:0.95rem; }
 
-    /* ------------ MODAL ------------ */
+    /* ————————————————————————— MODAL ————————————————————————— */
     .modal {
-      display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6);
-      justify-content:center; align-items:center;
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.7);
+      justify-content:center;
+      align-items:center;
+      padding:20px;
     }
     .modal-content {
-      background:#fff; padding:40px; border-radius:8px;
-      max-width:400px; width:90%; text-align:center;
+      background:#fff;
+      padding:40px;
+      border-radius:8px;
+      max-width:400px;
+      text-align:center;
+      box-shadow:0 8px 24px rgba(0,0,0,0.2);
     }
-
-    /* ------------ Responsiveness ------------ */
-    @media(max-width:768px){ nav ul { display:none; } .nav-wrap .burger { display:block; cursor:pointer; } }
+    .modal-content h4 {
+      margin-bottom:20px;
+    }
+    .modal-content button {
+      padding:10px 24px;
+      background:#000;
+      color:#fff;
+      border-radius:4px;
+      border:none;
+      cursor:pointer;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="nav-wrap container">
-    <div class="logo">EHO VIP Model</div>
-    <div class="burger" onclick="document.querySelector('nav ul').classList.toggle('open');">☰</div>
-    <nav>
-      <ul>
-        <li><a href="#about">Over Ons</a></li>
-        <li><a href="#services">Diensten</a></li>
-        <li><a href="#gallery">Succes</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#signup" class="cta">Inschrijven</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-wrap">
+      <a href="#" class="logo">EHO VIP Model</a>
+      <div class="burger" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</div>
+      <nav>
+        <ul>
+          <li><a href="#about">Over Ons</a></li>
+          <li><a href="#services">Diensten</a></li>
+          <li><a href="#gallery">Succes</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#signup" class="cta">Inschrijven</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Gratis Promotie<br>voor Modellen in Nederland</h1>
-    <p>Wij zetten je in de spotlight op Instagram, TikTok, Twitch & meer.</p>
-    <a href="#signup" class="btn">Start Gratis</a>
-  </div>
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Gratis Promotie voor Modellen in Nederland</h1>
+      <p>Wij zetten jou professioneel in de spotlight op Instagram, TikTok, Twitch & meer — volledig gratis.</p>
+      <a href="#signup" class="btn">Start Gratis</a>
+    </div>
+  </section>
 
-<section id="about" class="about container">
-  <h2>Over Ons</h2>
-  <p>Wij zijn een premium social media agency. Wij investeren in jouw succes en delen mee in de opbrengst — volledig legaal & contractueel vastgelegd.</p>
-  <div class="team-grid">
-    <div class="card">
-      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anna de Vries">
-      <div style="padding:20px;">
-        <h3>Anna de Vries</h3>
-        <p>Strategisch Manager</p>
+  <!-- ABOUT -->
+  <section id="about" class="container">
+    <h2>Over Ons</h2>
+    <p>Wij zijn een elite social media‑agentuur, gespecialiseerd in modellenpromotie. Ons doel is jouw succes — jij wordt bekend, wij investeren, en delen in de winst. Volledig legaal en contractueel geregeld.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Anna de Vries">
+        <div>
+          <h4>Anna de Vries</h4>
+          <p>Strategisch Manager</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Bas Janssen">
+        <div>
+          <h4>Bas Janssen</h4>
+          <p>Social Media Expert</p>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Bas Janssen">
-      <div style="padding:20px;">
-        <h3>Bas Janssen</h3>
-        <p>Social Media Expert</p>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="container">
+    <h2>Diensten</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167" alt="Instagram">
+        <div class="overlay">
+          <h3>Instagram Boost</h3>
+          <p>Strategie, content & gerichte campagnes voor snelle groei en engagement.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1589571894960-20bbe2828ec4" alt="TikTok">
+        <div class="overlay">
+          <h3>TikTok Virality</h3>
+          <p>Trend‑content en virale videos voor maximaal bereik en zichtbaarheid.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15" alt="Twitch">
+        <div class="overlay">
+          <h3>Twitch Presence</h3>
+          <p>Professionele stream-opzet met merkpartnerschappen en audience‑ontwikkeling.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="services" class="services container">
-  <h2>Diensten</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167" alt="Instagram">
-      <h3>Instagram Boost</h3>
-      <p>Strategie, content & campagnes gericht op snelle groei.</p>
+  <!-- GALLERY & CASES -->
+  <section id="gallery" class="container">
+    <h2>Succesverhalen</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1" alt="case 1">
+        <div class="overlay"><h3>+50K volgers in 2 maanden</h3></div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b" alt="case 2">
+        <div class="overlay"><h3>Eerste merkdeal binnen 3 weken</h3></div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a" alt="case 3">
+        <div class="overlay"><h3>Gemiddelde engagement +200%</h3></div>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1589571894960-20bbe2828ec4" alt="TikTok">
-      <h3>TikTok Virality</h3>
-      <p>Trend content, challenges & virale video’s voor maximales bereik.</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15" alt="Twitch">
-      <h3>Twitch Presence</h3>
-      <p>Professionele stream-opzet & merkpartnerschappen.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="gallery" class="gallery container">
-  <h2>Succesverhalen</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1" alt="Model Success">
-      <div class="overlay"><h3>+50k volgers in 2 maanden</h3></div>
+  <!-- STEPS -->
+  <section class="container">
+    <h2>Hoe Werkt Het?</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <h4>1. Aanmelden</h4>
+        <p>Vul jouw naam, leeftijd en socials in. Wij nodigen je uit voor een strategiegesprek.</p>
+      </div>
+      <div class="step-card">
+        <h4>2. Contract & Strategie</h4>
+        <p>We leggen alles juridisch vast: aanpak, verantwoordelijkheden en winstdeling.</p>
+      </div>
+      <div class="step-card">
+        <h4>3. Content & Promotie</h4>
+        <p>Campagnes, video’s, collaborations – wij bouwen aan jouw merk & bereik.</p>
+      </div>
+      <div class="step-card">
+        <h4>4. Succes & Winst</h4>
+        <p>Je groeit, verdient en wij delen in het succes — volgens vooraf afgesproken contract.</p>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b" alt="Model Growth">
-      <div class="overlay"><h3>Eerste merkdeal binnen 3 weken</h3></div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container">
+    <h2>Veelgestelde Vragen</h2>
+    <div class="faq-item">
+      <div class="faq-question">Is het echt volledig gratis?</div>
+      <div class="faq-answer">Ja — jouw promotie kost je niets. Wij verdienen alleen als jij inkomsten genereert.</div>
     </div>
-  </div>
-</section>
+    <div class="faq-item">
+      <div class="faq-question">Hoe ziet het contract eruit?</div>
+      <div class="faq-answer">Een helder contract met percentages, verantwoordelijkheden en transparante afspraken.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Hoe snel zie ik resultaten?</div>
+      <div class="faq-answer">Veel modellen zien groei binnen 4–6 weken. Succesverhalen tonen +50K volgers in 2 maanden.</div>
+    </div>
+  </section>
 
-<section id="faq" class="faq container">
-  <h2>Veelgestelde Vragen</h2>
-  <div class="faq-item">
-    <div class="faq-question">Is het echt gratis?</div>
-    <div class="faq-answer">Ja! Wij werken volledig kosteloos, gebaseerd op winstdeling vastgelegd in een contract.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-question">Hoe werkt die winstdeling?</div>
-    <div class="faq-answer">Zodra je inkomsten genereert via je groei (advertenties, samenwerkingen), delen wij winst volgens vooraf afgesproken percentages.</div>
-  </div>
-</section>
+  <!-- SIGNUP FORM -->
+  <section id="signup" class="container">
+    <div class="signup-form">
+      <h2>Schrijf Je Gratis In</h2>
+      <form id="form">
+        <label>Naam<input type="text" name="name" placeholder="Jouw naam" required></label>
+        <label>Leeftijd<input type="number" name="age" min="16" max="45" placeholder="Leeftijd" required></label>
+        <label>Social tag<input type="text" name="social_tag" placeholder="@jouwnaam" required></label>
+        <label>Telegram<input type="text" name="telegram" placeholder="@jouwtelegram" required></label>
+        <label>Email<input type="email" name="email" placeholder="email@example.com" required></label>
+        <button type="submit" class="btn">Start Gratis</button>
+      </form>
+    </div>
+  </section>
 
-<section id="signup" class="signup-section container">
-  <form id="signupForm">
-    <h2>Schrijf Je Gratis In</h2>
-    <label>Naam<input type="text" name="name" required /></label>
-    <label>Leeftijd<input type="number" name="age" min="16" max="45" required /></label>
-    <label>Social media tag<input type="text" name="social_tag" placeholder="@jouwnaam" required /></label>
-    <label>Telegram<input type="text" name="telegram" placeholder="@jouwtelegram" required /></label>
-    <label>Email<input type="email" name="email" required /></label>
-    <button type="submit" class="btn">Start Gratis</button>
-  </form>
-</section>
-
-<footer>
-  <div class="container">
+  <!-- FOOTER -->
+  <footer>
     <p>Contact: <a href="mailto:ehovipmodel@gmail.com">ehovipmodel@gmail.com</a> | Telegram: <a href="https://t.me/ehovipmodel">@ehovipmodel</a></p>
     <p>&copy; 2025 EHO VIP Model — Legaal. Professioneel. Gratis.</p>
-  </div>
-</footer>
+  </footer>
 
-<div class="modal" id="thankYouModal">
-  <div class="modal-content">
-    <h2>Bedankt!</h2>
-    <p>We hebben je inschrijving ontvangen en nemen snel contact op.</p>
-    <button onclick="closeModal()">Sluiten</button>
+  <!-- THANK YOU MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h4>Bedankt!</h4>
+      <p>Je aanmelding is binnen. Wij nemen snel contact op via Telegram of e-mail.</p>
+      <button onclick="closeModal()">Sluiten</button>
+    </div>
   </div>
-</div>
 
-<script>
-  // FAQ toggle
-  document.querySelectorAll('.faq-question').forEach(q => {
-    q.onclick = () => {
-      const ans = q.nextElementSibling;
-      ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
+  <!-- ————————————————————————— JAVASCRIPT ————————————————————————— -->
+  <script>
+    // Burger menu toggle
+    document.querySelector('.burger').onclick = () => {
+      document.querySelector('nav ul').classList.toggle('open');
+    };
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-question').onclick = () => {
+        item.classList.toggle('open');
+      };
+    });
+
+    // Form submission & modal
+    document.getElementById('form').onsubmit = e => {
+      e.preventDefault();
+      document.getElementById('modal').style.display = 'flex';
+      e.target.reset();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
     }
-  });
-  // Form submit & modal
-  const form = document.getElementById('signupForm');
-  form.onsubmit = e => {
-    e.preventDefault();
-    document.getElementById('thankYouModal').style.display = 'flex';
-    form.reset();
-  }
-  function closeModal(){
-    document.getElementById('thankYouModal').style.display = 'none';
-  }
-</script>
-
+  </script>
 </body>
 </html>

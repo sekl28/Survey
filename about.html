@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Model Agency | Start jouw carrière</title>
-  <meta name="description" content="Word model en bouw aan jouw carrière in de fashion en social media wereld. Professionele begeleiding en kansen op echte groei." />
+  <title>Eho VIP Model | Word gratis model & influencer</title>
+  <meta name="description" content="Word model bij Eho VIP Model. Gratis promotie op Instagram, TikTok, Twitch. Professioneel, legaal en op contractbasis. Meld je aan!">
+  <meta name="keywords" content="model worden, gratis modelbureau, influencer worden, modellenbureau Nederland, Instagram modellen, TikTok influencer, modelcontract">
+  <meta property="og:title" content="Eho VIP Model – Word het gezicht van morgen" />
+  <meta property="og:description" content="Wij maken van jou een ster. Gratis promotie, professionele begeleiding en eerlijke verdiensten." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:url" content="https://ehovipmodel.com" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,86 +27,132 @@
       align-items: center;
       background-color: #fff;
       border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
-      margin-left: 30px;
+      margin-left: 25px;
       text-decoration: none;
       color: #111;
       font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #ff3366;
     }
     .hero {
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 120px 20px 100px;
       background: url('https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      height: 90vh;
       color: white;
       position: relative;
     }
     .hero::after {
-      content: "";
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0,0,0,0.4);
-      z-index: 1;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
     }
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: 700px;
+      padding: 20px;
     }
     .hero h1 {
-      font-size: 50px;
+      font-size: 48px;
       font-weight: 700;
-      margin-bottom: 20px;
     }
     .hero p {
       font-size: 20px;
-      max-width: 600px;
-      margin: 0 auto;
+      margin-top: 15px;
     }
     .cta-btn {
       margin-top: 30px;
-      padding: 15px 30px;
       background-color: #ff3366;
       color: white;
-      font-weight: 600;
+      padding: 15px 30px;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
       font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
       text-decoration: none;
+      transition: background-color 0.2s;
     }
-    .intro {
-      padding: 80px 40px;
-      text-align: center;
-      max-width: 800px;
+    .cta-btn:hover {
+      background-color: #e6285a;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
       margin: auto;
     }
-    .intro h2 {
+    section h2 {
       font-size: 36px;
       margin-bottom: 20px;
+      text-align: center;
     }
-    .intro p {
+    section p {
       font-size: 18px;
-      color: #444;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+    .step {
+      width: 48%;
+      background: #fafafa;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .highlight {
+      background: #ff3366;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
     }
     footer {
+      background: #111;
+      color: white;
       text-align: center;
-      padding: 40px;
-      font-size: 14px;
-      color: #777;
+      padding: 40px 20px;
+    }
+    footer a {
+      color: #ff3366;
+      text-decoration: none;
+      margin: 0 10px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo" style="font-weight:700; font-size:20px;">MODELAGENTUUR</div>
+    <div style="font-weight: 700; font-size: 20px;">Eho VIP Model</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="over-ons.html">Over ons</a>
@@ -113,18 +165,58 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Jij bent het gezicht van morgen</h1>
-      <p>Sluit je aan bij hét fashionbureau dat talent ontdekt, ontwikkelt en de wereld instuurt. Professioneel. Persoonlijk. Gedreven.</p>
-      <a href="word-model.html" class="cta-btn">Word model</a>
+      <p>Sluit je aan bij het agentschap dat talent ontdekt, promoot en omzet in bereik én inkomen.</p>
+      <a href="#formulier" class="cta-btn">Word model</a>
     </div>
   </section>
 
-  <section class="intro">
-    <h2>Wij bouwen samen aan jouw succes</h2>
-    <p>Onze missie is om talentvolle modellen en influencers te begeleiden naar echte groei. Met professionele support, zichtbaarheid en een persoonlijke aanpak maak jij het verschil.</p>
+  <section>
+    <h2>Wij investeren in jouw groei</h2>
+    <p>Promotie is <span class="highlight">gratis</span>. Wij geloven in jouw potentieel. Pas als jij verdient, verdienen wij ook — via eerlijke contracten.</p>
+  </section>
+
+  <section>
+    <h2>Hoe werkt het?</h2>
+    <div class="steps">
+      <div class="step">
+        <strong>1. Aanmelden</strong>
+        <p>Je vult het formulier in met je gegevens. Wij nemen contact met je op.</p>
+      </div>
+      <div class="step">
+        <strong>2. Analyse</strong>
+        <p>We bekijken je profiel en bepalen samen jouw strategie.</p>
+      </div>
+      <div class="step">
+        <strong>3. Groeien</strong>
+        <p>Wij promoten je actief op social media en bouwen je bereik op.</p>
+      </div>
+      <div class="step">
+        <strong>4. Verdienen</strong>
+        <p>Je ontvangt inkomsten — wij nemen enkel een afgesproken percentage via contract.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="formulier">Meld je aan</h2>
+    <form>
+      <input type="text" placeholder="Naam" required>
+      <input type="number" placeholder="Leeftijd" required>
+      <input type="text" placeholder="Telegram gebruikersnaam" required>
+      <input type="email" placeholder="E-mailadres" required>
+      <button type="submit" class="cta-btn">Aanmelden</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>📧 ehovipmodel@gmail.com</p>
+    <p>💬 Telegram: <a href="https://t.me/ehovipmodel">@ehovipmodel</a></p>
   </section>
 
   <footer>
-    &copy; 2025 Modelagentschap. Alle rechten voorbehouden.
+    &copy; 2025 Eho VIP Model. Alle rechten voorbehouden.<br/>
+    <a href="mailto:ehovipmodel@gmail.com">E-mail</a> · <a href="https://t.me/ehovipmodel">Telegram</a>
   </footer>
 </body>
 </html>

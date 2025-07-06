@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Binance удерживает €30,000 – Международная кампания</title>
   <meta name="description" content="Binance незаконно заморозил мои средства на сумму €30,000. Я начинаю международную кампанию, чтобы добиться справедливости и вернуть деньги себе и другим жертвам.">
@@ -13,53 +13,69 @@
   <meta property="og:url" content="https://yourdomain.com">
   <link rel="icon" href="/favicon.ico">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background-color: #f9f9f9; color: #222; }
-    header { background-color: #8B0000; color: white; padding: 2rem; text-align: center; }
-    h1 { font-size: 2rem; margin: 0 0 1rem 0; }
-    .container { padding: 2rem; max-width: 800px; margin: 0 auto; }
-    section { margin-bottom: 2rem; }
-    h2 { color: #8B0000; }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #222; line-height: 1.6; }
+    header { background-color: #8B0000; color: white; padding: 2rem 1rem; text-align: center; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .container { padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+    section { margin-bottom: 2.5rem; }
+    h2 { color: #8B0000; font-size: 1.4rem; margin-bottom: 0.8rem; }
     .block { background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+    ul { padding-left: 1.2rem; margin: 0 0 1rem 0; }
     input, textarea, button {
-      width: 100%; padding: 0.8rem; margin-bottom: 1rem;
-      border: 1px solid #ccc; border-radius: 5px; font-size: 1rem;
+      width: 100%; padding: 0.9rem; margin-bottom: 1rem;
+      border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;
     }
     button {
-      background-color: #8B0000; color: white; font-weight: bold; cursor: pointer;
+      background-color: #8B0000;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
-    .success { color: green; margin-top: 1rem; display: none; }
+    button:hover {
+      background-color: #a10000;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+      display: none;
+      text-align: center;
+      padding-top: 1rem;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Binance удерживает мои €30,000</h1>
-    <p>Запускаем кампанию за правду и справедливость</p>
+    <p>Запускаю международную кампанию за справедливость</p>
   </header>
 
-  <div class="container">
+  <main class="container">
     <section class="block">
       <h2>История</h2>
-      <p>Binance заморозил мой биткоин-кошелёк с более чем €30,000. Поддержка молчит. Теперь я запускаю международную кампанию, чтобы вернуть свои деньги и защитить других.</p>
+      <p>Binance заморозил мой биткоин-кошелёк с более чем €30,000. Поддержка игнорирует обращения. Деньги продолжают поступать на замороженный адрес. Я не получил ни объяснений, ни решений. Именно поэтому я запускаю публичную кампанию против таких действий.</p>
     </section>
 
     <section class="block">
       <h2>Расходы</h2>
       <ul>
-        <li>4 сайта по ключевым GEO: €3,600</li>
-        <li>SEO-оптимизация: €2,300</li>
-        <li>Домены: €80</li>
+        <li>4 сайта по ключевым GEO — <strong>€3,600</strong></li>
+        <li>SEO-оптимизация — <strong>€2,300</strong></li>
+        <li>Домены — <strong>€80</strong></li>
       </ul>
-      <p>Общий текущий бюджет: €5,980. План на год: €150,000.</p>
+      <p>Итого потрачено: <strong>€5,980</strong>. Годовой бюджет кампании: <strong>€150,000</strong>.</p>
     </section>
 
     <section class="block">
       <h2>План действий</h2>
       <ul>
-        <li>Публикации в топ-СМИ</li>
-        <li>Наём юристов в ключевых странах</li>
-        <li>Сбор заявлений от пострадавших</li>
-        <li>Жалобы в регулирующие органы</li>
-        <li>Призыв к выводу средств и продаже BNB</li>
+        <li>Публикации в Forbes и других международных СМИ</li>
+        <li>Юридические действия в ЕС, Турции, Бразилии</li>
+        <li>Массовый сбор жалоб через сайт</li>
+        <li>Заявления в регулирующие органы</li>
+        <li>Запуск рекламы с предупреждением для пользователей Binance</li>
       </ul>
     </section>
 
@@ -71,33 +87,32 @@
         <textarea name="story" placeholder="Опишите вашу ситуацию (не менее 10 символов)" required></textarea>
         <button type="submit" id="sendBtn">Отправить жалобу</button>
       </form>
-      <div class="success" id="successMsg">✅ Жалоба сохранена. Telegram будет подключён позже.</div>
+      <div class="success" id="successMsg">✅ Жалоба сохранена (данные в консоли). Telegram подключим позже.</div>
     </section>
-  </div>
+  </main>
 
   <script>
     document.getElementById("reportForm").addEventListener("submit", function(e) {
       e.preventDefault();
-
       const form = e.target;
-      const btn = document.getElementById("sendBtn");
-      const msg = document.getElementById("successMsg");
+      const sendBtn = document.getElementById("sendBtn");
+      const successMsg = document.getElementById("successMsg");
 
-      if (form.story.value.trim().length < 10) {
-        alert("Опишите ситуацию подробнее (минимум 10 символов).");
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const story = form.story.value.trim();
+
+      if (story.length < 10) {
+        alert("Описание должно быть не короче 10 символов.");
         return;
       }
 
-      const data = {
-        name: form.name.value,
-        email: form.email.value,
-        story: form.story.value
-      };
+      const data = { name, email, story };
+      console.log("📩 Жалоба сохранена локально:", data);
 
-      console.log("Локальная жалоба:", data);
-      btn.disabled = true;
-      btn.innerText = "Сохранено";
-      msg.style.display = "block";
+      sendBtn.disabled = true;
+      sendBtn.innerText = "Сохранено";
+      successMsg.style.display = "block";
       form.reset();
     });
   </script>

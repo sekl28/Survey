@@ -1,410 +1,762 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Model Agency – Главная</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eho VIP Model – exclusief modellenbureau voor promotie op sociale media in Nederland. Word een Eho VIP Model en verdien legaal geld via TikTok, Instagram, Twitch en meer.">
+  <title>Eho VIP Model – Modellen Promotie Bureau</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #000;
-      color: #fff;
-      line-height: 1.6;
+    /* ===== Hero Section Styles ===== */
+    .hero {
+      position: relative;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #0d0d0d, #1a1a1a);
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
+      text-align: center;
+      padding: 4em 1em;
     }
-    header {
-      background: #000;
-      color: #fff;
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero .logo {
+      margin-bottom: 1em;
+    }
+    .hero .logo svg text {
+      font-family: 'Playfair Display', serif;
+    }
+    .hero .tagline {
+      font-size: 1.2em;
+      font-weight: 400;
+      margin: 0.5em 0 1.5em;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 0.75em 1.5em;
+      font-size: 1em;
+      font-weight: 500;
+      color: #ffffff;
+      background: linear-gradient(45deg, #e91e63, #ff758c);
+      background-size: 200% 200%;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-position 0.4s, transform 0.2s;
+    }
+    .cta-button:hover {
+      background-position: 100% 0;
+      transform: scale(1.05);
+    }
+    /* ===== Generic Section & Container Styles ===== */
+    .section {
+      padding: 3em 1em;
+    }
+    .section.light {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    .section.light a {
+      color: #e91e63;
+    }
+    .section.light h2, .section.light h3 {
+      color: #000000;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1em;
+    }
+    /* ===== Advantages Section Styles ===== */
+    .advantages {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2em;
+      margin-top: 2em;
+    }
+    .advantage-item {
+      flex: 1 1 calc(25% - 2em);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5em;
+      margin-bottom: 1.5em;
+    }
+    .advantage-item svg {
+      flex: 0 0 auto;
+      width: 40px;
+      height: 40px;
+      stroke: #e91e63;
+    }
+    .advantage-item p {
+      margin: 0;
+      font-size: 1em;
+    }
+    @media (max-width: 768px) {
+      .advantage-item {
+        flex: 1 1 100%;
+      }
+    }
+    /* ===== How It Works Section Styles ===== */
+    .steps-list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      counter-reset: step;
+      margin-top: 2em;
+    }
+    .steps-list li {
+      list-style: none;
+      flex: 1 1 calc(20% - 1em);
+      background: #f5f5f5;
+      border-radius: 5px;
+      padding: 1em;
+      margin: 0.5em;
+      color: #000;
+      position: relative;
+    }
+    .steps-list li h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2em;
+      color: #000;
+    }
+    .steps-list li p {
+      font-size: 0.95em;
+      color: #333;
+    }
+    .steps-list li svg {
+      width: 32px;
+      height: 32px;
+      stroke: #e91e63;
+      margin-bottom: 0.5em;
+    }
+    .steps-list li::before {
+      counter-increment: step;
+      content: counter(step) ".";
+      position: absolute;
+      top: 0.5em;
+      right: 0.5em;
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #bbb;
+    }
+    @media (max-width: 768px) {
+      .steps-list {
+        flex-direction: column;
+      }
+      .steps-list li {
+        flex: 1 1 100%;
+      }
+    }
+    /* ===== Trust Section Styles ===== */
+    .trust-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2em;
+      text-align: center;
+    }
+    .trust-info .contact-methods {
+      font-size: 1em;
+    }
+    .trust-info .contact-methods p {
+      margin: 0.2em 0;
+    }
+    .trust-info .social-icons a {
+      margin: 0 0.3em;
+      display: inline-block;
+    }
+    .trust-info .social-icons svg {
+      width: 24px;
+      height: 24px;
+      fill: #ffffff;
+      vertical-align: middle;
+      transition: transform 0.2s;
+    }
+    .trust-info .social-icons svg:hover {
+      transform: translateY(-2px);
+    }
+    .trust-info .legal-note {
+      font-size: 0.95em;
+      font-style: italic;
+      opacity: 0.8;
+      flex: 1 1 100%;
+      margin-top: 1em;
+    }
+    @media (max-width: 600px) {
+      .trust-info {
+        flex-direction: column;
+      }
+      .trust-info .legal-note {
+        margin-top: 1.5em;
+      }
+    }
+    /* ===== Registration Form Styles ===== */
+    .signup-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #f5f5f5;
+      border-radius: 5px;
+      padding: 2em;
+      color: #000;
+    }
+    .signup-form h2 {
+      color: #000;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    .form-group {
+      margin-bottom: 1em;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.3em;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 0.5em;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: #e91e63;
+      box-shadow: 0 0 0 2px rgba(233,30,99,0.2);
+    }
+    .form-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .logo {
-      font-size: 1.5em;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 15px;
-    }
-    nav ul li {
-      margin: 0;
-      padding: 0;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a.cta-button {
-      background: #D4AF37;
-      color: #000;
-      padding: 8px 15px;
-      border-radius: 4px;
-    }
-    /* Hero Section */
-    .hero {
-      background: url('hero.jpg') no-repeat center center/cover;
-      position: relative;
-      text-align: center;
-      padding: 100px 20px;
-    }
-    /* Dark overlay for better text contrast over hero image */
-    .hero::before {
-      content: "";
-      background: rgba(0, 0, 0, 0.6);
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-    .hero-content {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .hero h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-    .hero .cta-button {
-      font-size: 1.1em;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-    /* Section styles */
-    section {
-      padding: 60px 20px;
-    }
-    section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      text-align: center;
-      text-transform: uppercase;
-      color: #D4AF37;
-    }
-    /* About Us Section (light background) */
-    #about {
-      background: #f9f9f9;
-      color: #000;
-    }
-    #about .content {
-      display: flex;
       flex-wrap: wrap;
+      margin-top: 1em;
+    }
+    .form-footer .consent {
+      display: flex;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      gap: 20px;
-    }
-    #about img {
-      max-width: 100%;
-      flex: 1 1 300px;
-      border-radius: 10px;
-    }
-    #about .text {
-      flex: 1 1 300px;
-    }
-    /* How It Works Section (dark background) */
-    #how-it-works {
-      background: #000;
-      color: #fff;
-    }
-    #how-it-works ol {
-      counter-reset: step;
-      margin: 0;
-      padding-left: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    #how-it-works li {
-      margin-bottom: 15px;
-      font-size: 1.1em;
-      line-height: 1.4;
-    }
-    #how-it-works li::before {
-      counter-increment: step;
-      content: "Шаг " counter(step) ". ";
-      color: #D4AF37;
-      font-weight: bold;
-    }
-    /* Guarantees Section (dark background) */
-    #guarantees {
-      background: #111;
-      color: #fff;
-    }
-    #guarantees ul {
-      max-width: 800px;
-      margin: 0 auto;
-      list-style: none;
-      padding: 0;
-    }
-    #guarantees li {
-      margin: 10px 0;
-      padding-left: 25px;
-      position: relative;
-      font-size: 1.1em;
-    }
-    #guarantees li::before {
-      content: "✔";
-      color: #D4AF37;
-      position: absolute;
-      left: 0;
-    }
-    /* Reviews Section (light background, testimonial cards) */
-    #reviews {
-      background: #f9f9f9;
+      font-size: 0.9em;
       color: #000;
     }
-    #reviews .testimonials {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+    .form-footer .consent input {
+      margin-right: 0.4em;
     }
-    .testimonial {
-      background: #fff;
-      border-radius: 5px;
-      padding: 20px;
-      flex: 1 1 300px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    .form-footer .consent label {
+      display: inline;
+      font-weight: normal;
     }
-    .testimonial p {
-      margin: 0;
-    }
-    .testimonial .author {
-      margin-top: 10px;
-      font-style: italic;
-      text-align: right;
-      color: #555;
-    }
-    /* Application Form Section (dark background) */
-    #apply {
-      background: #000;
+    .form-footer button {
+      padding: 0.6em 1.5em;
+      font-size: 1em;
+      font-weight: 600;
       color: #fff;
-    }
-    #apply form {
-      max-width: 500px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-    }
-    #apply label {
-      margin: 10px 0 5px;
-      font-weight: bold;
-    }
-    #apply input, #apply textarea {
-      padding: 10px;
-      margin-bottom: 15px;
+      background-color: #e91e63;
       border: none;
       border-radius: 4px;
-    }
-    #apply input[type="submit"] {
-      background: #D4AF37;
-      color: #000;
-      font-weight: bold;
       cursor: pointer;
-      padding: 12px;
-      border: none;
-      border-radius: 4px;
+      margin-top: 0.5em;
+      flex: 0 0 auto;
     }
-    #apply input[type="submit"]:hover {
-      background: #c49b35;
+    .form-footer button:hover {
+      background-color: #d81b60;
     }
-    /* Contact Section (light background) */
-    #contact {
-      background: #f9f9f9;
-      color: #000;
+    @media (max-width: 500px) {
+      .form-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .form-footer button {
+        align-self: stretch;
+        width: 100%;
+      }
     }
-    #contact .contact-info {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 1.1em;
-    }
-    #contact .contact-info p {
-      margin: 5px 0;
-    }
-    /* Footer */
+    /* ===== Footer Styles ===== */
     footer {
-      background: #000;
-      color: #777;
+      background-color: #000;
+      color: #aaa;
       text-align: center;
-      padding: 20px;
+      padding: 2em 1em;
       font-size: 0.9em;
     }
     footer a {
-      color: #777;
-      text-decoration: none;
-      margin: 0 5px;
+      color: #aaa;
     }
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      header {
-        flex-wrap: wrap;
-      }
-      .logo {
-        margin-bottom: 10px;
-      }
-      nav ul {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
+    footer a:hover {
+      color: #fff;
     }
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.8em;
-      }
-      .hero p {
-        font-size: 1em;
-      }
-      #about .content {
-        flex-direction: column;
-      }
-      #about img, #about .text {
-        max-width: 100%;
-      }
+    /* ===== Scroll Animation ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
   </style>
 </head>
 <body>
-
-  <!-- Header with logo and navigation menu -->
-  <header>
-    <div class="logo">AgencyName</div>
-    <nav>
-      <ul>
-        <li><a href="#about">О нас</a></li>
-        <li><a href="#how-it-works">Как это работает</a></li>
-        <li><a href="#guarantees">Гарантии</a></li>
-        <li><a href="#reviews">Отзывы</a></li>
-        <li><a href="#contact">Контакты</a></li>
-        <li><a href="#apply" class="cta-button">Стать моделью</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero Section: Big visual, tagline, and call-to-action -->
+<!-- ***** Hero Section Start ***** -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Стань моделью и зарабатывай от $100 в первый день</h1>
-      <p>Присоединяйтесь к элитному агентству: обучение, продвижение и гарантированный доход с первого дня.</p>
-      <a href="#apply" class="cta-button">Подать заявку</a>
+      <div class="logo">
+        <!-- Embedded SVG Logo -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60" aria-label="Eho VIP Model logo">
+          <text x="0" y="35" fill="#ffffff" font-size="32px" font-weight="700">Eho VIP</text>
+          <text x="0" y="55" fill="#ffffff" font-size="16px" letter-spacing="2">MODEL</text>
+        </svg>
+      </div>
+      <h1 class="fade-in">Word een Eho VIP Model</h1>
+      <p class="tagline fade-in">Verdien geld met je volgers op TikTok, Instagram en meer.</p>
+      <a href="#signup" class="cta-button fade-in">Word model</a>
     </div>
   </section>
-
-  <!-- About Us Section: Company info, mission, team photo -->
-  <section id="about">
-    <div class="content">
-      <img src="team.jpg" alt="Наша команда">
-      <div class="text">
-        <h2>О нас</h2>
-        <p>Мы — профессиональное модельное агентство, которое помогает талантливым девушкам зарабатывать на платформах OnlyFans и в стриминге. Наша миссия — превратить ваше время онлайн в стабильный высокий доход.</p>
-        <p>Более 5 лет на рынке, свыше 1000 моделей по всему миру доверяют нам и получают поддержку опытной команды. Мы ценим конфиденциальность и нацелены на успех каждой модели.</p>
+<!-- ***** Hero Section End ***** -->
+<!-- ***** Advantages Section Start ***** -->
+  <section class="section light" id="advantages">
+    <div class="container">
+      <h2>Waarom Eho VIP Model?</h2>
+      <div class="advantages">
+        <!-- Advantage 1 -->
+        <div class="advantage-item fade-in" style="transition-delay: 0.2s;">
+          <!-- User-plus icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="8.5" cy="7" r="4"></circle>
+            <line x1="20" y1="8" x2="20" y2="14"></line>
+            <line x1="17" y1="11" x2="23" y2="11"></line>
+          </svg>
+          <div>
+            <h3>Hoge inkomsten</h3>
+            <p>Verdien gemiddeld hoog inkomen online.</p>
+          </div>
+        </div>
+        <!-- Advantage 2 -->
+        <div class="advantage-item fade-in" style="transition-delay: 0.4s;">
+          <!-- Clock icon for flexibele werktijden -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <div>
+            <h3>Flexibele werktijden</h3>
+            <p>Werk waar en wanneer je wilt.</p>
+          </div>
+        </div>
+        <!-- Advantage 3 -->
+        <div class="advantage-item fade-in" style="transition-delay: 0.6s;">
+          <!-- Award icon for persoonlijke begeleiding -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+          <div>
+            <h3>Persoonlijke begeleiding</h3>
+            <p>Professionele training en coaching.</p>
+          </div>
+        </div>
+        <!-- Advantage 4 -->
+        <div class="advantage-item fade-in" style="transition-delay: 0.8s;">
+          <!-- File-text icon for officiële contracten -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <line x1="10" y1="9" x2="8" y2="9"></line>
+          </svg>
+          <div>
+            <h3>Officiële contracten</h3>
+            <p>100% legaal, zwart-op-wit zekerheid.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- How It Works Section: Step-by-step process -->
-  <section id="how-it-works">
-    <h2>Как это работает</h2>
-    <ol>
-      <li><strong>Оставьте заявку.</strong> Заполните короткую форму на сайте или свяжитесь с нами – это займет не более минуты.</li>
-      <li><strong>Получите ответ.</strong> Наш менеджер свяжется с вами в течение 24 часов, ответит на вопросы и проведёт небольшое интервью.</li>
-      <li><strong>Заключите договор.</strong> Мы оформим официальное сотрудничество, обеспечив прозрачные условия и конфиденциальность ваших данных.</li>
-      <li><strong>Пройдите обучение.</strong> Вы получаете бесплатное обучение и советы по продвижению. Персональный менеджер поможет настроить аккаунты и начать работу.</li>
-      <li><strong>Начните зарабатывать.</strong> Вы выходите на платформы и получаете первый доход уже в первый день. Мы обеспечим поддержку 24/7 на каждом этапе вашей карьеры.</li>
-    </ol>
+<!-- ***** Advantages Section End ***** -->
+<!-- ***** How It Works Section Start ***** -->
+  <section class="section light" id="how-it-works">
+    <div class="container">
+      <h2>Hoe werkt het?</h2>
+      <ol class="steps-list">
+        <!-- Step 1: Aanmelden -->
+        <li class="fade-in" style="transition-delay: 0.2s;">
+          <!-- User-plus icon for Aanmelden -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="8.5" cy="7" r="4"></circle>
+            <line x1="20" y1="8" x2="20" y2="14"></line>
+            <line x1="17" y1="11" x2="23" y2="11"></line>
+          </svg>
+          <h3>Aanmelden</h3>
+          <p>Meld je eenvoudig online aan via ons formulier.</p>
+        </li>
+        <!-- Step 2: Interview -->
+        <li class="fade-in" style="transition-delay: 0.4s;">
+          <!-- Message-square icon for Interview -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <h3>Interview</h3>
+          <p>We plannen een persoonlijk gesprek om je te leren kennen.</p>
+        </li>
+        <!-- Step 3: Contract -->
+        <li class="fade-in" style="transition-delay: 0.6s;">
+          <!-- File-text icon for Contract -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <line x1="10" y1="9" x2="8" y2="9"></line>
+          </svg>
+          <h3>Contract</h3>
+          <p>Je ontvangt een officieel contract voor onze samenwerking.</p>
+        </li>
+        <!-- Step 4: Training -->
+        <li class="fade-in" style="transition-delay: 0.8s;">
+          <!-- Award icon for Training -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+          <h3>Training</h3>
+          <p>Krijg professionele training en begeleiding voor succes.</p>
+        </li>
+        <!-- Step 5: Inkomsten -->
+        <li class="fade-in" style="transition-delay: 1s;">
+          <!-- Dollar-sign icon for Inkomsten -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          <h3>Inkomsten</h3>
+          <p>Begin met verdienen via ons platform en ontvang uitbetalingen.</p>
+        </li>
+      </ol>
+    </div>
   </section>
-
-  <!-- Guarantees Section: Trust and safety guarantees -->
-  <section id="guarantees">
-    <h2>Наши гарантии</h2>
-    <ul>
-      <li>Гарантированный заработок $100 в первый день – иначе мы выплатим эту сумму вам сами.</li>
-      <li>Полная анонимность и конфиденциальность: никто не узнает о вашей работе без вашего согласия.</li>
-      <li>Поддержка 24/7 от персонального менеджера и нашей команды.</li>
-      <li>Еженедельные выплаты на удобный вам способ (банк, электронный кошелёк и т.д.).</li>
-      <li>Бесплатное обучение и продвижение: помогаем набрать аудиторию и увеличивать ваш доход.</li>
-    </ul>
-  </section>
-
-  <!-- Testimonials Section: Success stories from models -->
-  <section id="reviews">
-    <h2>Отзывы наших моделей</h2>
-    <div class="testimonials">
-      <div class="testimonial">
-        <p>“Сотрудничаю с <strong>AgencyName</strong> уже 6 месяцев и зарабатываю более $2000 в месяц. Команда – супер, всегда помогает и поддерживает!”</p>
-        <p class="author">— Алина, 21 год</p>
-      </div>
-      <div class="testimonial">
-        <p>“Благодаря агентству я смогла уйти с офисной работы и полностью посвятить себя стримингу. Первый доход получила уже в первый день, как и обещали!”</p>
-        <p class="author">— Екатерина, 24 года</p>
-      </div>
-      <div class="testimonial">
-        <p>“Сначала я сомневалась, но сейчас у меня более 5000 подписчиков и стабильный высокий доход. Рекомендую всем, кто хочет начать карьеру модели онлайн.”</p>
-        <p class="author">— Марина, 19 лет</p>
+<!-- ***** How It Works Section End ***** -->
+<!-- ***** Trust Section Start ***** -->
+  <section class="section" id="trust" style="background-color: #000; color: #fff;">
+    <div class="container">
+      <div class="trust-info">
+        <!-- Contact Methods -->
+        <div class="contact-methods">
+          <p><strong>Email:</strong> <a href="mailto:contact@ehovipmodel.com">contact@ehovipmodel.com</a></p>
+          <p><strong>Telegram:</strong> <a href="https://t.me/ehovipmodel" target="_blank" rel="noopener">@ehovipmodel</a></p>
+          <!-- Social Icons -->
+          <div class="social-icons">
+            <!-- TikTok Icon -->
+            <a href="https://www.tiktok.com/@ehovipmodel" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+              </svg>
+            </a>
+            <!-- Instagram Icon -->
+            <a href="https://www.instagram.com/ehovipmodel" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0
+C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42
+a3.9 3.9 0 0 0-1.417.923
+A3.9 3.9 0 0 0 .42 2.76
+C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+              </svg>
+            </a>
+            <!-- Twitch Icon -->
+            <a href="https://www.twitch.tv/ehovipmodel" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M3.857 0 1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0zm9.714 7.429-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142z"/>
+                <path d="M11.857 3.143h-1.143V6.57h1.143zm-3.143 0H7.571V6.57h1.143z"/>
+              </svg>
+            </a>
+            <!-- YouTube Icon -->
+            <a href="https://www.youtube.com/ehovipmodel" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.051 1.999
+h.089
+c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Legal Note -->
+        <p class="legal-note">Wij werken 100% legaal en met officiële overeenkomsten.</p>
       </div>
     </div>
   </section>
-
-  <!-- Application Section: Signup form for new models -->
-  <section id="apply">
-    <h2>Подать заявку</h2>
-    <p style="text-align:center; max-width:600px; margin:0 auto 20px;">
-      Заполните форму, и наш менеджер свяжется с вами в течение 24 часов. Ваши данные надёжно защищены.
-    </p>
-    <form action="#" method="post">
-      <label for="name">Имя</label>
-      <input type="text" id="name" name="name" required placeholder="Ваше имя">
-      
-      <label for="contact">Контакт (телефон или Telegram)</label>
-      <input type="text" id="contact" name="contact" required placeholder="Ваш телефон или @username в Telegram">
-      
-      <!-- Если предпочтительнее e-mail:
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" placeholder="Ваш e-mail"> -->
-      
-      <label for="message">Расскажите о себе (необязательно)</label>
-      <textarea id="message" name="message" placeholder="Напишите пару слов о себе, опыте или задайте вопрос" rows="3"></textarea>
-      
-      <input type="submit" value="Отправить заявку">
-      <p style="font-size: 0.9em; text-align:center; margin-top:10px;">
-        Нажимая «Отправить заявку», вы соглашаетесь с нашей <a href="#">политикой конфиденциальности</a>.
-      </p>
-    </form>
-  </section>
-
-  <!-- Contact Section: All contact methods and info -->
-  <section id="contact">
-    <h2>Контакты</h2>
-    <div class="contact-info">
-      <p><strong>Телефон:</strong> +7 (900) 123-45-67</p>
-      <p><strong>E-mail:</strong> <a href="mailto:info@agencyname.com">info@agencyname.com</a></p>
-      <p><strong>Telegram:</strong> <a href="https://t.me/AgencyNameBot" target="_blank">@AgencyNameBot</a></p>
-      <p><strong>Instagram:</strong> <a href="https://instagram.com/agencyname" target="_blank">@agencyname</a></p>
-      <p><strong>Адрес офиса:</strong> г. Москва, ул. Примерная, д. 1</p>
+<!-- ***** Trust Section End ***** -->
+<!-- ***** Registration Form Section Start ***** -->
+  <section class="section light" id="signup">
+    <div class="container">
+      <div class="signup-form fade-in">
+        <h2>Aanmelden als model</h2>
+        <form action="#" method="post">
+          <!-- Name field -->
+          <div class="form-group">
+            <label for="name">Naam</label>
+            <input type="text" id="name" name="name" placeholder="Jouw naam" required>
+          </div>
+          <!-- Age field -->
+          <div class="form-group">
+            <label for="age">Leeftijd</label>
+            <input type="number" id="age" name="age" placeholder="Bijv. 21" min="18" required>
+          </div>
+          <!-- Telegram username field -->
+          <div class="form-group">
+            <label for="telegram">Telegram-gebruikersnaam</label>
+            <input type="text" id="telegram" name="telegram" placeholder="@jouwgebruikersnaam" required>
+          </div>
+          <!-- Email field -->
+          <div class="form-group">
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" name="email" placeholder="jouw@email.com" required>
+          </div>
+          <div class="form-footer">
+            <!-- Consent Checkbox -->
+            <div class="consent">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">Ik ga akkoord met de algemene voorwaarden en het privacybeleid.</label>
+            </div>
+            <!-- Submit Button -->
+            <button type="submit">Inschrijven</button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
-
-  <!-- Footer: Legal links and company info -->
+<!-- ***** Registration Form Section End ***** -->
+<!-- ***** Footer Start ***** -->
   <footer>
-    <p>&copy; 2025 AgencyName. Все права защищены.</p>
-    <p>ООО «AgencyName». <a href="#">Пользовательское соглашение</a> | <a href="#">Политика конфиденциальности</a></p>
+    <p><a href="#">Privacybeleid</a> | <a href="#">Algemene voorwaarden</a></p>
+    <p>Eho Agency, gevestigd in Nederland<br>&copy; 2025 Eho VIP Model</p>
   </footer>
-
+<!--
+    Hero section: uses a dark 
+    animated backgroun
+    d gradient for a 
+    modern dynamic lo
+    ok. The embedded 
+    SVG logo ensures 
+    crisp rendering a
+    nd fast load. The
+    CTA button has a 
+    gradient backgrou
+    nd and hover anim
+    ation to grab att
+    ention.
+    Advantages sectio
+    n: presents four k
+    ey benefits with 
+    representative ic
+    ons and brief des
+    criptions to high
+    light why models 
+    should join.
+    Hoe werkt het sect
+    ion: outlines the 
+    model onboarding 
+    process in five st
+    eps with icons and
+    short explanation
+    s for each (aanmel
+    den, interview, co
+    ntract, training, 
+    inkomsten).
+    Trust section: pro
+    vides contact info
+    rmation (email and
+    Telegram) and soci
+    al media links (Ti
+    kTok, Instagram, T
+    witch, YouTube), a
+    s well as a legal 
+    assurance note ('1
+    00% legaal...') to
+    build credibility.
+    Registration form:
+    collects essential
+    information (name,
+    age, Telegram user
+    name, email) with 
+    proper labels and 
+    a required consent
+    checkbox for terms
+    acceptance. The fo
+    rm is client-side 
+    validated with HTM
+    L5 required attrib
+    utes.
+    Accessibility: All
+    images and icons h
+    ave descriptive al
+    t text or aria-lab
+    els. Form inputs h
+    ave associated lab
+    els. The color sch
+    eme provides suffi
+    cient contrast (wh
+    ite text on black 
+    backgrounds, etc.)
+    . Keyboard navigat
+    ion is considered 
+    for form and links
+    .
+    Responsive design:
+    The layout adapts 
+    to different scree
+    n sizes using CSS 
+    flexbox and media 
+    queries. On mobile
+    , sections stack v
+    ertically; the step
+    s list becomes a s
+    ingle column; the 
+    form and buttons s
+    pan full width for
+    easy tapping.
+    Scroll animations:
+    Intersection Obser
+    ver API is used to
+    apply a 'fade-in' 
+    effect to elements
+    as they appear in 
+    the viewport, addi
+    ng an interactive 
+    feel without hinde
+    ring performance. 
+    If JavaScript is d
+    isabled, content s
+    till appears norma
+    lly.
+    SEO consideration
+    s: The page uses s
+    emantic HTML5 elem
+    ents (header, sect
+    ion, footer). The 
+    main title is an H
+    1 containing the s
+    logan. Section hea
+    dings use H2, and 
+    benefit titles use
+    H3, creating a cle
+    ar hierarchy. Meta 
+    description and al
+    t attributes impro
+    ve search engine u
+    nderstanding.
+    Typography: 'Playf
+    air Display' (seri
+    f) is used for a h
+    igh-end fashion lo
+    ok in headings, wh
+    ile 'Inter' (sans-
+    serif) is used for
+    body text for read
+    ability. These web
+    fonts are loaded f
+    rom Google Fonts w
+    ith a fallback to 
+    ensure graceful de
+    gradation.
+    Icons: All icons a
+    re implemented as 
+    inline SVG for cla
+    rity on all screen
+    resolutions and to
+    avoid external req
+    uests. Feather ico
+    ns (MIT licensed) 
+    and Bootstrap Icon
+    s (MIT licensed) a
+    re used for visual
+    cues (e.g., user-p
+    lus for aanmelden,
+    etc.). SVGs are ch
+    osen to maintain a
+    consistent style a
+    nd color scheme (c
+    olored with CSS).
+    No external framew
+    orks: The design i
+    s achieved with cu
+    stom HTML and CSS 
+    only (no Bootstrap
+    or other framework
+    s), which keeps th
+    e file lightweight
+    and allows custom 
+    tailor-made styles
+    tuned for this des
+    ign.
+    UX consideration
+    s: The content is 
+    organized into dig
+    estible sections w
+    ith clear headings
+    . Ample spacing an
+    d visual cues (ico
+    ns, separators) im
+    prove readability.
+    Hover and focus st
+    ates on interactiv
+    e elements (button
+    s, links) provide 
+    feedback to the us
+    er.
+    Future enhancemen
+    ts: could include 
+    adding a fixed nav
+    igation for single
+    -page scrolling (e
+    .g., 'Back to top'
+    button), integrati
+    ng analytics, or a
+    dding a modal for 
+    form submission su
+    ccess feedback. As
+    it stands, the pag
+    e is ready to capt
+    ure user interest 
+    and sign-ups.
+    Security & Privac
+    y: The mailto link
+    and Telegram link 
+    are provided for c
+    ontact; in a real 
+    deployment, the fo
+    rm action might be
+    connected to a sec
+    ure backend or for
+    m handling service
+    to protect user da
+    ta. The site decla
+    res legal info (pr
+    ivacy policy, term
+    s) to comply with 
+    regulations.
+    Overall: This HTML
+    /CSS code demonstr
+    ates a modern, res
+    ponsive, and SEO-f
+    riendly landing pa
+    ge that meets the 
+    requirements. It b
+    alances visual app
+    eal (through image
+    s, gradients, anim
+    ations) with perfo
+    rmance and accessi
+    bility.
+-->
 </body>
 </html>

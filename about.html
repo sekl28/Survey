@@ -1,240 +1,598 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EHO VIP Model - Gratis Model Promotie</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eho VIP Model – Word het gezicht van morgen</title>
+  <!-- Google Fonts: Playfair Display (serif for headings) and Inter (sans-serif for body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    /* Global Styles */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #000; /* Black background for luxury look */
+      color: #FFF;            /* Default text color in white for contrast */
+      font-family: 'Inter', sans-serif;
       line-height: 1.6;
-      background-color: #f8f8f8;
-      color: #333;
     }
-    header {
-      background: #000;
-      color: #fff;
-      padding: 20px;
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
     }
-    header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      color: #fff;
+    a {
+      color: inherit;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .hero {
-      padding: 80px 20px;
-      background: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e') no-repeat center center/cover;
-      color: #fff;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #000;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 20px;
+    /* Container and layout helpers */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
+      padding: 4rem 0;
     }
-    h2 {
-      margin-bottom: 20px;
-      color: #111;
-    }
-    .services, .team, .faq {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-    .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      flex: 1 1 calc(33% - 40px);
-    }
-    .card img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-    form {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    form label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    form input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    footer {
-      background: #000;
-      color: #fff;
+    /* Hero Section Styles */
+    .hero {
+      position: relative;
+      /* Full-screen hero with parallax background image */
+      background: url('https://images.pexels.com/photos/9010581/pexels-photo-9010581.jpeg?cs=srgb&fm=jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #FFF;
       text-align: center;
-      padding: 30px 20px;
-      margin-top: 60px;
-    }
-    .faq-item {
-      margin-bottom: 15px;
-    }
-    .faq-question {
-      background: #eee;
-      padding: 15px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .faq-answer {
-      display: none;
-      padding: 10px 15px;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
+      padding: 8rem 2rem;
+      /* Ensure hero takes full viewport height for impact */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
-    .modal-content {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%);
+      /* Overlay to darken image for text readability */
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .hero p.subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #DDD;
+    }
+    .hero .cta-button {
+      display: inline-block;
+      background: #8e44ad; /* Royal purple CTA for contrast (purple accent) */
+      color: #FFF;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.125rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .hero .cta-button:hover {
+      background: #732d91; /* Darken on hover */
+      transform: scale(1.05);
+    }
+    /* "Waarom Eho VIP Model?" Section */
+    .features {
+      text-align: center;
+      color: #FFF;
+    }
+    .features h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 2rem 1.5rem;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #FFD700; /* gold icon */
+    }
+    .feature-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #DDD;
+      margin: 0;
+    }
+    /* "Hoe werkt het?" Section */
+    .steps {
+      background: #111; /* slightly lighter black for contrast between sections */
+      color: #FFF;
+    }
+    .steps h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .step-item {
+      padding: 1rem 1.5rem;
+    }
+    .step-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #8e44ad; /* purple number */
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.5rem;
+    }
+    .step-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .step-item p {
+      font-size: 0.95rem;
+      color: #CCC;
+      margin: 0;
+    }
+    /* Galerie Section */
+    .gallery-section {
+      text-align: center;
+      color: #FFF;
+    }
+    .gallery-section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      overflow: hidden;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #222;
+      border-radius: 4px;
+      transition: transform 0.4s ease;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      border-color: #8e44ad;
+    }
+    /* Ervaringen/Testimonial Section */
+    .testimonials {
+      background: #111;
+      color: #FFF;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonials h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .testimonial-slider {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    /* Slider inner container with slides */
+    .slides {
+      display: flex;
+      transition: transform 0.6s ease;
+      /* width is 300% since we have 3 slides */
+      width: 300%;
+    }
+    .testimonial {
+      flex: 1 0 100%;
+      padding: 0 2rem;
+      box-sizing: border-box;
+    }
+    .testimonial blockquote {
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin: 0 0 1rem;
+      quotes: "“" "”" "‘" "’";
+    }
+    .testimonial blockquote:before {
+      content: open-quote;
+      font-size: 2rem;
+      line-height: 0;
+      margin-right: 0.1em;
+      vertical-align: -0.4em;
+      color: #8e44ad;
+    }
+    .testimonial blockquote:after {
+      content: close-quote;
+    }
+    .testimonial-footer {
+      font-size: 0.95rem;
+      color: #DDD;
+    }
+    .testimonial-footer::before {
+      content: "– "; /* En dash before name */
+    }
+    /* Slider radio controls (visually hidden) */
+    .testimonial-slider input[type=radio] {
+      position: absolute;
+      opacity: 0;
+    }
+    /* Positioning of slides via radio state */
+    #t-1:checked ~ .slides { transform: translateX(0%); }
+    #t-2:checked ~ .slides { transform: translateX(-100%); }
+    #t-3:checked ~ .slides { transform: translateX(-200%); }
+    /* Slider navigation dots */
+    .slider-dots {
+      margin-top: 1.5rem;
+    }
+    .slider-dots label {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 6px;
+      background-color: #555;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .slider-dots label:hover {
+      background-color: #8e44ad;
+    }
+    /* Highlight active dot */
+    #t-1:checked ~ .slider-dots label[for="t-1"],
+    #t-2:checked ~ .slider-dots label[for="t-2"],
+    #t-3:checked ~ .slider-dots label[for="t-3"] {
+      background-color: #8e44ad;
+    }
+    /* Contact Section */
+    .contact {
+      text-align: center;
+      color: #FFF;
+      padding: 3rem 2rem;
+    }
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .contact p {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+    .social-icons {
+      margin: 1.5rem 0;
+    }
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      margin: 0 0.5rem;
+      vertical-align: middle;
+      /* Using currentColor for fill allows color change on hover */
+      fill: currentColor;
+      transition: color 0.3s ease;
+    }
+    .social-icon:hover {
+      color: #8e44ad;
+    }
+    /* Footer / Legality Section */
+    .footer {
+      background: #000;
+      color: #777;
+      font-size: 0.875rem;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .footer a {
+      color: #777;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+      color: #BBB;
+    }
+    .footer p {
+      margin: 0.5rem 0;
+    }
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p.subtitle {
+        font-size: 1.1rem;
+      }
+      .cta-button {
+        font-size: 1rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr; /* stack features on mobile */
+      }
+      .step-grid {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+      .step-item {
+        background: rgba(255,255,255,0.05);
+        padding: 1.5rem;
+        border-radius: 5px;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      /* Make gallery horizontally scrollable on narrow screens */
+      .gallery-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+      }
+      .gallery-grid img {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
+      }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid {
+        flex-direction: column;
+        overflow: visible;
+      }
+      .gallery-grid img {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+    /* Appearance animations (fade-in) using the 'animate' class */
+    .animate {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .animate.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="container">
-    <h1>EHO VIP Model</h1>
-    <nav>
-      <a href="#about">Over Ons</a>
-      <a href="#services">Diensten</a>
-      <a href="#faq">FAQ</a>
-      <a href="#signup">Inschrijven</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <h1>Gratis Promotie voor Modellen in Nederland</h1>
-  <p>Word zichtbaar op Instagram, TikTok, Twitch & meer — zonder kosten!</p>
-  <a href="#signup" class="btn">Start Gratis</a>
-</section>
-
-<section id="about">
-  <h2>Over Ons</h2>
-  <p>Wij zijn een professioneel social media agency met ervaring in modellenpromotie. Ons doel is jou populair maken zonder kosten — wij investeren in jouw groei en verdienen mee op basis van omzet. Alles verloopt via juridisch vastgelegde contracten.</p>
-  <div class="team">
-    <div class="card">
-      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Anna">
-      <h3>Anna de Vries</h3>
-      <p>Strategisch Manager</p>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Word het gezicht van morgen</h1>
+      <p class="subtitle">Gratis professionele promotie via Instagram, TikTok en Twitch</p>
+      <a href="#aanmelding" class="cta-button">Meld je nu aan</a>
     </div>
-    <div class="card">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Bas">
-      <h3>Bas Janssen</h3>
-      <p>Social Media Expert</p>
+  </header>
+
+  <!-- Waarom Eho VIP Model Section -->
+  <section class="features">
+    <div class="container">
+      <h2>Waarom Eho VIP Model?</h2>
+      <div class="feature-grid">
+        <div class="feature-card animate">
+          <!-- Icon: personal guidance (user silhouette) -->
+          <div class="feature-icon">🤝</div>
+          <h3>Persoonlijke begeleiding</h3>
+          <p>Je krijgt een eigen manager die je persoonlijk coacht en begeleidt.</p>
+        </div>
+        <div class="feature-card animate">
+          <!-- Icon: 0 investment (money bag with $0) -->
+          <div class="feature-icon">💰</div>
+          <h3>€0 investering</h3>
+          <p>Volledig gratis – jij betaalt niets. Wij investeren in jouw promotie.</p>
+        </div>
+        <div class="feature-card animate">
+          <!-- Icon: 24/7 (clock or support) -->
+          <div class="feature-icon">⏱️</div>
+          <h3>24/7 support</h3>
+          <p>Ons team staat dag en nacht klaar om al je vragen te beantwoorden.</p>
+        </div>
+        <div class="feature-card animate">
+          <!-- Icon: legal contract (document) -->
+          <div class="feature-icon">📄</div>
+          <h3>Juridisch contract</h3>
+          <p>We werken 100% legaal met een officieel contract voor jouw zekerheid.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="services">
-  <h2>Diensten</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Instagram Boost</h3>
-      <p>Wij zorgen voor snelle groei en engagement via content en strategie.</p>
+  <!-- Hoe werkt het Section -->
+  <section class="steps">
+    <div class="container">
+      <h2>Hoe werkt het?</h2>
+      <div class="step-grid">
+        <div class="step-item animate">
+          <div class="step-number">1</div>
+          <h3>Aanmelden</h3>
+          <p>Vul het aanmeldingsformulier in met je gegevens.</p>
+        </div>
+        <div class="step-item animate">
+          <div class="step-number">2</div>
+          <h3>Intake</h3>
+          <p>We plannen een kennismakingsgesprek om je te leren kennen.</p>
+        </div>
+        <div class="step-item animate">
+          <div class="step-number">3</div>
+          <h3>Contract</h3>
+          <p>Je tekent een officieel contract voor samenwerking en verdiensten.</p>
+        </div>
+        <div class="step-item animate">
+          <div class="step-number">4</div>
+          <h3>Training</h3>
+          <p>Je krijgt gratis training, tips en ondersteuning van ons team.</p>
+        </div>
+        <div class="step-item animate">
+          <div class="step-number">5</div>
+          <h3>Start inkomsten</h3>
+          <p>We lanceren je profielen en je begint inkomsten te genereren!</p>
+        </div>
+      </div>
     </div>
-    <div class="card">
-      <h3>TikTok Virality</h3>
-      <p>Wij creëren content die viral gaat — challenges, trends en reactievideo’s.</p>
+  </section>
+
+  <!-- Galerie Section -->
+  <section class="gallery-section">
+    <div class="container">
+      <h2>Galerij</h2>
+      <div class="gallery-grid">
+        <img src="https://images.pexels.com/photos/31696958/pexels-photo-31696958.jpeg?cs=srgb&fm=jpg" alt="Elegant model portret in donkere setting" class="animate" />
+        <img src="https://images.pexels.com/photos/9912163/pexels-photo-9912163.jpeg?cs=srgb&fm=jpg" alt="Drie vrouwelijke modellen poseren samen voor camera" class="animate" />
+        <img src="https://images.pexels.com/photos/25655980/pexels-photo-25655980.jpeg?cs=srgb&fm=jpg" alt="Zwart-wit portret van model in schaduw" class="animate" />
+        <img src="https://images.pexels.com/photos/9010581/pexels-photo-9010581.jpeg?cs=srgb&fm=jpg" alt="Model gehuld in zwarte stof met dramatisch licht" class="animate" />
+      </div>
     </div>
-    <div class="card">
-      <h3>Twitch Presence</h3>
-      <p>Professionele begeleiding voor je stream om volgers te laten groeien.</p>
+  </section>
+
+  <!-- Ervaringen / Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>Ervaringen van onze modellen</h2>
+      <div class="testimonial-slider">
+        <!-- Slider radio buttons -->
+        <input type="radio" name="testimonial" id="t-1" checked>
+        <input type="radio" name="testimonial" id="t-2">
+        <input type="radio" name="testimonial" id="t-3">
+        <!-- Slides -->
+        <div class="slides">
+          <div class="testimonial">
+            <blockquote>"Dankzij Eho VIP Model groeide mijn Instagram van 0 naar 50.000 volgers in twee maanden!"</blockquote>
+            <div class="testimonial-footer">Anna (22 jaar)</div>
+          </div>
+          <div class="testimonial">
+            <blockquote>"Het team staat dag en nacht voor me klaar. Ik verdien nu een vast inkomen via social media."</blockquote>
+            <div class="testimonial-footer">Sophie (19 jaar)</div>
+          </div>
+          <div class="testimonial">
+            <blockquote>"Eerst twijfelde ik, maar nu ben ik het gezicht van een grote online community. Deze kans heeft mijn leven veranderd!"</blockquote>
+            <div class="testimonial-footer">Lisa (24 jaar)</div>
+          </div>
+        </div>
+        <!-- Slider navigation dots -->
+        <div class="slider-dots">
+          <label for="t-1"></label>
+          <label for="t-2"></label>
+          <label for="t-3"></label>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="faq">
-  <h2>Veelgestelde Vragen</h2>
-  <div class="faq">
-    <div class="faq-item">
-      <div class="faq-question">Is het echt gratis?</div>
-      <div class="faq-answer">Ja. Onze promotie is volledig gratis. Wij werken op basis van winstdeling via contract.</div>
+  <!-- Aanmeldingsformulier Section -->
+  <section id="aanmelding" class="contact">
+    <div class="container">
+      <h2>Aanmelden als model</h2>
+      <p>Vul onderstaand formulier in om je aan te melden. We nemen snel contact met je op!</p>
+      <form action="#" method="post" class="animate" style="max-width: 500px; margin: 2rem auto; text-align: left;">
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <div style="flex: 1 1 60%;">
+            <label for="name" style="display:block; margin-bottom: .25rem;">Naam</label>
+            <input type="text" id="name" name="name" required placeholder="Je naam" style="width: 100%; padding: .5rem; border-radius: 4px; border: none;" />
+          </div>
+          <div style="flex: 1 1 35%;">
+            <label for="age" style="display:block; margin-bottom: .25rem;">Leeftijd</label>
+            <input type="number" id="age" name="age" required placeholder="18+" style="width: 100%; padding: .5rem; border-radius: 4px; border: none;" />
+          </div>
+        </div>
+        <div style="margin-top: 1rem;">
+          <label for="telegram" style="display:block; margin-bottom: .25rem;">Telegram gebruikersnaam</label>
+          <input type="text" id="telegram" name="telegram" required placeholder="@jouwGebruikersnaam" style="width: 100%; padding: .5rem; border-radius: 4px; border: none;" />
+        </div>
+        <div style="margin-top: 1rem;">
+          <label for="email" style="display:block; margin-bottom: .25rem;">E-mail</label>
+          <input type="email" id="email" name="email" required placeholder="voorbeeld@domein.com" style="width: 100%; padding: .5rem; border-radius: 4px; border: none;" />
+        </div>
+        <div style="margin: 1rem 0;">
+          <label style="font-size: 0.9rem;">
+            <input type="checkbox" name="terms" required style="margin-right: .5rem; transform: scale(1.2);" />
+            Ik ga akkoord met de <a href="#">algemene voorwaarden</a> en <a href="#">privacyverklaring</a>.
+          </label>
+        </div>
+        <button type="submit" style="background: #FFD700; color: #000; font-weight: 600; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; width: 100%;">Verstuur aanmelding</button>
+      </form>
     </div>
-    <div class="faq-item">
-      <div class="faq-question">Hoe verdien ik geld?</div>
-      <div class="faq-answer">Als jouw account groeit, komen de inkomsten — advertenties, sponsors, streams, enz.</div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" style="padding-top: 0;">
+    <div class="container">
+      <h2>Contact & Socials</h2>
+      <p>Heb je vragen? Neem gerust contact op:</p>
+      <p><strong>Email:</strong> <a href="mailto:contact@ehovipmodel.com">contact@ehovipmodel.com</a></p>
+      <p><strong>Telegram:</strong> <a href="https://t.me/ehovipmodel" target="_blank">@ehovipmodel</a></p>
+      <div class="social-icons">
+        <!-- TikTok icon -->
+        <svg class="social-icon" viewBox="0 0 48 48">
+          <path d="M38.0766847,15.8542954 C36.0693906,15.7935177 34.2504839,14.8341149 32.8791434,13.5466056 C32.1316475,12.8317108 31.540171,11.9694126 31.1415066,11.0151329 C30.7426093,10.0603874 30.5453728,9.03391952 30.5619062,8 L24.9731521,8 L24.9731521,28.8295196 C24.9731521,32.3434487 22.8773693,34.4182737 20.2765028,34.4182737 C19.6505623,34.4320127 19.0283477,34.3209362 18.4461858,34.0908659 C17.8640239,33.8612612 17.3337909,33.5175528 16.8862248,33.0797671 C16.4386588,32.6422142 16.0833071,32.1196657 15.8404292,31.5426268 C15.5977841,30.9658208 15.4727358,30.3459348 15.4727358,29.7202272 C15.4727358,29.0940539 15.5977841,28.4746337 15.8404292,27.8978277 C16.0833071,27.3207888 16.4386588,26.7980074 16.8862248,26.3604545 C17.3337909,25.9229017 17.8640239,25.5791933 18.4461858,25.3491229 C19.0283477,25.1192854 19.6505623,25.0084418 20.2765028,25.0219479 C20.7939283,25.0263724 21.3069293,25.1167239 21.794781,25.2902081 L21.794781,19.5985278 C21.2957518,19.4900128 20.7869423,19.436221 20.2765028,19.4380839 C18.2431278,19.4392483 16.2560928,20.0426009 14.5659604,21.1729264 C12.875828,22.303019 11.5587449,23.9090873 10.7814424,25.7878401 C10.003907,27.666593 9.80084889,29.7339663 10.1981162,31.7275214 C10.5953834,33.7217752 11.5748126,35.5530237 13.0129853,36.9904978 C14.4509252,38.4277391 16.2828722,39.4064696 18.277126,39.8028054 C20.2711469,40.1991413 22.3382874,39.9951517 24.2163416,39.2169177 C26.0948616,38.4384508 27.7002312,37.1209021 28.8296253,35.4300711 C29.9592522,33.7397058 30.5619062,31.7522051 30.5619062,29.7188301 L30.5619062,18.8324027 C32.7275484,20.3418321 35.3149087,21.0404263 38.0766847,21.0867664 L38.0766847,15.8542954 Z" />
+        </svg>
+        <!-- Instagram icon -->
+        <svg class="social-icon" viewBox="0 0 48 48">
+          <path d="M25.6440564,8.00125481 C28.524689,8.00651102 29.1340343,8.02966857 30.5968,8.09632 C32.29984,8.17376 33.46272,8.44448 34.48064,8.84 C35.5328,9.24896 36.42496,9.79584 37.31456,10.68544 C38.20416,11.57504 38.75136,12.4672 39.16,13.51936 C39.55552,14.53728 39.82592,15.70016 39.90368,17.4032 C39.9747749,18.9634834 39.9963833,19.5527641 39.9995653,22.9632797 L39.9995653,25.0367203 C39.9963833,28.4472359 39.9747749,29.0365166 39.90368,30.5968 C39.82592,32.29984 39.55552,33.46272 39.16,34.48064 C38.75136,35.5328 38.20416,36.42496 37.31456,37.31456 C36.42496,38.20416 35.5328,38.75104 34.48064,39.16 C33.46272,39.55552 32.29984,39.82624 30.5968,39.90368 C29.0365166,39.9747749 28.4472359,39.9963833 25.0367203,39.9995653 L22.9632797,39.9995653 C19.5527641,39.9963833 18.9634834,39.9747749 17.4032,39.90368 C15.70016,39.82624 14.53728,39.55552 13.51936,39.16 C12.4672,38.75104 11.57504,38.20416 10.68544,37.31456 C9.79584,36.42496 9.24864,35.5328 8.84,34.48064 C8.44448,33.46272 8.17408,32.29984 8.09632,30.5968 C8.02966857,29.1340343 8.00651102,28.524689 8.00125481,25.6440564 L8.00125481,22.3559436 C8.00651102,19.475311 8.02966857,18.8659657 8.09632,17.4032 C8.17408,15.70016 8.44448,14.53728 8.84,13.51936 C9.24864,12.4672 9.79584,11.57504 10.68544,10.68544 C11.57504,9.79584 12.4672,9.24896 13.51936,8.84 C14.53728,8.44448 15.70016,8.17376 17.4032,8.09632 C18.8659657,8.02966857 19.475311,8.00651102 22.3559436,8.00125481 Z M25.0186977,10.8832675 L22.9813023,10.8832675 C19.6322732,10.8861221 19.0771566,10.9057829 17.53472,10.976 C15.97472,11.04736 15.12736,11.30784 14.56384,11.52704 C13.81696,11.81728 13.28384,12.16416 12.72416,12.72384 C12.16416,13.28384 11.81728,13.81696 11.52704,14.56352 C11.30816,15.12736 11.04704,15.97472 10.97632,17.53472 C10.9058103,19.0771566 10.8861244,19.6322732 10.8832677,22.9813023 L10.8832677,25.0186977 C10.8861244,28.3677268 10.9058103,28.9228434 10.97632,30.46528 C11.04704,32.02528 11.30816,32.87264 11.52704,33.43648 C11.81728,34.18304 12.16416,34.71616 12.72416,35.27616 C13.28384,35.83584 13.81696,36.18272 14.56384,36.47296 C15.12736,36.69216 15.97472,36.95264 17.53472,37.024 C19.076864,37.0942171 19.6319556,37.1138779 22.9812271,37.1167325 L25.0187729,37.1167325 C28.3680444,37.1138779 28.923136,37.0942171 30.46528,37.024 C32.02528,36.95264 32.87264,36.69216 33.43616,36.47296 C34.18304,36.18272 34.71616,35.83584 35.27584,35.27616 C35.83584,34.71616 36.18272,34.18304 36.47296,33.43648 C36.69184,32.87264 36.95296,32.02528 37.02368,30.46528 C37.0941897,28.9228434 37.1138756,28.3677268 37.1167323,25.0186977 L37.1167323,22.9813023 C37.1138756,19.6322732 37.0941897,19.0771566 37.02368,17.53472 C36.95296,15.97472 36.69184,15.12736 36.47296,14.56352 C36.18272,13.81696 35.83584,13.28384 35.27584,12.72384 C34.71616,12.16416 34.18304,11.81728 33.43616,11.52704 C32.87264,11.30784 32.02528,11.04736 30.46528,10.976 C28.9228434,10.9057829 28.3677268,10.8861221 25.0186977,10.8832675 Z M24,15.78384 C28.53792,15.78384 32.21632,19.46224 32.21632,23.99984 C32.21632,28.53776 28.53792,32.21616 24,32.21616 C19.46208,32.21616 15.78368,28.53776 15.78368,23.99984 C15.78368,19.46224 19.46208,15.78384 24,15.78384 Z M24,18.66672 C21.0544,18.66672 18.66656,21.05456 18.66656,23.99984 C18.66656,26.94544 21.0544,29.33328 24,29.33328 C26.9456,29.33328 29.33344,26.94544 29.33344,23.99984 C29.33344,21.05456 26.9456,18.66672 24,18.66672 Z M32.540928,13.539232 C33.601088,13.539232 34.460928,14.398752 34.460928,15.459232 C34.460928,16.519392 33.601088,17.379232 32.540928,17.379232 C31.480448,17.379232 30.620928,16.519392 30.620928,15.459232 C30.620928,14.398752 31.480448,13.539232 32.540928,13.539232 Z" />
+        </svg>
+        <!-- Twitch icon -->
+        <svg class="social-icon" viewBox="0 0 16 16">
+          <path d="M3.857 0 1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0zm9.714 7.429-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142z" />
+          <path d="M11.857 3.143h-1.143V6.57h1.143zm-3.143 0H7.571V6.57h1.143z" />
+        </svg>
+      </div>
+      <p>Volg ons op TikTok, Instagram en Twitch voor updates en succesverhalen!</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="signup">
-  <h2>Schrijf Je Gratis In</h2>
-  <form id="form">
-    <label>Naam<input type="text" required></label>
-    <label>Leeftijd<input type="number" min="16" max="40" required></label>
-    <label>Social media tag<input type="text" required></label>
-    <label>Telegram<input type="text" required></label>
-    <label>Email<input type="email" required></label>
-    <button type="submit" class="btn">Start Gratis</button>
-  </form>
-</section>
+  <!-- Footer / Legal info -->
+  <footer class="footer">
+    <p>Wij werken 100% legaal en met officiële overeenkomsten.</p>
+    <p>
+      <a href="#">Privacybeleid</a> | <a href="#">Algemene voorwaarden</a>
+    </p>
+    <p>&copy; 2025 Eho VIP Model. Alle rechten voorbehouden.</p>
+  </footer>
 
-<footer>
-  <p>Contact: <a href="mailto:ehovipmodel@gmail.com" style="color:#fff;">ehovipmodel@gmail.com</a> | Telegram: <a href="https://t.me/ehovipmodel" style="color:#fff;">@ehovipmodel</a></p>
-  <p>&copy; 2025 EHO VIP Model - Alle rechten voorbehouden.</p>
-</footer>
-
-<div class="modal" id="thanksModal">
-  <div class="modal-content">
-    <p>Bedankt voor je aanmelding! We nemen spoedig contact met je op.</p>
-    <button onclick="document.getElementById('thanksModal').style.display='none'" class="btn">Sluiten</button>
-  </div>
-</div>
-
-<script>
-  document.querySelectorAll('.faq-question').forEach(el => {
-    el.addEventListener('click', () => {
-      const answer = el.nextElementSibling;
-      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-    });
-  });
-
-  document.getElementById('form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    document.getElementById('thanksModal').style.display = 'flex';
-    this.reset();
-  });
-</script>
-
+  <!-- Fade-in on scroll script -->
+  <script>
+    // Voeg 'visible' toe aan elementen met .animate zodra ze in beeld verschijnen (voor zachte fade-in animaties)
+    const animatedElements = document.querySelectorAll('.animate');
+    const onScroll = () => {
+      animatedElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.9) {
+          el.classList.add('visible');
+        }
+      });
+    };
+    document.addEventListener('scroll', onScroll);
+    window.addEventListener('load', onScroll);
+  </script>
 </body>
 </html>

@@ -1,243 +1,107 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eho VIP Model Agency</title>
-<style>
-/* Basic Reset */
-* { margin: 0; padding: 0; box-sizing: border-box;}
-body { background-color: #000; color: #eee; font-family: Arial, sans-serif; line-height: 1.6;}
-a { color: #e0aa15; text-decoration: none;}
-a:hover { text-decoration: underline;}
-.container { width: 90%; max-width: 1200px; margin: auto; overflow: hidden; padding: 2rem 0;}
-nav ul { display: flex; justify-content: center; gap: 2rem; list-style: none;}
-nav a { font-weight: bold; text-transform: uppercase;}
-header { text-align: center; padding: 4rem 0; }
-header h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #e0aa15;}
-header p { font-size: 1.1rem; margin-bottom: 1.5rem;}
-.btn { display: inline-block; margin: 0.5rem 0; padding: 0.75rem 1.5rem; background: #e0aa15; color: #000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.3s, transform 0.3s;}
-.btn:hover { background: #ffd700; transform: translateY(-3px);}
-/* Sections */
-section { padding: 2rem 0; }
-section h2 { font-size: 2rem; margin-bottom: 1rem; color: #e0aa15; position: relative;}
-section h2::after { content: ''; display: block; width: 50px; height: 3px; background: #e0aa15; margin-top: 5px;}
-section h3 { font-size: 1.5rem; margin: 1.5rem 0 1rem; color: #d2a700;}
-section p, section li { margin-bottom: 1rem;}
-ul { list-style: none; margin-left: 1.5rem;}
-ul li { margin-bottom: 0.5rem; position: relative;}
-ul li::before { content: '•'; position: absolute; left: -1.2rem; color: #e0aa15;}
-/* Testimonials */
-.testimonial { background: #111; padding: 1rem; margin: 1rem 0; border-left: 4px solid #e0aa15;}
-.testimonial p { font-style: italic;}
-.testimonial cite { display: block; text-align: right; margin-top: 0.5rem; font-weight: bold; color: #fff;}
-/* Blog */
-.blog-posts { display: flex; flex-wrap: wrap; gap: 1rem; }
-.blog-post { background: #111; flex: 1 1 300px; border-radius: 4px; overflow: hidden; }
-.blog-post img { width: 100%; height: auto; }
-.blog-post-content { padding: 1rem; }
-.blog-post-content h4 { margin-bottom: 0.5rem; color: #d2a700; }
-.blog-post-content p { margin-bottom: 0.75rem; }
-/* FAQ */
-.faq dt { font-weight: bold; margin-top: 1rem;}
-.faq dd { margin-left: 1.5rem; margin-bottom: 1rem;}
-/* Contact Form */
-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
-input, textarea { width: 100%; padding: 0.75rem; border: none; border-radius: 4px;}
-input::placeholder, textarea::placeholder { color: #666;}
-textarea { resize: vertical;}
-/* Footer */
-footer { text-align: center; font-size: 0.9rem; color: #666; background: #111; padding: 1.5rem 0;}
-footer a { color: #888; }
-footer a:hover { color: #e0aa15;}
-/* Animation */
-.animate { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-in-out;}
-.visible { opacity: 1; transform: translateY(0); }
-@media(max-width: 768px) {
-  header h1 { font-size: 2rem;}
-  section h2 { font-size: 1.75rem;}
-  section h3 { font-size: 1.25rem;}
-  .blog-posts { flex-direction: column;}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стратегия 256€ — Мартингейл в рулетке</title>
+  <meta name="description" content="Уникальная проверенная стратегия для заработка в live-рулетке. Узнай, как заработать +1€ с каждой игровой сессии. Только для Узбекистана.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #00ffae;
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 30px;
+      color: #ffe500;
+    }
+    .highlight {
+      color: #00ffae;
+      font-weight: 600;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #ffe500;
+      color: #000;
+      font-weight: bold;
+      padding: 15px 25px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .cta-button:hover {
+      background-color: #ffd000;
+    }
+    .info-box {
+      background-color: #1a1a1a;
+      border-left: 4px solid #00ffae;
+      padding: 15px;
+      margin: 20px 0;
+    }
+  </style>
 </head>
 <body>
-
-<nav class="container">
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#over-ons">Over Ons</a></li>
-    <li><a href="#hoe-werkt-het">Hoe Werkt Het</a></li>
-    <li><a href="#strategie">Strategie</a></li>
-    <li><a href="#garantie">Garantie</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<header id="home">
   <div class="container">
-    <h1>Word de Ster op Social Media</h1>
-    <p>Bij <strong>Eho VIP Model</strong> helpen wij jou GRATIS om te groeien op Instagram, TikTok, Twitch en OnlyFans. Laat jouw talent stralen met professionele promotie van ons expert team!</p>
-    <a href="#contact" class="btn">Nu Aanmelden</a>
-  </div>
-</header>
+    <h1>Проверенная стратегия для live-рулетки: +1€ за каждую сессию</h1>
 
-<section id="over-ons" class="container animate">
-  <h2>Over Ons</h2>
-  <p>Eho VIP Model is een premium modellenbureau dat is opgericht met één doel: jou laten schitteren. Wij geloven dat elk talent de kans verdient om gezien te worden, zonder kosten of risico. Ons team bestaat uit ervaren professionals uit de mode- en social media wereld. Met meer dan <strong>10 jaar ervaring</strong> en een uitgebreid internationaal netwerk hebben we al <strong>honderden modellen</strong> geholpen om hun carrière te lanceren.</p>
-  <p>Onze missie is simpel: we bieden <strong>gratis</strong> promotie en begeleiding aan getalenteerde modellen. Wij werken samen met toonaangevende fotografen, stylisten en influencers om jouw profiel te versterken. Van professionele fotoshoots tot contentstrategie: wij staan voor je klaar bij elke stap van jouw reis. Met passie voor fashion en technologie helpen we jou om een sterke online aanwezigheid op te bouwen en je droom te leven.</p>
-  <p>Enkele cijfers:</p>
-  <ul>
-    <li>+500 opgepakte profielen in ons netwerk</li>
-    <li>+50 miljoen gecombineerde volgers van onze topmodellen</li>
-    <li>+150 succesvolle promotiecampagnes per jaar</li>
-  </ul>
-</section>
+    <p>Метод, который работает с начала XX века. Используют математику, а не азарт. Идеально для новичков, особенно из <span class="highlight">Узбекистана</span>, кто хочет играть <strong>по схеме</strong>, а не наугад.</p>
 
-<section id="hoe-werkt-het" class="container animate">
-  <h2>Hoe Werkt Het?</h2>
-  <h3>1. Aanmelden</h3>
-  <p>Vul ons eenvoudige online <strong>aanmeldingsformulier</strong> in. Vertel ons over jezelf, je social media kanalen en jouw doelen. Het is helemaal gratis en vrijblijvend. Ons team bekijkt jouw profiel en neemt snel contact op om je persoonlijk te leren kennen.</p>
-  <h3>2. Interview</h3>
-  <p>We plannen een <strong>gesprek</strong> via videocall of bij ons op kantoor. Tijdens dit kennismakingsgesprek bespreken we jouw ambities en hoe Eho VIP Model jou het beste kan ondersteunen. We beantwoorden al je vragen en leggen uit wat je kunt verwachten.</p>
-  <h3>3. Contract</h3>
-  <p>Als we samen verder gaan, ontvang je van ons een duidelijk en veilig <strong>contract</strong>. Bij Eho VIP Model geloven we in transparantie. Het aanmelden is gratis, wij vragen geen kosten of opnamegelden. Je behoudt volledige controle over je content en account.</p>
-  <h3>4. Ondersteuning</h3>
-  <p>Vanaf dag één krijg je professionele <strong>ondersteuning</strong>: we helpen je met personal branding, contentplanning en styling. Je leert hoe je effectief gebruik maakt van Instagram, TikTok en Twitch om jouw bereik te vergroten. Met exclusieve workshops en tips van experts weet jij precies hoe je volgers omzet naar fans.</p>
-  <h3>5. Verdienen</h3>
-  <p>Na verloop van tijd ontdek je jouw <strong>inkomstenpotentieel</strong>. Wij brengen je in contact met merken en sponsors die bij je passen. Via samenwerkingen en (affiliate) campagnes genereer je inkomsten, terwijl wij jou begeleiden om je doelen te halen. Jouw succes is ons succes!</p>
-  <a href="#contact" class="btn">Word Model</a>
-</section>
-
-<section id="strategie" class="container animate">
-  <h2>Strategie</h2>
-  <p>Onze aanpak voor jouw promotie is gebaseerd op de nieuwste inzichten van <strong>2025</strong>. We combineren mode-esthetiek met data-gedreven strategieën. Hier zijn enkele van onze toonaangevende methoden:</p>
-  <h3>Instagram</h3>
-  <p>Op Instagram draait het om visuele kwaliteit en authenticiteit. Wij zorgen voor <strong>professionele fotografie</strong> en branding die past bij jouw stijl. Door gebruik van <em>Reels</em>, Instagram Stories en strategische hashtags vergroten we je zichtbaarheid. Ook stimuleren we interactie: commentaar geven op populaire accounts, deelnemen aan challenges en samenwerken met influencers zorgt voor extra exposure.</p>
-  <h3>TikTok</h3>
-  <p>TikTok is dé plek voor viral content. Onze experts analyseren actuele trends en geluiden om creatieve <strong>challenges</strong> en dansvideo's te maken die aansluiten bij jouw persoonlijkheid. Met korte, pakkende clips boeien we het publiek. Daarnaast gebruiken we slimme samenwerkingen: duetten met bekende TikTokkers en deelname aan trending hashtags die aansluiten bij jouw niche.</p>
-  <h3>Twitch</h3>
-  <p>Voor Twitch zetten we in op <strong>community-building</strong>. We helpen je een aantrekkelijke streaming lay-out te maken en geven tips over het opbouwen van interactie met kijkers. Onze strategie omvat consistente streamschema’s, speciale events zoals kijkerswedstrijden, en cross-promotie via je andere sociale kanalen. In 2025 zien we dat merken ook samenwerken met streamers voor gesponsorde streams, dus we begeleiden je bij het aantrekken van sponsors en donaties.</p>
-  <h3>OnlyFans</h3>
-  <p>Ook op platforms als OnlyFans ligt de nadruk op exclusieve en waardevolle content. Wij adviseren hoe je jouw beste content opbouwt en deelt, zonder je eigen merk uit het oog te verliezen. Denk aan gepersonaliseerde video’s, interactieve Q&amp;A’s of exclusieve behind-the-scenes series. Veiligheid en privacy staan voorop, wij zorgen voor juridische ondersteuning en advies.</p>
-  <p>Onze unieke strategie: continu leren en optimaliseren. We volgen <strong>AI-analyses</strong> om te ontdekken wat werkt, houden vinger aan de pols bij alle nieuwe functionaliteiten van de platforms en experimenteren met innovatieve contentvormen. Zo sta jij altijd voorop!</p>
-</section>
-
-<section id="garantie" class="container animate">
-  <h2>Garantie</h2>
-  <p>Bij Eho VIP Model werken we met complete <strong>transparantie</strong> en betrouwbaarheid. Onze garanties aan jou:</p>
-  <ul>
-    <li><strong>100% Gratis:</strong> Wij vragen geen inschrijfgeld of kosten. Ons succes kan niet zonder jouw succes.</li>
-    <li><strong>Legaal en Veilig:</strong> Alle samenwerkingen en promoties verlopen volgens de regels. Je krijgt een heldere overeenkomst en wij zorgen voor correcte financiële afhandeling.</li>
-    <li><strong>Jouw Privacy:</strong> Je bepaalt zelf welke informatie je deelt. We gebruiken veilige servers en beschermen je gegevens volgens de strengste normen.</li>
-    <li><strong>Betrouwbaarheid:</strong> Ons team bestaat uit professionele experts. We opereren transparant, hebben uitstekende referenties en houden onze beloften.</li>
-  </ul>
-  <p>Sluit je aan bij Eho VIP Model met het geruststellende gevoel dat je in goede handen bent. Wij staan voor jou klaar, elke stap van de weg.</p>
-</section>
-
-<section id="testimonials" class="container animate">
-  <h2>Testimonials</h2>
-  <div class="testimonial">
-    <p>"Dankzij Eho VIP Model heb ik in een paar maanden mijn Instagram-volgers verdubbeld! Hun tips voor contentplanning en styling waren goud waard. Ik heb nu meer opdrachten dan ooit."</p>
-    <cite>- Anna, 21, Arnhem</cite>
-  </div>
-  <div class="testimonial">
-    <p>"Eho VIP was echt een eye-opener. Met hun hulp heb ik geleerd professionele streams te maken en samenwerkingen met merken op te zetten. Het was makkelijk en helemaal gratis - ik had nooit gedacht dat zoiets zou bestaan!"</p>
-    <cite>- Fleur, 24, Rotterdam</cite>
-  </div>
-  <div class="testimonial">
-    <p>"Na mijn aanmelding kreeg ik meteen persoonlijke coaching. Nu verdien ik via mijn OnlyFans maandelijkse commissies waar ik heel blij mee ben. Eho VIP Model heeft echt mijn leven veranderd."</p>
-    <cite>- Simone, 29, Amsterdam</cite>
-  </div>
-</section>
-
-<section id="blog" class="container animate">
-  <h2>Blog</h2>
-  <p>Blijf groeien en leren met onze blogs vol tips en inspiratie!</p>
-  <div class="blog-posts">
-    <div class="blog-post">
-      <img src="https://source.unsplash.com/featured/?fashion,street" alt="Instagram trends 2025">
-      <div class="blog-post-content">
-        <h4>Instagram Trends 2025</h4>
-        <p>Ontdek welke nieuwe functies en trends er aankomen op Instagram dit jaar. Van verbeterde Reels-opties tot nieuwe engagement-tools: lees het in deze blog post.</p>
-      </div>
+    <h2>Как это работает?</h2>
+    <div class="info-box">
+      <p>
+        1. Заходишь в <strong>Live-рулетку</strong><br>
+        2. Ставишь 1€ на чёт/нечёт или красное/чёрное<br>
+        3. Если проигрываешь — удваиваешь ставку<br>
+        4. Как только выигрываешь — возвращаешь всё + получаешь <strong>+1€ чистой прибыли</strong><br>
+        5. Повторяешь цикл
+      </p>
     </div>
-    <div class="blog-post">
-      <img src="https://source.unsplash.com/featured/?tiktok,video" alt="TikTok marketingtips">
-      <div class="blog-post-content">
-        <h4>TikTok Marketingtips</h4>
-        <p>Leer hoe je opvalt op TikTok met effectieve video’s en hashtags. Wij delen de beste hacks voor jouw contentstrategie.</p>
-      </div>
-    </div>
-    <div class="blog-post">
-      <img src="https://source.unsplash.com/featured/?twitch,gamer" alt="Twitch strategie">
-      <div class="blog-post-content">
-        <h4>Twitch Strategie</h4>
-        <p>Streaming begint niet en eindigt met alleen uitzenden. Lees onze tips voor het opbouwen van een trouwe volgersbasis.</p>
-      </div>
-    </div>
+
+    <h2>Пример стратегии:</h2>
+    <p>
+      Первый спин — 1€ → проиграл<br>
+      Второй — 2€ → проиграл<br>
+      Третий — 4€ → проиграл<br>
+      Четвёртый — 8€ → выиграл → получил 16€, а всего поставил 1+2+4+8=15€ → <strong>+1€</strong>
+    </p>
+
+    <h2>Почему это работает?</h2>
+    <p>
+      Вероятность проиграть 9 раз подряд ≈ <strong>0.195%</strong><br>
+      Это значит, что <strong>в 998 из 1000 случаев</strong> ты будешь в плюсе.
+    </p>
+
+    <h2>Что нужно?</h2>
+    <ul>
+      <li>Реальная регистрация в казино</li>
+      <li>Минимум <strong>256€ депозит</strong>, чтобы выдержать 9 шагов</li>
+      <li>Хладнокровие и точность</li>
+    </ul>
+
+    <h2>Важно:</h2>
+    <p>
+      Это не “быстрый заработок”, а <strong>метод системного плюса</strong>.<br>
+      Не отклоняйся от схемы — не увеличивай ставки самовольно.
+    </p>
+
+    <a class="cta-button" href="#">Попробовать стратегию</a>
   </div>
-</section>
-
-<section id="faq" class="container animate">
-  <h2>FAQ</h2>
-  <dl class="faq">
-    <dt>Is het echt gratis om mee te doen?</dt>
-    <dd>Ja, deelname is volledig gratis. Wij verdienen onze inkomsten via samenwerkingen met merken, zodat jij gratis onze diensten kunt gebruiken.</dd>
-    <dt>Heb ik ervaring nodig als model?</dt>
-    <dd>Nee, we helpen zowel beginners als ervaren modellen. Het belangrijkste is jouw enthousiasme en motivatie. Wij zorgen voor begeleiding bij elk niveau.</dd>
-    <dt>Hoe snel zie ik resultaten?</dt>
-    <dd>Resultaten verschillen per persoon, maar veel van onze modellen zien binnen enkele maanden een groeiend bereik. We streven ernaar om zo snel mogelijk waarde te leveren.</dd>
-    <dt>Kan ik mijn eigen content blijven beheren?</dt>
-    <dd>Absoluut. Jij bent de eigenaar van je eigen accounts en content. Wij adviseren en ondersteunen je, maar je behoudt de creatieve vrijheid.</dd>
-    <dt>Hoe weet ik dat het legaal en veilig is?</dt>
-    <dd>Wij werken volgens de Nederlandse wet- en regelgeving. Je krijgt duidelijke contracten en wij zorgen voor correcte fiscale en juridische begeleiding.</dd>
-  </dl>
-</section>
-
-<section id="contact" class="container animate">
-  <h2>Contact</h2>
-  <p>Heb je vragen of wil je direct starten? Vul het formulier in of neem contact met ons op!</p>
-  <form>
-    <input type="text" name="naam" placeholder="Naam" required>
-    <input type="email" name="email" placeholder="Emailadres" required>
-    <input type="text" name="instagram" placeholder="Instagram gebruikersnaam">
-    <input type="text" name="tiktok" placeholder="TikTok gebruikersnaam">
-    <textarea name="bericht" placeholder="Vertel iets over jezelf..." rows="4"></textarea>
-    <button type="submit" class="btn">Stuur Aanvraag</button>
-  </form>
-  <p>Of stuur een mailtje naar <a href="mailto:info@ehoVIPmodel.com">info@ehoVIPmodel.com</a> of een bericht via Telegram: <a href="https://t.me/EhoVIPModel" target="_blank">@EhoVIPModel</a>.</p>
-</section>
-
-<footer>
-  <p>&copy; 2025 Eho VIP Model Agency. Alle rechten voorbehouden. <a href="#">Privacybeleid</a> | <a href="#">Voorwaarden</a></p>
-</footer>
-
-<script>
-// Smooth scroll for anchor links
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-// Animation on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.2 });
-document.querySelectorAll('section.animate, header').forEach(el => {
-  observer.observe(el);
-});
-</script>
-
 </body>
 </html>

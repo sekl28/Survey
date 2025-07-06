@@ -1,349 +1,763 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Binance Victim Campaign</title>
-  <style>
-    /* Reset some basic styling */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
-      scroll-behavior: smooth;
-    }
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem;
-    }
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #444;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-    }
-    nav ul li {
-      margin-left: 1rem;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #444;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #1d70b8;
-    }
-    nav .cta-button {
-      background: #1d70b8;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      margin-left: 1rem;
-      transition: background 0.3s;
-    }
-    nav .cta-button:hover {
-      background: #155d8a;
-    }
-    /* Hero section */
-    .hero {
-      margin-top: 70px; /* to account for fixed header height */
-      background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODBAUEBAQEhUXGBcYGRYRFRkaISEaGyEkJiYgICAgICAgIhIiJSwoLCQyODw4Oi8zMDAzPCwsOCQgLDAwPDgwOEAxMT8BCwsLDg4PGhISGjMzIzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzP/2wBDAQVFRoVERIZGRkdGh0cHyMcHCIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiL/wAARCABkAGQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgAF/8QAJhAAAQMDAgcAAAAAAAAAAAAAAQACEQMFEgYHIUETFSIiMUFxof/EABUBAQEAAAAAAAAAAAAAAAAAAAIE/8QAFxEBAAMAAAAAAAAAAAAAAAAAAQASIf/aAAwDAQACEQMRAD8A70AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASANGZzct6a5vUo2/QUlxKRovJP0vRoFjJkL4NCmqfFKbXfSdQVGb3e+lg4c6CwupbFlHUdZjGZ3U4w2pNPVaWtMOZqKmxfTLK+KOdeThXEV5SVo1JLNi3ZUqmY8Q0cTS/Lw+ty3qsU0NJdgQgAAAAAAABJx0NVNv9x1yWhsBpUmJsJyj5/ruRWdpXaY9eIOXclQMl/O9xtqlqv+vmxhc7DS9DOvPzsuxqW5q9HRgR8rdrk0eOrPoyEzSRxr3S1tvmOSYRZTxxuy1G/M12n2vIaL8MvGtFHHeCDSowikqtKofQgHNRgs9KLuorHKNYFuL1tYJ7PlLt99eu9wrkt6LTEmXTtOxjGKDBTDuvHpdYi5fZPM2baT/cpJ0d7uha8zz2Wxyk9utGy5T9DZMoQ2m4+6PoORkHw5yo+X/AKjczYV7vRrBF7qyBBmZx6zpUk9WjCZVG3uXuVuuv6JipNnWHGR6XZqjUpP84OOy8zYyuNlw5n6so0ZKU5OUkuZycSvIfSlO3KvxOey+3FTGHX8mmXus3l3oCx0MWl4cc6p4wbfZl9E+VJu7fOhpYnULasW1WCOWFqtTReTWVny5STfH3CrM/IyU7Cq9erZvJGOqJsNGBv9Cipz8cND3O9vbnfh0taRd0X2I7WYna559uFJRxQwlo6yRms3Ju3s4t6t2u6vybuc67PudzOXjdctpn+ER7tnr62y1Tv8AonNLUj3/W4ySyq3n60r1Hn1jTk5SkmfytdKWhx8Lsdzya5VPrxHnZJJcpvEkpKdpv8AwLLxXeHEnE7H0aMTpVhv9wuzmpcpWHhcvJthp6Irx1JRlzefKslDnrHtm9sj8Vo7lljtWa5HDCsptTXpvQp6lEEaAAAAACBUktbpXlSX4/hdUbCdGX5qqOyD4nqTguzGukLVJTnF+X4k+yg/1BISjoPXNcpMK/3Cgyu4sQUnPeTdrnxu08YplmLzG5yF1SitOLN0qUJbUx812pPuNebF6sVZwNAhxawlpGnqFdqqy61LkcMhScVyVnLxzG2kvr1NyrpJJlmU+wd6lmVcldGykuKyUlAGAAAAAAAAKhJ6ySqbnV/Ti9Kdnb7xaS4+5OMvqA+9W3F0tv8EyZ1ctp3R2kpmfGO3lm2NbaWq3J9QGVHKsK+uMJscpqG8p6v6nvnUlu3HhRf3zrJTv13T2ea7N3nrlUH0qw9zg06dX8AIoxH9FerBMOjPW0dX7EJFOl+5OpUc9oapRbnqd1vJJNTm+2W13TS1HidHSJo3o+ogKTEgAAAAAAAAAAAAAAAAAAAAAAAAA//2Q==') no-repeat center center/cover !important;
-      color: #fff;
-      text-align: center;
-      padding: 8rem 2rem;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.5);
-    }
-    .hero-content {
-      position: relative;
-      max-width: 800px;
-      margin: auto;
-      z-index: 1;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-    .hero .btn {
-      background: #e53a40;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-    .hero .btn:hover {
-      background: #c72b31;
-    }
-    /* Section styling */
-    section {
-      padding: 4rem 2rem;
-    }
-    section:nth-child(even) {
-      background: #fff;
-    }
-    section:nth-child(odd) {
-      background: #f9f9f9;
-    }
-    section h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
-    section p {
-      max-width: 800px;
-      margin: 0.75rem auto;
-      line-height: 1.6;
-      color: #444;
-    }
-    /* Steps */
-    .steps ol {
-      max-width: 800px;
-      margin: auto;
-      counter-reset: step;
-    }
-    .steps li {
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-left: 3rem;
-    }
-    .steps li:before {
-      counter-increment: step;
-      content: "Step " counter(step);
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-weight: bold;
-      color: #1d70b8;
-    }
-    .steps li strong {
-      color: #333;
-    }
-    .steps li p {
-      margin-top: 0.5rem;
-      margin-bottom: 0;
-    }
-    /* Expenses table */
-    table {
-      width: 100%;
-      max-width: 800px;
-      margin: auto;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-    table th, table td {
-      padding: 0.75rem 1rem;
-      border: 1px solid #ddd;
-      text-align: left;
-    }
-    table th {
-      background: #f2f2f2;
-    }
-    table tr:nth-child(even) {
-      background: #fbfbfb;
-    }
-    /* Actions */
-    .actions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .action-item {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .action-item .icon {
-      font-size: 2rem;
-      margin-bottom: 0.75rem;
-      color: #e53a40;
-    }
-    .action-item h3 {
-      margin-bottom: 0.75rem;
-      color: #222;
-    }
-    /* Resources list */
-    .resources ul {
-      max-width: 800px;
-      margin: auto;
-      list-style-type: disc;
-      padding-left: 1.5rem;
-    }
-    .resources li {
-      margin-bottom: 1rem;
-    }
-    .resources li a {
-      color: #1d70b8;
-      text-decoration: none;
-    }
-    .resources li a:hover {
-      text-decoration: underline;
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      nav ul li {
-        margin-left: 0.5rem;
-      }
-      .steps li {
-        padding-left: 2.5rem;
-      }
-      .steps li:before {
-        font-size: 0.9rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1.0">
+    <title>Eho VIP Model – Modellenbureau</title>
+    <meta name="description" 
+      content="Eho VIP Model is een premium modellenbureau in Nederland. Wij bieden hoge verdiensten, flexibele werktijden en professionele begeleiding voor aspirant modellen op platforms als TikTok, Instagram en Twitch. Meld je aan en start je carrière als VIP model.">
+    <meta name="keywords" 
+      content="Eho VIP Model, modellenbureau, model worden, TikTok model, Instagram influencer, online geld verdienen, influencer worden, Twitch streamer">
+    <meta name="robots" 
+      content="index, follow">
+    <meta property="og:title" 
+      content="Eho VIP Model – Modellenbureau">
+    <meta property="og:description" 
+      content="Word een VIP model bij Eho VIP Model. Hoge verdiensten, flexibele uren en professionele coaching voor succes op TikTok, Instagram en Twitch.">
+    <meta property="og:type" 
+      content="website">
+    <meta property="og:url" 
+      content="https://ehovipmodel.com/">
+    <meta name="twitter:card" 
+      content="summary_large_image">
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+      href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
+        }
+        h3 {
+            font-size: 1.3em;
+            margin: 0.5em 0 0.3em;
+        }
+        p {
+            margin: 0 0 1em;
+        }
+        a {
+            color: #8e44ad;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #d4af37;
+        }
+        /* Utility and theme colors */
+        :root {
+            --gold: #d4af37;
+            --purple: #8e44ad;
+            --gray: #888;
+        }
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75em 1.5em;
+            font-weight: 600;
+            color: var(--gold);
+            background: transparent;
+            border: 2px solid var(--gold);
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .btn:hover {
+            background: var(--gold);
+            color: #000;
+        }
+        /* Hero Section Styles */
+        header.hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        header.hero .logo {
+            font-size: 3em;
+            margin-bottom: 0.2em;
+        }
+        header.hero .logo .logo-sub {
+            display: block;
+            font-size: 0.5em;
+            letter-spacing: 0.3em;
+            margin-top: -0.2em;
+        }
+        header.hero .tagline {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-bottom: 1.2em;
+        }
+        /* Section Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        section {
+            padding: 60px 0;
+        }
+        /* Section Titles - Purple underline */
+        section h2 {
+            display: inline-block;
+            position: relative;
+        }
+        section h2::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--purple);
+            margin: 0.5em auto 0;
+        }
+        /* Features Section Styles */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .feature {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .feature i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 0.5em;
+        }
+        .feature p {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        .step {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--purple);
+            color: var(--purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 0 auto 0.5em;
+        }
+        .step h3 {
+            margin-top: 0;
+            margin-bottom: 0.3em;
+        }
+        .step p {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+        
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .model-card {
+            background-color: #111;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .model-card .photo {
+            width: 100%;
+            padding-top: 75%;
+            background-color: #333;
+            position: relative;
+        }
+        .model-card .photo i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: #555;
+        }
+        .model-card h3 {
+            margin-top: 15px;
+        }
+        .model-card p.platform {
+            color: var(--gray);
+            font-size: 0.9em;
+            margin: 0;
+        }
+        
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .form-container p.intro {
+            color: #ccc;
+            margin-bottom: 2em;
+        }
+        form {
+            text-align: left;
+        }
+        .form-field {
+            margin-bottom: 1em;
+        }
+        .form-field label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.3em;
+        }
+        .form-field input[type="text"],
+        .form-field input[type="email"],
+        .form-field input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            background: #000;
+            border: 1px solid #555;
+            border-radius: 4px;
+            color: #fff;
+        }
+        .form-field input::placeholder {
+            color: #777;
+        }
+        .form-field input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        .form-field input[type="checkbox"] {
+            accent-color: var(--gold);
+            transform: scale(1.2);
+            margin-right: 0.5em;
+        }
+        .form-field .checkbox-label {
+            font-size: 0.9em;
+            color: #ccc;
+        }
+        .form-field .checkbox-label a {
+            color: #ccc;
+            text-decoration: underline;
+        }
+        .form-field .checkbox-label a:hover {
+            color: #fff;
+        }
+        .form-submit {
+            text-align: center;
+            margin-top: 1em;
+        }
+        .form-submit button {
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+        }
+        
+        .contact-info p {
+            margin: 0.5em 0;
+        }
+        .contact-info i {
+            color: var(--gold);
+            margin-right: 0.5em;
+        }
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .social-links a {
+            color: #fff;
+            margin: 0 0.5em;
+            font-size: 1.4em;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--gold);
+        }
+        
+        .legal {
+            color: #ccc;
+            font-size: 0.9em;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #333;
+        }
+        .legal i {
+            color: var(--gold);
+            margin-right: 0.5em;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #777;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #777;
+            text-decoration: none;
+            margin: 0 0.5em;
+        }
+        footer a:hover {
+            text-decoration: underline;
+            color: #fff;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="logo"><span class="logo-main">Eho VIP</span><span class="logo-sub">MODEL</span></h1>
+            <p class="tagline">Start jouw carrière als VIP model
+            met ons exclusief bureau</p>
+            <a href="#aanmelden" class="btn">Word model</a>
+        </div>
 
-<header>
-  <nav>
-    <div class="logo">Binance Victim Campaign</div>
-    <ul>
-      <li><a href="#history">History</a></li>
-      <li><a href="#plan">Plan</a></li>
-      <li><a href="#expenses">Expenses</a></li>
-      <li><a href="#actions">Take Action</a></li>
-      <li><a href="#resources">Resources</a></li>
-      <li><a class="cta-button" href="#actions">Join Campaign</a></li>
-    </ul>
-  </nav>
-</header>
+    </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Hold Binance Accountable</h1>
-    <p>Join our campaign to recover stolen funds and push for exchange accountability.</p>
-    <a href="#actions" class="btn">Get Involved</a>
-  </div>
-</section>
+    <!-- Waarom kiezen voor Eho VIP Model? -->
+    <section id="benefits">
+        <div class="container">
+            <h2>Waarom kiezen voor Eho VIP Model?</h2>
+            <div class="features">
+                <!-- Feature card -->
+                <div class="feature fade-in">
+                    <i class="fas fa-coins" aria-hidden="true"></i>
+                    <h3>Hoge verdiensten</h3>
+                    <p>Verdien aanzienlijk inkomen als VIP model,
+                    met bonussen en groeikansen.</p>
+                </div>
 
-<section id="history">
-  <h2>History</h2>
-  <p>In mid-2022, we discovered unauthorized withdrawals of 50 BTC from our Binance account. We immediately tried to resolve the issue through Binance’s official support channels. Unfortunately, Binance’s response was slow and unsatisfactory, leading to frustration. Over the following months, we submitted numerous support tickets and participated in phone calls, but received little helpful guidance.</p>
-  <p>Having exhausted all direct avenues, we realized that public pressure might be needed. We decided to document our experience online to raise awareness and seek help from the community. Through social media and online forums, we shared our story to gather support and attention. The more our story spread, the more pressure Binance would feel to address this issue.</p>
-</section>
+                <!-- Feature card -->
+                <div class="feature fade-in">
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                    <h3>Flexibele werktijden</h3>
+                    <p>Werk wanneer het jou uitkomt – overdag, 's avonds of in het weekend,
+                    helemaal flexibel.</p>
+                </div>
 
-<section id="plan">
-  <h2>Plan</h2>
-  <p>We have formulated a multi-pronged plan to seek the return of the funds and prevent such injustices from happening to others. Our campaign combines public exposure, legal action, and community engagement in several stages.</p>
-  <div class="steps">
-    <ol>
-      <li><strong>Public Awareness Campaign</strong> – Share our story through press releases, social media, and community forums.</li>
-      <li><strong>Support Petition</strong> – Create an online petition gathering support from the cryptocurrency community and victims of similar cases.</li>
-      <li><strong>Legal Coordination</strong> – Coordinate with consumer protection lawyers and experts to explore legal options and prepare for potential legal actions.</li>
-      <li><strong>Industry Advocacy</strong> – Engage cryptocurrency watchdogs and legislators to highlight exchange accountability and push for stronger regulations.</li>
-      <li><strong>Victim Support Network</strong> – Organize a support forum (e.g., Discord/Telegram) for victims to share experiences and resources.</li>
-      <li><strong>Regulatory & Enforcement</strong> – File complaints with financial regulators (e.g., FinCEN, SEC) and law enforcement agencies about Binance’s violations.</li>
-      <li><strong>Public Pressure Campaign</strong> – Organize letter-writing campaigns and call-ins to Binance’s leadership and regulators to demand action, and encourage media outlets to cover the story.</li>
-    </ol>
-  </div>
-</section>
+                <!-- Feature card -->
+                <div class="feature fade-in">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    <h3>Professionele coaching</h3>
+                    <p>Persoonlijke begeleiding en training
+                    om je succes als online model te garanderen.</p>
+                </div>
 
-<section id="expenses">
-  <h2>Campaign Expenses</h2>
-  <table>
-    <thead>
-      <tr><th>Category</th><th>Estimated (USD)</th><th>Notes</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Web hosting &amp; development</td><td>$0</td><td>Provided by volunteers (platform setup)</td></tr>
-      <tr><td>Legal consultation</td><td>$500</td><td>Approx. 5 hours at typical rates</td></tr>
-      <tr><td>Marketing</td><td>$400</td><td>Social media promotion, press releases</td></tr>
-      <tr><td>Translation &amp; support</td><td>$100</td><td>Volunteer translation of materials</td></tr>
-      <tr><td><strong>Total</strong></td><td><strong>$1000</strong></td><td></td></tr>
-    </tbody>
-  </table>
-</section>
+                <!-- Feature card -->
+                <div class="feature fade-in">
+                    <i class="fas fa-handshake" aria-hidden="true"></i>
+                    <h3>Officiële contracten</h3>
+                    <p>100% legale samenwerking
+                    met duidelijke afspraken en officiële overeenkomsten.</p>
+                </div>
 
-<section id="actions">
-  <h2>Take Action</h2>
-  <div class="actions">
-    <div class="action-item">
-      <div class="icon">💰</div>
-      <h3>Withdraw Your Funds</h3>
-      <p>If you still have funds on Binance, withdraw them now to avoid potential loss.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Hoe werkt het? -->
+    <section id="how-it-works">
+        <div class="container">
+            <h2>Hoe werkt het?</h2>
+            <div class="steps">
+                <!-- Step item -->
+                    <div class="step fade-in">
+                    <div class="step-icon">1</div>
+                    <h3>Aanmelden</h3>
+                    <p>Meld je eenvoudig aan via ons online formulier
+                    met je gegevens.</p>
+                </div>
+
+                <!-- Step item -->
+                    <div class="step fade-in">
+                    <div class="step-icon">2</div>
+                    <h3>Interview</h3>
+                    <p>We plannen een kennismakingsgesprek
+                    om je beter te leren kennen.</p>
+                </div>
+
+                <!-- Step item -->
+                    <div class="step fade-in">
+                    <div class="step-icon">3</div>
+                    <h3>Contract</h3>
+                    <p>Onderteken een officieel contract
+                    en word onderdeel van ons agentschap.</p>
+                </div>
+
+                <!-- Step item -->
+                    <div class="step fade-in">
+                    <div class="step-icon">4</div>
+                    <h3>Training</h3>
+                    <p>Volg onze exclusieve training
+                    en krijg persoonlijke begeleiding.</p>
+                </div>
+
+                <!-- Step item -->
+                    <div class="step fade-in">
+                    <div class="step-icon">5</div>
+                    <h3>Inkomsten</h3>
+                    <p>Ga aan de slag
+                    en begin te verdienen als een Eho VIP model.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Onze modellen -->
+    <section id="models">
+        <div class="container">
+            <h2>Onze modellen</h2>
+            <div class="models-grid">
+                <!-- Model card -->
+                    <div class="model-card fade-in">
+                    <div class="photo"><i class="fas fa-image" aria-hidden="true"></i></div>
+                    <h3>Sophie</h3>
+                    <p class="platform">TikTok Creator</p>
+                </div>
+
+                <!-- Model card -->
+                    <div class="model-card fade-in">
+                    <div class="photo"><i class="fas fa-image" aria-hidden="true"></i></div>
+                    <h3>Lotte</h3>
+                    <p class="platform">Instagram Model</p>
+                </div>
+
+                <!-- Model card -->
+                    <div class="model-card fade-in">
+                    <div class="photo"><i class="fas fa-image" aria-hidden="true"></i></div>
+                    <h3>Emma</h3>
+                    <p class="platform">Twitch Streamer</p>
+                </div>
+
+                <!-- Model card -->
+                    <div class="model-card fade-in">
+                    <div class="photo"><i class="fas fa-image" aria-hidden="true"></i></div>
+                    <h3>Noor</h3>
+                    <p class="platform">TikTok Influencer</p>
+                </div>
+
+                <!-- Model card -->
+                    <div class="model-card fade-in">
+                    <div class="photo"><i class="fas fa-image" aria-hidden="true"></i></div>
+                    <h3>Mila</h3>
+                    <p class="platform">Instagram Influencer</p>
+                </div>
+
+                <!-- Model card -->
+                    <div class="model-card fade-in">
+                    <div class="photo"><i class="fas fa-image" aria-hidden="true"></i></div>
+                    <h3>Lucas</h3>
+                    <p class="platform">Twitch Streamer</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Aanmeldingsformulier -->
+    <section id="aanmelden">
+        <div class="container">
+            <h2>Aanmeldingsformulier</h2>
+            <div class="form-container fade-in">
+                <p class="intro">Vul het formulier in
+                    om je aan te melden als model.</p>
+                <form>
+                    <!-- Form field -->
+                    <div class="form-field">
+                        <label for="name">Naam</label>
+                        <input type="text" id="name" name="naam" placeholder="Bijv. Lisa Janssen" required>
+                    </div>
+
+                    <!-- Form field -->
+                    <div class="form-field">
+                        <label for="age">Leeftijd</label>
+                        <input type="number" id="age" name="leeftijd" placeholder="Bijv. 21" required>
+                    </div>
+
+                    <!-- Form field -->
+                    <div class="form-field">
+                        <label for="telegram">Telegram-gebruikersnaam</label>
+                        <input type="text" id="telegram" name="telegram" placeholder="Bijv. @gebruikersnaam" required>
+                    </div>
+
+                    <!-- Form field -->
+                    <div class="form-field">
+                        <label for="email">E-mailadres</label>
+                        <input type="email" id="email" name="email" placeholder="Bijv. naam@voorbeeld.com" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="checkbox-label"><input type="checkbox" required> Ik ga akkoord met de <a href="privacybeleid.html" target="_blank">Privacyverklaring</a> en <a href="algemene-voorwaarden.html" target="_blank">Algemene Voorwaarden</a>.</label>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn">Verstuur</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contactgegevens -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contactgegevens</h2>
+            <div class="contact-info fade-in" style="text-align:center;">
+                <p><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:contact@ehovipmodel.com">contact@ehovipmodel.com</a></p>
+                <p><i class="fab fa-telegram-plane" aria-hidden="true"></i><a href="https://t.me/ehovipmodel" target="_blank">@ehovipmodel</a></p>
+                <p>Volg ons: <span class="social-links"><a href="https://www.tiktok.com/@ehovipmodel" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a><a href="https://instagram.com/ehovipmodel" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://twitch.tv/ehovipmodel" target="_blank" aria-label="Twitch"><i class="fab fa-twitch"></i></a></span></p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Juridisch blok -->
+    <div class="legal fade-in">
+        <p><i class="fas fa-gavel" aria-hidden="true"></i>Wij werken 100% legaal en met officiële overeenkomsten.</p>
     </div>
-    <div class="action-item">
-      <div class="icon">📣</div>
-      <h3>Spread The Word</h3>
-      <p>Help us raise awareness by sharing this campaign on social media and forums.</p>
-    </div>
-    <div class="action-item">
-      <div class="icon">💬</div>
-      <h3>Share Your Story</h3>
-      <p>If you are a victim too, please share your experience with us to strengthen our case.</p>
-    </div>
-    <div class="action-item">
-      <div class="icon">🛠</div>
-      <h3>Offer Support &amp; Expertise</h3>
-      <p>If you have legal or PR skills, volunteer to help with our campaign efforts.</p>
-    </div>
-  </div>
-</section>
 
-<section id="resources">
-  <h2>Evidence & Resources</h2>
-  <div class="resources">
-    <ul>
-      <li><a href="#">Binance Terms of Service</a> – Official Binance user agreement.</li>
-      <li><a href="#">Press Article (Jan 2023)</a> – Media coverage of unauthorized withdrawals.</li>
-      <li><a href="#">Crypto Blog (Feb 2023)</a> – Analysis of exchange accountability issues.</li>
-      <li><a href="#">Community Forum</a> – Discussion thread of affected users.</li>
-      <li><a href="#">Regulatory Guidelines</a> – Latest crypto exchange compliance regulations.</li>
-    </ul>
-  </div>
-</section>
+    <!-- Footer -->
+    <footer>
+        <p>2025 © Eho VIP Model – <a href="privacybeleid.html" target="_blank">Privacybeleid</a> | <a href="algemene-voorwaarden.html" target="_blank">Algemene voorwaarden</a></p>
+    </footer>
 
-<footer style="padding:1rem; text-align:center; font-size:0.9rem; color:#777;">
-  &copy; 2025 Binance Victim Campaign. All rights reserved.
-</footer>
-
+    <!-- Fade-in script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faders = document.querySelectorAll('.fade-in');
+            const options = { threshold: 0.1 };
+            const observer = new IntersectionObserver(function(entries, obs) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, options);
+            faders.forEach(fader => observer.observe(fader));
+        });
+    </script>
+<!-- Padding
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+-->
 </body>
 </html>

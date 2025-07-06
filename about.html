@@ -2,184 +2,239 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gratis Model Promotie Nederland | EHO VIP Model</title>
-  <meta name="description" content="Word gratis gepromoot als model in Nederland via Instagram, TikTok, Twitch & Co. Contract, winstdeling en professionele strategie.">
-  <meta name="keywords" content="model promotie, gratis promotie, model agentuur nederland, social media modellen">
-  <link rel="canonical" href="https://www.ehovipmodel.nl/">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
-  <script src="scripts.js" defer></script>
-
-  <!-- Open Graph и Twitter Card -->
-  <meta property="og:title" content="Gratis Model Promotie Nederland | EHO VIP Model">
-  <meta property="og:description" content="Profiteer van gratis promotie op Instagram, TikTok, Twitch — bereik fans en omzet zonder investering.">
-  <meta property="og:image" content="https://www.ehovipmodel.nl/og-image.jpg">
-  <meta property="og:url" content="https://www.ehovipmodel.nl/">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- JSON-LD структура -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "EHO VIP Model",
-    "url": "https://www.ehovipmodel.nl/",
-    "email": "ehovipmodel@gmail.com",
-    "sameAs": [
-      "https://www.instagram.com/ehovipmodel",
-      "https://t.me/ehovipmodel"
-    ]
-  }
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EHO VIP Model - Gratis Model Promotie</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 20px;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      padding: 80px 20px;
+      background: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #111;
+    }
+    .services, .team, .faq {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      flex: 1 1 calc(33% - 40px);
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+    .faq-item {
+      margin-bottom: 15px;
+    }
+    .faq-question {
+      background: #eee;
+      padding: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .faq-answer {
+      display: none;
+      padding: 10px 15px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Навигация -->
-  <header>
-    <nav class="navbar">
-      <a href="#home" class="logo">EHO VIP Model</a>
-      <button class="burger" aria-label="Menu">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="#about">Over Ons</a></li>
-        <li><a href="#services">Diensten</a></li>
-        <li><a href="#success">Successverhalen</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#signup" class="cta">Schrijf In</a></li>
-      </ul>
+
+<header>
+  <div class="container">
+    <h1>EHO VIP Model</h1>
+    <nav>
+      <a href="#about">Over Ons</a>
+      <a href="#services">Diensten</a>
+      <a href="#faq">FAQ</a>
+      <a href="#signup">Inschrijven</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <!-- Hero секция с видео-фоном -->
-  <section id="home" class="hero" data-aos="fade-up">
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="hero.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay">
-      <h1>Gratis Promotie voor Modellen in Nederland</h1>
-      <p>Zichtbaarheid op Instagram, TikTok, Twitch — Start vandaag!</p>
-      <a href="#signup" class="btn btn-primary">Start Gratis</a>
-    </div>
-  </section>
+<section class="hero">
+  <h1>Gratis Promotie voor Modellen in Nederland</h1>
+  <p>Word zichtbaar op Instagram, TikTok, Twitch & meer — zonder kosten!</p>
+  <a href="#signup" class="btn">Start Gratis</a>
+</section>
 
-  <!-- Over Ons -->
-  <section id="about" class="container">
-    <h2 data-aos="fade-right">Over Ons</h2>
-    <p data-aos="fade-left">Met jarenlange ervaring in fashion & social media, weten wij precies hoe we jouw merk versterken. Volledig legaal, op contract met winstdeling.</p>
-    <div class="team" data-aos="fade-up">
-      <!-- Команда -->
-      <div class="team-member">
-        <img src="team1.jpg" alt="Team member">
-        <h3>Anna de Vries</h3>
-        <p>Head of Strategy</p>
-      </div>
-      <div class="team-member">
-        <img src="team2.jpg" alt="Team member">
-        <h3>Bas Janssen</h3>
-        <p>Social Media Specialist</p>
-      </div>
-      <!-- … -->
+<section id="about">
+  <h2>Over Ons</h2>
+  <p>Wij zijn een professioneel social media agency met ervaring in modellenpromotie. Ons doel is jou populair maken zonder kosten — wij investeren in jouw groei en verdienen mee op basis van omzet. Alles verloopt via juridisch vastgelegde contracten.</p>
+  <div class="team">
+    <div class="card">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Anna">
+      <h3>Anna de Vries</h3>
+      <p>Strategisch Manager</p>
     </div>
-  </section>
+    <div class="card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Bas">
+      <h3>Bas Janssen</h3>
+      <p>Social Media Expert</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Services -->
-  <section id="services" class="container">
-    <h2 data-aos="fade-right">Diensten</h2>
-    <div class="services-grid">
-      <div class="service-item" data-aos="zoom-in">
-        <img src="service-instagram.jpg" alt="">
-        <h3>Instagram Boost</h3>
-        <p>Gerichte campagnes en content-creatie.</p>
-      </div>
-      <div class="service-item" data-aos="zoom-in" data-aos-delay="100">
-        <img src="service-tiktok.jpg" alt="">
-        <h3>TikTok Virality</h3>
-        <p>Trending content en challenges voor meer engagement.</p>
-      </div>
-      <div class="service-item" data-aos="zoom-in" data-aos-delay="200">
-        <img src="service-twitch.jpg" alt="">
-        <h3>Twitch Presence</h3>
-        <p>Professionele streams met merkpartners.</p>
-      </div>
+<section id="services">
+  <h2>Diensten</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Instagram Boost</h3>
+      <p>Wij zorgen voor snelle groei en engagement via content en strategie.</p>
     </div>
-  </section>
+    <div class="card">
+      <h3>TikTok Virality</h3>
+      <p>Wij creëren content die viral gaat — challenges, trends en reactievideo’s.</p>
+    </div>
+    <div class="card">
+      <h3>Twitch Presence</h3>
+      <p>Professionele begeleiding voor je stream om volgers te laten groeien.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Success Stories -->
-  <section id="success" class="container">
-    <h2 data-aos="fade-right">Succesverhalen</h2>
-    <div class="slider">
-      <!-- слайды с кейсами, цифрами и изображениями -->
-      <div class="slide" data-aos="slide-left">
-        <h3>Model X</h3>
-        <p>+50k volgers in 2 maanden, omzet x3</p>
-        <img src="case1.jpg" alt="">
-      </div>
-      <div class="slide" data-aos="slide-left" data-aos-delay="100">
-        <h3>Model Y</h3>
-        <p>Instagram + TikTok, merkdeals binnen 3 weken</p>
-        <img src="case2.jpg" alt="">
-      </div>
-      <!-- … -->
+<section id="faq">
+  <h2>Veelgestelde Vragen</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-question">Is het echt gratis?</div>
+      <div class="faq-answer">Ja. Onze promotie is volledig gratis. Wij werken op basis van winstdeling via contract.</div>
     </div>
-  </section>
+    <div class="faq-item">
+      <div class="faq-question">Hoe verdien ik geld?</div>
+      <div class="faq-answer">Als jouw account groeit, komen de inkomsten — advertenties, sponsors, streams, enz.</div>
+    </div>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section id="faq" class="container">
-    <h2 data-aos="fade-right">Veelgestelde Vragen</h2>
-    <div class="faq-item" data-aos="fade-up">
-      <button class="faq-question">Is de promotie echt gratis?</button>
-      <div class="faq-answer">
-        <p>Ja, wij vragen geen vergoeding — we werken op basis van een contract met winstdeling.</p>
-      </div>
-    </div>
-    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
-      <button class="faq-question">Hoe zit het met het contract?</button>
-      <div class="faq-answer">
-        <p>Alles is juridisch vastgelegd, inclusief inkomstenverdeling.</p>
-      </div>
-    </div>
-    <!-- …  -->
-  </section>
+<section id="signup">
+  <h2>Schrijf Je Gratis In</h2>
+  <form id="form">
+    <label>Naam<input type="text" required></label>
+    <label>Leeftijd<input type="number" min="16" max="40" required></label>
+    <label>Social media tag<input type="text" required></label>
+    <label>Telegram<input type="text" required></label>
+    <label>Email<input type="email" required></label>
+    <button type="submit" class="btn">Start Gratis</button>
+  </form>
+</section>
 
-  <!-- Регистрация -->
-  <section id="signup" class="container signup-section">
-    <h2 data-aos="fade-right">Schrijf Je Gratis In</h2>
-    <form id="signup-form" action="/submit-form" method="post" data-aos="fade-up">
-      <label>Naam<input type="text" name="name" required></label>
-      <label>Leeftijd<input type="number" name="age" min="16" max="40" required></label>
-      <label>Social Tag<input type="text" name="social_tag" placeholder="@jouwnaam" required></label>
-      <label>Telegram<input type="text" name="telegram" placeholder="@jouwtelegram" required></label>
-      <label>Email<input type="email" name="email" required></label>
-      <button type="submit" class="btn btn-secondary">Start Gratis</button>
-    </form>
-    <div id="form-message" class="modal">
-      <div class="modal-content">
-        <p>Bedankt! We nemen snel contact op.</p>
-        <button id="modal-close">Sluiten</button>
-      </div>
-    </div>
-  </section>
+<footer>
+  <p>Contact: <a href="mailto:ehovipmodel@gmail.com" style="color:#fff;">ehovipmodel@gmail.com</a> | Telegram: <a href="https://t.me/ehovipmodel" style="color:#fff;">@ehovipmodel</a></p>
+  <p>&copy; 2025 EHO VIP Model - Alle rechten voorbehouden.</p>
+</footer>
 
-  <!-- Contact -->
-  <section id="contact" class="container">
-    <h2 data-aos="fade-right">Neem Contact Op</h2>
-    <p>E-mail: <a href="mailto:ehovipmodel@gmail.com">ehovipmodel@gmail.com</a></p>
-    <p>Telegram: <a href="https://t.me/ehovipmodel">@ehovipmodel</a></p>
-  </section>
+<div class="modal" id="thanksModal">
+  <div class="modal-content">
+    <p>Bedankt voor je aanmelding! We nemen spoedig contact met je op.</p>
+    <button onclick="document.getElementById('thanksModal').style.display='none'" class="btn">Sluiten</button>
+  </div>
+</div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-widgets">
-      <div>
-        <h4>Quick Links</h4>
-        <ul><li><a href="#about">Over Ons</a></li><li><a href="#services">Diensten</a></li><li><a href="#faq">FAQ</a></li></ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p>ehovipmodel@gmail.com</p>
-        <p>@ehovipmodel</p>
-      </div>
-    </div>
-    <p>&copy; 2025 EHO VIP Model — Gratis promotie voor modellen in Nederland. Werkelijk, legaal, professioneel.</p>
-  </footer>
+<script>
+  document.querySelectorAll('.faq-question').forEach(el => {
+    el.addEventListener('click', () => {
+      const answer = el.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+
+  document.getElementById('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('thanksModal').style.display = 'flex';
+    this.reset();
+  });
+</script>
+
 </body>
 </html>

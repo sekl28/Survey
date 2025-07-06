@@ -6,38 +6,61 @@
   <title>BitStarz Türkiye</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:sans-serif;color:#222}
-    a{display:inline-block;text-decoration:none;color:#fff;background:#f39c12;padding:0.8rem 1.5rem;border-radius:30px;transition:0.3s}
-    a:hover{background:#e67e22}
-    section{padding:2rem 1rem;text-align:center}
-    .hero{background:linear-gradient(135deg,#f06,#4a90e2);color:#fff}
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
-    .features div{background:#fafafa;padding:1rem;border-radius:8px;}
-    ul{list-style:none;text-align:left;padding-left:1rem}
+    body{font-family:'Helvetica Neue',sans-serif;background:#f5f5f5;color:#222}
+    a{display:inline-block;text-decoration:none}
+    .container{max-width:480px;margin:auto;padding:1rem}
+    .btn{background:#fb8c00;color:#fff;padding:0.75rem 1.5rem;border-radius:30px;font-weight:bold;transition:0.2s}
+    .btn:hover{opacity:0.9}
+    section{margin-bottom:1.5rem;text-align:center}
+    h1{font-size:2rem;margin-bottom:0.5rem}
+    h2{font-size:1.5rem;margin-bottom:0.5rem}
+    p{margin-bottom:1rem;font-size:1rem}
+    .feature-list{list-style:none;text-align:left;margin:1rem 0 1.5rem;padding-left:1rem}
+    .feature-list li{margin-bottom:0.75rem;font-size:1rem}
+    .feature-list li::before{content:'✔️';margin-right:0.5rem}
+    .vip-list{list-style:none;text-align:left;margin:1rem 0 1.5rem;padding-left:1rem}
+    .vip-list li{margin-bottom:0.75rem;font-size:1rem}
+    .vip-list li::before{content:'🌟';margin-right:0.5rem}
+    footer{font-size:0.75rem;color:#888;text-align:center;padding:1rem}
   </style>
 </head>
 <body>
-  <section class="hero">
-    <h1>🔥 BitStarz Türkiye</h1>
-    <p>Hızlı ödemeler, benzersiz VIP & devasa BONUS!</p>
-    <a href="https://bzstarz.com/b1d333966">5 BTC veya 180 FS Al!</a>
-  </section>
-  <section class="features">
-    <div>⏱️ <strong>10dk Ödeme</strong><br>Her miktar anında.</div>
-    <div>🔒 <strong>Güvenlik</strong><br>Çoklu imza & SSL.</div>
-    <div>🎰 <strong>Oyun Çeşitliliği</strong><br>Slot, canlı casino.</div>
-    <div>📞 <strong>7/24 Destek</strong><br>Hızlı çözüm.</div>
-  </section>
-  <section>
-    <h2>✨ VIP Ayrıcalıkları</h2>
-    <ul>
-      <li>🚀 Haftalık cashback</li>
-      <li>👤 Kişisel yönetici</li>
-      <li>💸 Yüksek çekim limiti</li>
-      <li>⭐ Öncelikli destek</li>
-    </ul>
-    <a href="https://bzstarz.com/b1d333966">BONUSU KAÇIRMA!</a>
-  </section>
-  <footer style="font-size:0.8rem;color:#666;padding:1rem">©2025 BitStarz • <a href="https://bitstarz.com/terms" style="color:#666;background:none;padding:0">Şartlar</a> | <a href="https://bitstarz.com/privacy" style="color:#666;background:none;padding:0">Gizlilik</a></footer>
+  <div class="container">
+    <!-- Hero -->
+    <section style="background:#ffeb3b;border-radius:12px;padding:1.5rem">
+      <h1>🔥 BitStarz Türkiye'ye Hoşgeldin!</h1>
+      <p>İnanılmaz hız, dev ödüller ve sınırsız oyun keyfi.</p>
+      <a class="btn" href="https://bzstarz.com/b1d333966">5 BTC ya da 180 FS Kap!</a>
+    </section>
+
+    <!-- Ana Avantajlar -->
+    <section style="background:#fff;border-radius:12px;padding:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.1)">
+      <h2>🚀 Neden BitStarz?</h2>
+      <ul class="feature-list">
+        <li>10dk içinde any tutar ödemesi</li>
+        <li>%100 güvenlik & şeffaflık</li>
+        <li>2000+ oyun seçeneği</li>
+        <li>7/24 uzman destek</li>
+      </ul>
+      <a class="btn" href="https://bzstarz.com/b1d333966">Hemen Başla</a>
+    </section>
+
+    <!-- VIP Programı -->
+    <section style="background:#e1bee7;border-radius:12px;padding:1rem">
+      <h2>👑 VIP Ayrıcalıklar</h2>
+      <ul class="vip-list">
+        <li>Özel bonus & cashback</li>
+        <li>Kişisel hesap koçu</li>
+        <li>Yüksek çekim limitleri</li>
+        <li>Erken turnuva davetleri</li>
+      </ul>
+      <a class="btn" href="https://bzstarz.com/b1d333966">VIP Ol!</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 BitStarz Türkiye • <a href="https://bitstarz.com/terms">Şartlar</a> | <a href="https://bitstarz.com/privacy">Gizlilik</a>
+    </footer>
+  </div>
 </body>
 </html>

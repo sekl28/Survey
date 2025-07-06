@@ -1,591 +1,447 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eho VIP Model</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join the campaign against Binance's unfair fund freezes. Share your story, sign petitions, and add your voice!" />
+  <title>Stop Binance Freeze</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* Custom Properties */
     :root {
-      --bg-color: #000;
-      --text-color: #fff;
-      --accent-gold: #D4AF37;
-      --accent-purple: #800080;
+      --primary: #e53e3e;
+      --secondary: #2d3748;
+      --accent: #f6ad55;
+      --bg: #f7fafc;
+      --text: #1a202c;
+      --wave-height: 150px;
     }
-    * {
-      box-sizing: border-box;
+    /* Global Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
       margin: 0;
       padding: 0;
-      transition: all 0.3s ease;
-    }
-    body {
-      background: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-    }
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-      color: var(--text-color);
+      overflow-x: hidden;
     }
     a {
-      color: var(--accent-gold);
       text-decoration: none;
+      color: inherit;
     }
-    a:hover {
-      color: var(--accent-purple);
+    /* Header Animation */
+    .logo {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary);
+      animation: pulse 3s infinite;
     }
-    /* Hero Section */
-    .hero {
-      background: var(--bg-color);
-      padding: 100px 20px;
-      text-align: center;
-      position: relative;
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: var(--accent-gold);
-    }
-    .hero .subtitle {
-      font-size: 1.5rem;
-      margin-bottom: 30px;
-      color: var(--text-color);
-    }
-    .hero .btn {
-      font-size: 1.2rem;
-      padding: 15px 30px;
-      background: var(--accent-gold);
-      color: #000;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-    }
-    .hero .btn:hover {
-      background: var(--accent-purple);
-      color: #fff;
-    }
-    /* Waarom kiezen Section */
-    #why {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    #why h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      color: var(--accent-gold);
-    }
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .card {
-      background: #111;
-      padding: 20px;
-      width: 250px;
-      border-radius: 10px;
-      text-align: center;
-      border: 1px solid #222;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    }
-    .card h3 {
-      margin: 15px 0;
-      color: var(--accent-gold);
-    }
-    .card p {
-      font-size: 0.9rem;
-      color: var(--text-color);
-    }
-    /* Hoe werkt het Section */
-    #how {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    #how h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      color: var(--accent-gold);
-    }
-    .steps {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-    }
-    .step {
-      background: #111;
-      padding: 20px;
-      flex: 1 1 180px;
-      max-width: 180px;
-      border-radius: 10px;
-    }
-    .step-number {
-      display: inline-block;
-      background: var(--accent-gold);
-      color: #000;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      font-size: 1.2rem;
-      border-radius: 50%;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    .step h3 {
-      margin: 10px 0;
-      font-size: 1.2rem;
-    }
-    .step p {
-      font-size: 0.9rem;
-    }
-    /* Beveiliging & Legaliteit Section */
-    #legal {
-      padding: 60px 20px;
-      background: #111;
-      color: var(--text-color);
-    }
-    #legal h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: var(--accent-gold);
-      text-align: center;
-    }
-    #legal p {
-      max-width: 600px;
-      margin: 0 auto 20px;
-    }
-    #legal ul {
-      list-style: none;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 0;
-    }
-    #legal li {
-      margin: 10px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-    #legal li:before {
-      content: "✔";
+    /* Hero Video Background */
+    .hero-video {
       position: absolute;
+      top: 0;
       left: 0;
-      color: var(--accent-gold);
-    }
-    /* Cases en Succesverhalen Section */
-    .cases {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .cases h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      color: var(--accent-gold);
-    }
-    .case-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .case {
-      background: #111;
-      border-radius: 10px;
-      padding: 20px;
-      width: 250px;
-      color: var(--text-color);
-      text-align: center;
-    }
-    .case img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .case p {
-      font-style: italic;
-      margin: 15px 0;
-    }
-    .case h4 {
-      margin-top: 10px;
-      color: var(--accent-gold);
-      font-weight: normal;
-      font-size: 1rem;
-    }
-    /* Galerij Section */
-    #gallery {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    #gallery h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      color: var(--accent-gold);
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 10px;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      transition: transform 0.3s, opacity 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
-    }
-    /* Video-presentatie Section */
-    #video {
-      padding: 60px 20px;
-      text-align: center;
-      background: #111;
-    }
-    #video h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      color: var(--accent-gold);
-    }
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      padding-bottom: 56.25%; /* 16:9 */
-      height: 0;
-    }
-    .video-container iframe {
-      position: absolute;
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.6;
     }
-    /* Inkomsten & Partners Section */
-    #stats {
-      padding: 60px 20px;
-      text-align: center;
+    /* Wave SVG */
+    .wave {
+      position: relative;
+      width: 100%;
+      height: var(--wave-height);
+      margin-bottom: -1px;
     }
-    #stats h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      color: var(--accent-gold);
+    /* Animated Counters */
+    .counter {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary);
     }
-    .stats {
+    /* Testimonials Carousel */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-inner {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
+      transition: transform 0.5s ease-in-out;
     }
-    .stat {
-      flex: 1 1 150px;
-      max-width: 200px;
+    .carousel-item {
+      min-width: 100%;
+      flex-shrink: 0;
+      padding: 1rem;
     }
-    .stat h3 {
-      color: var(--accent-gold);
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-    .stat .stat-number {
-      font-size: 2rem;
-      color: var(--accent-gold);
-      display: block;
-      margin-bottom: 5px;
-    }
-    .partners svg {
-      width: 30px;
-      height: 30px;
-      fill: var(--text-color);
-      margin: 0 5px;
-      vertical-align: middle;
-      transition: fill 0.3s;
-    }
-    .partners svg:hover {
-      fill: var(--accent-gold);
-    }
-    /* Aanmeldformulier Section */
-    #signup {
-      padding: 60px 20px;
-      text-align: center;
-      background: #111;
-    }
-    #signup h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: var(--accent-gold);
-    }
-    #signup form {
-      max-width: 400px;
-      margin: 0 auto;
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      gap: 15px;
+      justify-content: space-between;
+      transform: translateY(-50%);
     }
-    #signup input[type="text"],
-    #signup input[type="email"],
-    #signup input[type="number"] {
-      padding: 10px;
-      border: 1px solid #444;
-      border-radius: 5px;
-      background: #222;
-      color: #fff;
-      font-size: 1rem;
+    /* FAQ Accordion */
+    .accordion-item + .accordion-item {
+      margin-top: 1rem;
     }
-    #signup input[type="checkbox"] {
-      margin-right: 10px;
-    }
-    #signup label {
-      display: flex;
-      align-items: center;
-      font-size: 0.9rem;
-    }
-    #signup button {
-      padding: 12px;
-      border: none;
-      border-radius: 5px;
-      background: var(--accent-gold);
-      color: #000;
-      font-size: 1rem;
+    .accordion-header {
       cursor: pointer;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    #signup button:hover {
-      background: var(--accent-purple);
-      color: #fff;
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background-color: #fff;
+      padding: 0 1rem;
     }
-    /* Contact Section */
-    #contact {
-      padding: 40px 20px;
-      text-align: center;
+    .accordion-header.open + .accordion-content {
+      max-height: 500px;
+      padding: 1rem;
     }
-    #contact h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: var(--accent-gold);
+    /* Modal Styles */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
     }
-    #contact p {
-      margin: 5px 0;
+    .modal.active {
+      display: flex;
     }
-    .social-icons {
-      margin-top: 10px;
+    .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
     }
-    .social-icons a {
-      margin: 0 10px;
-      color: var(--text-color);
-      display: inline-block;
-      transition: color 0.3s;
-    }
-    .social-icons a:hover {
-      color: var(--accent-gold);
-    }
-    .social-icons svg {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-    }
-    /* Footer */
-    footer {
-      background: #111;
-      padding: 20px;
-      text-align: center;
-      color: #777;
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: #777;
-    }
-    footer a:hover {
-      color: var(--accent-gold);
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--secondary);
     }
   </style>
 </head>
 <body>
+  <!-- NAVIGATION -->
+  <nav class="bg-white shadow fixed w-full z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="#top" class="logo">StopBinance</a>
+        </div>
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="#about" class="hover:text-red-600">About</a>
+          <a href="#stats" class="hover:text-red-600">Stats</a>
+          <a href="#testimonials" class="hover:text-red-600">Testimonials</a>
+          <a href="#faq" class="hover:text-red-600">FAQ</a>
+          <button id="openModal" class="btn-primary">Join Now</button>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="menuToggle" class="focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white">
+      <a href="#about" class="block px-4 py-2">About</a>
+      <a href="#stats" class="block px-4 py-2">Stats</a>
+      <a href="#testimonials" class="block px-4 py-2">Testimonials</a>
+      <a href="#faq" class="block px-4 py-2">FAQ</a>
+      <button id="openModalMobile" class="w-full text-center py-2 bg-red-600 text-white font-semibold">Join Now</button>
+    </div>
+  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Word het gezicht van morgen</h1>
-    <p class="subtitle">Gratis promotie via Instagram, TikTok, Twitch</p>
-    <button class="btn">Start nu gratis</button>
+  <!-- HERO SECTION -->
+  <section id="top" class="relative h-screen flex items-center justify-center text-center text-white">
+    <video autoplay muted loop class="hero-video">
+      <source src="hero-background.mp4" type="video/mp4" />
+    </video>
+    <div class="z-10 max-w-2xl px-4">
+      <h1 class="text-5xl md:text-6xl font-extrabold drop-shadow-lg">"Binance froze my $30k without explanation."</h1>
+      <p class="mt-6 text-xl">Join thousands demanding accountability. Share your story and pressure regulators to act.</p>
+      <button id="heroJoinBtn" class="mt-10 btn-primary text-lg px-8 py-4">Add Your Voice</button>
+    </div>
+    <!-- Wave Separator -->
+    <div class="wave">
+      <svg viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,128L60,117.3C120,107,240,85,360,117.3C480,149,600,235,720,245.3C840,256,960,192,1080,170.7C1200,149,1320,171,1380,181.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </div>
   </section>
 
-  <!-- Waarom kiezen voor Eho VIP Model -->
-  <section id="why">
-    <h2>Waarom kiezen voor Eho VIP Model</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="icon">📣</div>
-        <h3>Gratis promotie</h3>
-        <p>Ontvang gratis promotie en exposure op onze social media kanalen.</p>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="bg-white py-20">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <h2 class="text-4xl font-bold mb-6">Why We Fight</h2>
+      <p class="text-lg leading-relaxed">
+        Centralized exchanges like Binance hold immense power over your funds. When they freeze accounts without due process, innocent users lose their livelihoods.
+        It's time to expose this injustice and demand transparency, accountability, and the return of our assets.
+      </p>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section id="stats" class="py-20">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center px-4">
+      <div>
+        <div class="counter" data-target="10000">0</div>
+        <p class="mt-2">Users Joined</p>
       </div>
-      <div class="card">
-        <div class="icon">🌍</div>
-        <h3>Internationale exposure</h3>
-        <p>Bereik een internationaal publiek via TikTok, Instagram en meer.</p>
+      <div>
+        <div class="counter" data-target="50000000">0</div>
+        <p class="mt-2">Funds at Risk (USD)</p>
       </div>
-      <div class="card">
-        <div class="icon">📸</div>
-        <h3>Professionele shoots</h3>
-        <p>Professionele fotoshoots en trainingssessies voor jouw portfolio.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🤝</div>
-        <h3>Persoonlijke begeleiding</h3>
-        <p>Persoonlijke coaching en ondersteuning door ons ervaren team.</p>
+      <div>
+        <div class="counter" data-target="25">0</div>
+        <p class="mt-2">Regulators Notified</p>
       </div>
     </div>
   </section>
 
-  <!-- Hoe werkt het -->
-  <section id="how">
-    <h2>Hoe werkt het</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Aanvraag</h3>
-        <p>Dien je aanvraag in via ons online formulier.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>Intake</h3>
-        <p>We plannen een kennismakingsgesprek om jouw doelen te bespreken.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Contract</h3>
-        <p>We tekenen een transparant contract dat jouw belangen beschermt.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <h3>Opleiding</h3>
-        <p>Volg trainingen en fotoshoots om je vaardigheden te verbeteren.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">5</div>
-        <h3>Verdiensten</h3>
-        <p>Ontvang een deel van de inkomsten via onze partners.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Beveiliging & Legaliteit -->
-  <section id="legal">
-    <h2>Beveiliging & Legaliteit</h2>
-    <p>Wij werken <strong>100% legaal</strong> onder Europese regelgeving. Jouw veiligheid en privacy staan voorop.</p>
-    <ul>
-      <li>24/7 ondersteuning voor al je vragen</li>
-      <li>Volledige vertrouwelijkheid van persoonlijke gegevens</li>
-      <li>Transparante en officiële contracten</li>
-    </ul>
-  </section>
-
-  <!-- Cases en Succesverhalen -->
-  <section class="cases">
-    <h2>Cases en Succesverhalen</h2>
-    <div class="case-container">
-      <div class="case">
-        <img src="https://images.pexels.com/photos/2065195/pexels-photo-2065195.jpeg?cs=srgb&dl=pexels-anastasiya-gepp-654466-2065195.jpg&fm=jpg" alt="Model Story 1">
-        <p>"Dankzij Eho VIP Model is mijn carrière een vlucht genomen!"</p>
-        <h4>Emma, 22 jaar</h4>
-      </div>
-      <div class="case">
-        <img src="https://images.pexels.com/photos/2916814/pexels-photo-2916814.jpeg?cs=srgb&dl=pexels-vanyaoboleninov-2916814.jpg&fm=jpg" alt="Model Story 2">
-        <p>"Professionele begeleiding en top exposure. Super ervaren team!"</p>
-        <h4>Sofie, 25 jaar</h4>
-      </div>
-      <div class="case">
-        <img src="https://images.pexels.com/photos/2836486/pexels-photo-2836486.jpeg?cs=srgb&dl=pexels-alipazani-2836486.jpg&fm=jpg" alt="Model Story 3">
-        <p>"Ik verdiende meer dan €2000 in mijn eerste maand dankzij Eho VIP."</p>
-        <h4>Yara, 20 jaar</h4>
-      </div>
-      <div class="case">
-        <img src="https://images.pexels.com/photos/1631181/pexels-photo-1631181.jpeg?cs=srgb&dl=pexels-sachinbhartiphotography-1631181.jpg&fm=jpg" alt="Model Story 4">
-        <p>"Een fantastische ervaring! Ik voel me als een echte topmodel."</p>
-        <h4>Lisa, 23 jaar</h4>
+  <!-- TESTIMONIALS CAROUSEL -->
+  <section id="testimonials" class="bg-white py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Voices of the Victims</h2>
+      <div class="carousel">
+        <div class="carousel-inner" id="carouselInner">
+          <div class="carousel-item">
+            <blockquote class="italic">
+              "Binance froze my account and I can't access my savings... I'm desperate!"
+            </blockquote>
+            <p class="mt-4 font-semibold text-right">— Alex, Russia</p>
+          </div>
+          <div class="carousel-item">
+            <blockquote class="italic">
+              "I transferred earnings from my livestream platform. Binance demands proof they can't provide."
+            </blockquote>
+            <p class="mt-4 font-semibold text-right">— Maria, Brazil</p>
+          </div>
+          <div class="carousel-item">
+            <blockquote class="italic">
+              "They gave no reason. No response. No help. I'm fighting back now."
+            </blockquote>
+            <p class="mt-4 font-semibold text-right">— Nguyen, Vietnam</p>
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <button id="prevBtn" aria-label="Previous">❮</button>
+          <button id="nextBtn" aria-label="Next">❯</button>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Galerij -->
-  <section id="gallery">
-    <h2>Galerij</h2>
-    <div class="gallery">
-      <img src="https://images.pexels.com/photos/2874421/pexels-photo-2874421.jpeg?cs=srgb&dl=pexels-vicky-1459651-2874421.jpg&fm=jpg" alt="Galerij 1">
-      <img src="https://images.pexels.com/photos/1857375/pexels-photo-1857375.jpeg?cs=srgb&dl=pexels-abir-hasan-912465-1857375.jpg&fm=jpg" alt="Galerij 2">
-      <img src="https://images.pexels.com/photos/983569/pexels-photo-983569.jpeg?cs=srgb&dl=pexels-aizhana-aldanova-364644-983569.jpg&fm=jpg" alt="Galerij 3">
-      <img src="https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?cs=srgb&dl=pexels-alipazani-2584269.jpg&fm=jpg" alt="Galerij 4">
-    </div>
-  </section>
-
-  <!-- Video-presentatie -->
-  <section id="video">
-    <h2>Video-presentatie</h2>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/hoKDrFyQDy0" title="Video over Eho VIP Model" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </section>
-
-  <!-- Inkomsten & Partners -->
-  <section id="stats">
-    <h2>Inkomsten & Partners</h2>
-    <div class="stats">
-      <div class="stat">
-        <h3>Gemiddeld inkomen</h3>
-        <span class="stat-number">€1500</span>
-        <p>per maand</p>
-      </div>
-      <div class="stat">
-        <h3>Volgersgroei</h3>
-        <span class="stat-number">+50%</span>
-        <p>per jaar</p>
-      </div>
-      <div class="stat">
-        <h3>Onze partners</h3>
-        <p class="partners">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitch" viewBox="0 0 16 16"><path d="M3.857 0 1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0zm9.714 7.429-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142z"/><path d="M11.857 3.143h-1.143V6.57h1.143zm-3.143 0H7.571V6.57h1.143z"/></svg>
-        </p>
+  <!-- TIMELINE SECTION -->
+  <section id="timeline" class="py-20 relative bg-gradient-to-r from-red-100 to-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Journey So Far</h2>
+      <div class="relative wrap overflow-hidden p-10 h-full">
+        <!-- Timeline item 1 -->
+        <div class="mb-8 flex justify-between items-center w-full right-timeline">
+          <div class="order-1 w-5/12"></div>
+          <div class="order-1 w-5/12 px-1 py-4 text-right">
+            <p class="mb-2 font-bold">Campaign Launch</p>
+            <p class="text-sm">We launched the website and social channels, garnering 1,000 sign-ups in 48 hours.</p>
+          </div>
+        </div>
+        <!-- Timeline item 2 -->
+        <div class="mb-8 flex justify-between items-center w-full left-timeline">
+          <div class="order-1 w-5/12 px-1 py-4 text-left">
+            <p class="mb-2 font-bold">First Media Coverage</p>
+            <p class="text-sm">Local press in Turkey covered the story within the first week.</p>
+          </div>
+          <div class="order-1 w-5/12"></div>
+        </div>
+        <!-- Timeline item 3 -->
+        <div class="mb-8 flex justify-between items-center w-full right-timeline">
+          <div class="order-1 w-5/12"></div>
+          <div class="order-1 w-5/12 px-1 py-4 text-right">
+            <p class="mb-2 font-bold">Regulatory Complaints Filed</p>
+            <p class="text-sm">Complaints submitted to the AMF, CFTC, and local authorities.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Aanmeldformulier -->
-  <section id="signup">
-    <h2>Aanmeldformulier</h2>
-    <form action="#">
-      <input type="text" name="name" placeholder="Naam" required>
-      <input type="number" name="age" placeholder="Leeftijd" required>
-      <input type="text" name="telegram" placeholder="Telegram" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <label><input type="checkbox" required> Ik ga akkoord met de <a href="#">voorwaarden</a></label>
-      <button type="submit">Word model</button>
-    </form>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:contact@ehovipmodel.com">contact@ehovipmodel.com</a></p>
-    <p>Telegram: @ehovipmodel</p>
-    <div class="social-icons">
-      <a href="https://t.me/ehovipmodel">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214.214.214.438 0 .622l-3.22 2.22c-.228.21-.53.21-.759 0L3.856 9.12c-.203-.18-.201-.518 0-.684.051-.045.116-.074.183-.074h.009c.054.003.106.009.155.022l2.558.641h.005c.208.054.338.189.339.369 0 .154-.103.37-.266.512-.143.123-.34.166-.577.107l-1.198-.305c-.338-.085-.74-.018-1.14.17-.274.139-.635.078-.884-.149-.243-.221-.246-.608-.008-.84l3.888-3.267c.312-.258.784-.184 1.009.16.047.068.07.146.071.226v3.246c-.001.204.103.386.276.485.158.091.351.092.51.001l2.16-1.285c.27-.161.485-.452.605-.784.17-.483.066-1.017-.288-1.369z"/></svg>
-      </a>
-      <a href="https://instagram.com/ehovipmodel">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@ehovipmodel">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/></svg>
-      </a>
+  <!-- FAQ SECTION -->
+  <section id="faq" class="bg-white py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <div class="accordion-item">
+          <div class="accordion-header" data-target="faq1">What is the purpose of this campaign? <span>+</span></div>
+          <div id="faq1" class="accordion-content">
+            <p>This campaign aims to expose Binance's unfair freezing practices and push for transparency and restitution.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" data-target="faq2">How can I join? <span>+</span></div>
+          <div id="faq2" class="accordion-content">
+            <p>Click any "Join Now" button to submit your story. We'll guide you through filing complaints and sharing your experience.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" data-target="faq3">Is it safe to share my personal details? <span>+</span></div>
+          <div id="faq3" class="accordion-content">
+            <p>We recommend sharing minimal information publicly. Sensitive details remain confidential and only used for legal actions.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p><a href="#">Privacybeleid</a> | <a href="#">Algemene voorwaarden</a></p>
-    <p>&copy; 2025 Eho VIP Model</p>
+  <!-- CTA SECTION -->
+  <section class="py-20 bg-secondary text-white text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-6">Ready to Take Action?</h2>
+      <p class="text-lg mb-8">Join thousands of victims standing up to Binance. Together, we can force change.</p>
+      <button id="ctaJoin" class="btn-primary text-lg px-10 py-4">Join the Movement</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-200 py-12">
+    <div class="max-w-4xl mx-auto px-4 text-center text-gray-700">
+      <p class="mb-4">© 2025 StopBinance Campaign. All rights reserved.</p>
+      <div class="space-x-4">
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+    </div>
   </footer>
 
+  <!-- MODAL -->
+  <div id="joinModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3 class="text-2xl font-bold mb-4">Join the Campaign</h3>
+      <form action="https://your-backend.example.com/submit" method="POST" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium">Name</label>
+          <input type="text" name="name" required class="mt-1 block w-full border-gray-300 rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Email</label>
+          <input type="email" name="email" required class="mt-1 block w-full border-gray-300 rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Country</label>
+          <input type="text" name="country" required class="mt-1 block w-full border-gray-300 rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Your Story</label>
+          <textarea name="story" rows="4" required class="mt-1 block w-full border-gray-300 rounded p-2"></textarea>
+        </div>
+        <button type="submit" class="btn-primary w-full py-3">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Modal logic
+    const openModal = document.getElementById('openModal');
+    const openModalMobile = document.getElementById('openModalMobile');
+    const joinModal = document.getElementById('joinModal');
+    const closeModal = document.querySelector('.modal-close');
+    const heroJoinBtn = document.getElementById('heroJoinBtn');
+    const ctaJoin = document.getElementById('ctaJoin');
+
+    [openModal, openModalMobile, heroJoinBtn, ctaJoin].forEach(btn => {
+      btn.addEventListener('click', () => {
+        joinModal.classList.add('active');
+      });
+    });
+    closeModal.addEventListener('click', () => {
+      joinModal.classList.remove('active');
+    });
+    window.addEventListener('click', e => {
+      if (e.target === joinModal) joinModal.classList.remove('active');
+    });
+
+    // Animated counters
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 200;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      };
+      updateCount();
+    });
+
+    // Carousel
+    const carouselInner = document.getElementById('carouselInner');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let index = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    const total = items.length;
+    const showSlide = idx => {
+      if (idx >= total) index = 0;
+      if (idx < 0) index = total - 1;
+      carouselInner.style.transform = `translateX(-${index * 100}%)`;
+    };
+    prevBtn.addEventListener('click', () => { showSlide(--index); });
+    nextBtn.addEventListener('click', () => { showSlide(++index); });
+    // Auto slide every 5s
+    setInterval(() => { showSlide(++index); }, 5000);
+
+    // FAQ Accordion
+    const headers = document.querySelectorAll('.accordion-header');
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const open = header.classList.contains('open');
+        headers.forEach(h => h.classList.remove('open'));
+        document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+        if (!open) {
+          header.classList.add('open');
+          const content = document.getElementById(header.dataset.target);
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,253 +1,136 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eho VIP Model – Modellenbureau & Gratis Promotie</title>
-  <meta name="description" content="Eho VIP Model – Modellenbureau in NL. Gratis promotie voor modellen via Instagram, TikTok, Twitch. Word model en groei met ons mee op basis van eerlijke winstdeling." />
-  <meta name="keywords" content="Eho VIP Model, modellenbureau, model worden, gratis promotie, influencer, Nederland, Instagram modellen, TikTok modellen" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binance – Кампания пострадавших</title>
+  <meta name="description" content="Binance удерживает средства. Мы собираем пострадавших и запускаем публичное разоблачение. Присоединяйся!">
+  <link rel="icon" href="/favicon.ico">
   <style>
-    /* --- CSS Reset (simplified) --- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #222; background: #fff; line-height: 1.6; }
-
-    /* Root colors (fashionable gradient colors and neutrals) */
-    :root {
-      --primary-color: #e91e63;   /* pink accent */
-      --secondary-color: #7b1fa2; /* purple accent */
-      --gradient: linear-gradient(135deg, #e91e63, #7b1fa2);
-      --bg-color: #fefefe;
-      --text-color: #222;
-      --light-text: #555;
-      --border-color: rgba(0,0,0,0.1);
-    }
-
-    /* Basic elements */
-    h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.2; margin-bottom: 0.5em; }
-    h1 { font-size: 2.2em; }
-    h2 { font-size: 1.5em; }
-    p { margin-bottom: 1em; color: var(--light-text); }
-    a { color: var(--primary-color); text-decoration: none; transition: color 0.3s ease; }
-    a:hover { color: var(--secondary-color); }
-
-    /* Layout containers */
-    header, section, footer { padding: 60px 20px; }
-    header { 
-      /* Full-screen hero */
-      min-height: 100vh; 
-      background: var(--gradient); 
-      color: #fff; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-      align-items: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #ff0099; color: white; }
+    header { padding: 5rem 1rem; text-align: center; }
+    header h1 { font-size: 2.4rem; margin-bottom: 1rem; }
+    header p { font-size: 1.2rem; }
     nav {
-      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-      background: rgba(255,255,255,0.8);
-      backdrop-filter: blur(10px);  /* glassmorphism nav background */
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      background: white;
+      color: #111;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
     }
-    nav ul { display: flex; justify-content: center; align-items: center; list-style: none; padding: 10px 0; margin: 0; }
-    nav li { margin: 0 15px; }
-    nav a { color: #000; font-weight: 600; }
-    nav a:hover { color: var(--primary-color); }
-
-    /* Hero content */
-    .hero-title { font-size: 2.5em; font-weight: 800; margin-bottom: 0.5em; text-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-    .hero-subtitle { font-size: 1.2em; margin-bottom: 1em; max-width: 600px; }
-    .hero-cta {
-      display: inline-block; padding: 15px 30px; font-size: 1em;
-      background: rgba(255,255,255,0.1); /* translucent button */
-      color: #fff; font-weight: 600; border: 2px solid #fff;
-      border-radius: 5px; backdrop-filter: blur(5px);
-      transition: background 0.3s, transform 0.3s;
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
     }
-    .hero-cta:hover { 
-      background: rgba(255,255,255,0.3); 
-      transform: scale(1.05); 
+    .section {
+      background: white;
+      color: #222;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 2rem auto;
     }
-
-    /* Section styles */
-    section { max-width: 1000px; margin: 0 auto; }
-    section:nth-of-type(odd) { background: #fafafa; } /* light gray background on alternate sections */
-    .section-title { text-align: center; margin-bottom: 40px; position: relative; }
-    .section-title::after {
-      content: ""; position: absolute; left: 50%; bottom: -10px;
-      transform: translateX(-50%);
-      width: 60px; height: 3px;
-      background: var(--primary-color);
-      border-radius: 2px;
+    .section h2 { color: #8B0000; }
+    form input, form textarea, form button {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.9rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
-    .section-content { font-size: 1em; line-height: 1.6; }
-
-    /* Over ons / Wat we doen content specifics */
-    .features { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
-    .feature-item { flex: 1 1 45%; background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-    .feature-item h3 { font-size: 1.1em; margin-bottom: 0.5em; color: var(--text-color); }
-    .feature-item p { font-size: 0.95em; color: var(--light-text); }
-
-    /* Word model form */
-    .form-container { background: #fff; border: 1px solid var(--border-color); border-radius: 10px; padding: 30px; max-width: 500px; margin: 0 auto; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .form-container h3 { text-align: center; margin-bottom: 20px; color: var(--text-color); }
-    .form-group { margin-bottom: 15px; display: flex; flex-direction: column; }
-    .form-group label { font-weight: 600; margin-bottom: 5px; color: var(--text-color); }
-    .form-group input {
-      padding: 10px; font-size: 1em; border: 1px solid var(--border-color);
-      border-radius: 5px;
+    form button {
+      background: #8B0000;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
-    .form-group input:focus { outline: none; border-color: var(--primary-color); }
-    .submit-btn {
-      background: var(--primary-color); color: #fff; font-size: 1em;
-      padding: 12px 20px; border: none; border-radius: 5px;
-      width: 100%; cursor: pointer;
-      transition: background 0.3s;
-    }
-    .submit-btn:hover { background: var(--secondary-color); }
-
-    /* Contact (footer) */
-    footer { background: #212121; color: #f0f0f0; text-align: center; padding: 40px 20px; }
-    .contact-info p { margin: 0.5em 0; }
-    .contact-info a { color: #f0f0f0; font-weight: 500; }
-    .contact-info a:hover { color: var(--primary-color); }
-
-    /* Responsive tweaks */
-    @media(max-width: 768px) {
-      .features { flex-direction: column; }
-      .feature-item { flex: 1 1 100%; }
-      nav ul { flex-wrap: wrap; }
-      .hero-title { font-size: 2em; }
-      .hero-subtitle { font-size: 1em; }
-    }
-    @media(max-width: 480px) {
-      nav li { margin: 5px; }
-      .hero-title { font-size: 1.7em; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background: #fff;
+      color: #777;
     }
   </style>
 </head>
 <body>
-
-  <!-- Navigatie -->
   <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#wat-we-doen">Wat we doen</a></li>
-      <li><a href="#word-model">Word model</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <a href="#about">О проекте</a>
+    <a href="#facts">Факты</a>
+    <a href="#action">План</a>
+    <a href="#form">Жалоба</a>
+    <a href="#contact">Контакты</a>
   </nav>
 
-  <!-- Home / Hero Section -->
-  <header id="home">
-    <h1 class="hero-title">Jouw modellencarrière, onze missie</h1>
-    <p class="hero-subtitle">Gratis promotie voor ambitieuze modellen via Instagram, TikTok, Twitch en meer. Professioneel, betrouwbaar en 100% op contractbasis.</p>
-    <a href="#word-model" class="hero-cta">Meld je nu gratis aan</a>
+  <header>
+    <h1>Binance заморозил €30,000</h1>
+    <p>Публичная кампания разоблачения. Твоя история может спасти других.</p>
   </header>
 
-  <!-- Over ons Section -->
-  <section id="over-ons">
-    <h2 class="section-title">Over ons</h2>
-    <div class="section-content">
-      <p><strong>Eho VIP Model</strong> is een modellenbureau van de nieuwe generatie. Wij zijn jouw partner in het opbouwen van een succesvolle modellen- en influencerscarrière – <em>zonder kosten vooraf.</em> Ons ervaren team promoot jou <strong>gratis</strong> op social media en investeert in jouw talent.</p>
-      <p>Waarom doen we dat? Omdat jouw succes ons succes is. Wij werken op basis van <strong>winstdeling</strong>: als jij inkomsten verdient, ontvangen wij een afgesproken percentage. Alles gebeurt legaal en transparant, vastgelegd in een contract. Geen gedoe, geen kleine lettertjes – wij groeien mee met jou.</p>
-      <p>Ons bureau combineert traditionele modellenwereld-expertise met moderne <strong>influencer marketing</strong>. We hebben een netwerk van merken en creators, en weten precies hoe we jouw profiel in de schijnwerpers zetten. Professionaliteit, vertrouwen en persoonlijke begeleiding staan bij ons voorop.</p>
-    </div>
+  <section class="section" id="about">
+    <h2>О проекте</h2>
+    <p>Мы — пострадавшие от действий Binance. Наши средства были заморожены без объяснений. Binance не отвечает, не возвращает деньги, не признаёт вины. Мы запускаем масштабную кампанию, чтобы добиться справедливости и привлечь к ответственности виновных.</p>
   </section>
 
-  <!-- Wat we doen Section -->
-  <section id="wat-we-doen">
-    <h2 class="section-title">Wat we doen</h2>
-    <div class="section-content">
-      <p>Bij Eho VIP Model krijg je méér dan alleen management – wij bieden een totaalpakket om jouw bereik te vergroten en jouw merk op te bouwen:</p>
-      <div class="features">
-        <div class="feature-item">
-          <h3>📈 Social media promotie</h3>
-          <p>We laten jouw Instagram, TikTok en andere kanalen explosief groeien. Dagelijks actieve promotie, de juiste hashtags en strategische contentplanning – zo vergroten we je volgersbasis en zichtbaarheid.</p>
-        </div>
-        <div class="feature-item">
-          <h3>🤝 Samenwerkingen</h3>
-          <p>Profiteer van ons uitgebreide netwerk. We koppelen jou aan passende merken en campagnes. Van gesponsorde posts tot ambassadeurschappen – wij regelen de deals, jij doet wat je leuk vindt en verdient eraan.</p>
-        </div>
-        <div class="feature-item">
-          <h3>📸 Coaching & Creatie</h3>
-          <p>Fotoshoots, videoproducties, content ideeën – we staan naast je. Onze experts helpen jou met het creëren van professionele content die aanslaat. Zo presenteer jij je op je best aan volgers én potentiële opdrachtgevers.</p>
-        </div>
-        <div class="feature-item">
-          <h3>💼 Contract & Verdiensten</h3>
-          <p>Transparantie voorop: alle afspraken leggen we vast in een helder contract. Je deelt in de opbrengsten – wij vragen geen vooruitbetaling. Pas als jij inkomsten krijgt, ontvangen wij onze afgesproken commissie. Fair en eenvoudig.</p>
-        </div>
-      </div>
-      <p>Met deze aanpak hoef jij je geen zorgen te maken over marketing of contracten. Jij focust op poseren en creëren; wij doen de rest. <strong>Samen bouwen we aan jouw merk</strong> – en tillen we jouw modellencarrière naar het hoogste niveau.</p>
-    </div>
+  <section class="section" id="facts">
+    <h2>Факты</h2>
+    <ul>
+      <li>19 транзакций заморожены, общая сумма — более €30,000</li>
+      <li>Поддержка Binance игнорирует обращения</li>
+      <li>Формальный возврат невозможен — требуют txid, которого нет</li>
+      <li>Binance продолжает использовать замороженный адрес</li>
+    </ul>
   </section>
 
-  <!-- Word model Section (CTA + Form) -->
-  <section id="word-model">
-    <h2 class="section-title">Word model</h2>
-    <div class="section-content">
-      <p>Droom je van een carrière als model en influencer? Dit is je kans! Vul het onderstaande formulier in en word onderdeel van <strong>Eho VIP Model</strong>. We behandelen je aanmelding discreet en nemen spoedig contact met je op als je profiel aansluit bij wat we zoeken.</p>
-      <div class="form-container">
-        <h3>Inschrijfformulier</h3>
-        <form action="#" method="post">
-          <div class="form-group">
-            <label for="name">Naam</label>
-            <input type="text" id="name" name="name" placeholder="Je volledige naam" required />
-          </div>
-          <div class="form-group">
-            <label for="age">Leeftijd</label>
-            <input type="number" id="age" name="age" placeholder="Bijv. 20" min="13" required />
-          </div>
-          <div class="form-group">
-            <label for="telegram">Telegram-gebruikersnaam</label>
-            <input type="text" id="telegram" name="telegram" placeholder="@jouwgebruikersnaam" required />
-          </div>
-          <div class="form-group">
-            <label for="email">E-mailadres</label>
-            <input type="email" id="email" name="email" placeholder="naam@voorbeeld.com" required />
-          </div>
-          <button type="submit" class="submit-btn">Aanmelden</button>
-        </form>
-      </div>
-      <p style="margin-top: 15px; font-size: 0.9em; text-align: center; color: var(--light-text);">* We gaan vertrouwelijk om met je gegevens. Na verzenden nemen we bij interesse binnen enkele dagen contact op.</p>
-    </div>
+  <section class="section" id="action">
+    <h2>Что мы делаем</h2>
+    <ul>
+      <li>Создаём сайты и распространяем информацию в каждом GEO</li>
+      <li>Готовим публикации в Forbes и других крупных изданиях</li>
+      <li>Собираем жалобы для подачи в полицию и регуляторы</li>
+      <li>Запускаем рекламу с предупреждением пользователям Binance</li>
+    </ul>
   </section>
 
-  <!-- Contact Section (Footer) -->
+  <section class="section" id="form">
+    <h2>Расскажи свою историю</h2>
+    <form id="reportForm">
+      <input type="text" name="name" placeholder="Имя / Псевдоним" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="story" placeholder="Что произошло?" required></textarea>
+      <button type="submit" id="sendBtn">Отправить жалобу</button>
+    </form>
+    <div class="success" id="successMsg" style="color:green; display:none">✅ Жалоба сохранена (Telegram будет позже)</div>
+  </section>
+
   <footer id="contact">
-    <h2 class="section-title" style="color: #f0f0f0;">Contact</h2>
-    <div class="contact-info">
-      <p>E-mail: <a href="mailto:ehovipmodel@gmail.com">ehovipmodel@gmail.com</a></p>
-      <p>Telegram: <a href="https://t.me/ehovipmodel" target="_blank" rel="noopener">@ehovipmodel</a></p>
-      <p>© 2025 Eho VIP Model – Alle rechten voorbehouden</p>
-    </div>
+    <p>© 2025 Binance Victims Initiative. Мы добьёмся справедливости. Контакт: info@yourdomain.com</p>
   </footer>
 
-  <!-- Optional JavaScript for scroll reveal (IntersectionObserver) -->
   <script>
-    // Animatie: fade-in bij scroll (voegt 'visible' class toe als element in viewport komt)
-    const observerOptions = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-    document.querySelectorAll('.section-content, .form-container').forEach(el => {
-      el.classList.add('fade-in-up');
-      observer.observe(el);
+    document.getElementById("reportForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const story = form.story.value.trim();
+      if (story.length < 10) {
+        alert("Пожалуйста, опишите ситуацию подробнее.");
+        return;
+      }
+      const data = { name, email, story };
+      console.log("Новая жалоба:", data);
+      document.getElementById("sendBtn").disabled = true;
+      document.getElementById("sendBtn").innerText = "Сохранено";
+      document.getElementById("successMsg").style.display = "block";
+      form.reset();
     });
   </script>
-  <style>
-    /* CSS Animatie classes */
-    .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .visible.fade-in-up { opacity: 1; transform: translateY(0); }
-  </style>
-
 </body>
 </html>

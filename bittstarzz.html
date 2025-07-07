@@ -7,20 +7,21 @@
   <style>
     body {
       margin: 0;
-      background: url('https://i.ibb.co/WzGpwn6/bitstarz-bg.jpg') no-repeat center center fixed;
+      background: #0d0d0d url('https://i.imgur.com/zZZhDRd.jpg') no-repeat center top;
       background-size: cover;
       font-family: Arial, sans-serif;
       color: #fff;
       text-align: center;
     }
     .container {
-      padding: 50px 20px;
-      background: rgba(0, 0, 0, 0.7);
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.75);
       min-height: 100vh;
     }
     h1 {
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 20px;
+      font-weight: bold;
     }
     .bags {
       display: flex;
@@ -29,22 +30,22 @@
       margin-top: 30px;
     }
     .bags img {
-      width: 100px;
+      width: 110px;
       cursor: pointer;
-      transition: transform 0.3s;
+      transition: transform 0.2s ease;
     }
     .bags img:hover {
       transform: scale(1.1);
     }
     #result {
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 22px;
-      color: #00e676;
+      color: #00ff8c;
     }
     .btn {
       display: inline-block;
-      margin-top: 30px;
-      padding: 16px 30px;
+      margin-top: 25px;
+      padding: 16px 32px;
       background-color: #f39c12;
       color: #000;
       font-size: 20px;
@@ -59,15 +60,15 @@
 </head>
 <body>
   <div class="container">
-    <h1>Угадай, в каком мешке фриспины 🎰</h1>
+    <h1>🎁 Угадай, в каком мешке спрятаны фриспины!</h1>
     <div class="bags">
-      <img src="https://i.ibb.co/Y0G7xW0/bag.png" onclick="revealPrize()" />
-      <img src="https://i.ibb.co/Y0G7xW0/bag.png" onclick="revealPrize()" />
-      <img src="https://i.ibb.co/Y0G7xW0/bag.png" onclick="revealPrize()" />
+      <img src="https://i.imgur.com/JMJGw8Y.png" onclick="revealPrize(this)" />
+      <img src="https://i.imgur.com/JMJGw8Y.png" onclick="revealPrize(this)" />
+      <img src="https://i.imgur.com/JMJGw8Y.png" onclick="revealPrize(this)" />
     </div>
     <div id="result"></div>
     <div id="cta" style="display: none;">
-      <a id="cta-button" class="btn" target="_blank" href="https://bzstarz.com/b6583691a">ЗАБРАТЬ БОНУС</a>
+      <a id="cta-button" class="btn" target="_blank" href="https://bzstarz.com/b6583691a">🎯 ЗАБРАТЬ БОНУС</a>
     </div>
   </div>
 
@@ -82,10 +83,11 @@
     }
 
     let opened = false;
-    function revealPrize() {
+    function revealPrize(el) {
       if (opened) return;
       opened = true;
-      document.getElementById("result").textContent = "🎉 Вы угадали! Вы выиграли 180 фриспинов!";
+      el.style.transform = "scale(1.2)";
+      document.getElementById("result").innerHTML = "🎉 Поздравляем! Вы выиграли <b>180 фриспинов</b>!";
       document.getElementById("cta").style.display = "block";
     }
   </script>

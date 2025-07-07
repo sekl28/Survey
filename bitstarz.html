@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casino Bonus for Canada</title>
   <style>
     body {
@@ -86,19 +86,17 @@
 </head>
 <body>
   <div class="container">
-    
-
     <h1>🇨🇦 Grab Your 180 Free Spins in CAD</h1>
     <p>
-      Crypto payouts in minutes • VIP status • Up to 5 BTC bonus<br>
+      Crypto payouts in minutes • VIP status • Up to 5 BTC bonus<br />
       Trusted by thousands of Canadian players
     </p>
 
-    <a id="cta-button" href="https://bzstarz.com/b6583691a" class="btn" target="_blank">💰 UNLOCK BONUS NOW</a>
+    <a class="btn cta" href="https://bzstarz.com/b6583691a" target="_blank" rel="nofollow">💰 UNLOCK BONUS NOW</a>
 
     <div class="live-stats">
-      💸 Last payout: CA$325 — 4 minutes ago<br>
-      🧑‍💻 Players online: 1,219<br>
+      💸 Last payout: CA$325 — 4 minutes ago<br />
+      🧑‍💻 Players online: 1,219<br />
       🎰 4,912 players claimed bonuses today
       <div class="timer" id="timer"></div>
     </div>
@@ -116,10 +114,10 @@
       </ul>
     </div>
 
-    <a href="https://bzstarz.com/b6583691a" class="btn" target="_blank">🎯 I WANT MY BONUS</a>
+    <a class="btn cta" href="https://bzstarz.com/b6583691a" target="_blank" rel="nofollow">🎯 I WANT MY BONUS</a>
 
-    <p style="margin-top: 60px; font-size:14px; color:#aaa;">
-      18+ only. Gamble responsibly. Bonuses vary by deposit.<br>
+    <p style="margin-top: 60px; font-size: 14px; color: #aaa;">
+      18+ only. Gamble responsibly. Bonuses vary by deposit.<br />
       This site does not host any gambling content — we provide access to promotional offers.
     </p>
   </div>
@@ -128,8 +126,8 @@
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const clickid = urlParams.get('clickid');
-    if (clickid) {
-      document.querySelectorAll('a[href*="bzstarz.com"]').forEach(link => {
+    if (clickid && clickid.length > 5) {
+      document.querySelectorAll('a.cta').forEach(link => {
         const url = new URL(link.href);
         url.searchParams.set('sub1', clickid);
         link.href = url.toString();

@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #101010;
+      background-color: #0e0e0e;
       color: #fff;
       margin: 0;
       padding: 0;
@@ -19,7 +19,7 @@
       padding: 40px 20px;
     }
     h1 {
-      font-size: 28px;
+      font-size: 30px;
       color: #f1c40f;
     }
     p {
@@ -28,18 +28,18 @@
     }
     .btn {
       display: inline-block;
-      background-color: #f39c12;
-      color: #000;
+      background-color: #00c853;
+      color: #fff;
       padding: 16px 30px;
       font-size: 20px;
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
-      margin-top: 30px;
+      margin: 30px 0;
       transition: background 0.3s;
     }
     .btn:hover {
-      background-color: #e67e22;
+      background-color: #00b248;
       cursor: pointer;
     }
     .features {
@@ -64,33 +64,54 @@
       margin-bottom: 12px;
     }
     .features ul li::before {
-      content: "✔ ";
+      content: "🔥 ";
+      color: #ff9800;
+    }
+    .live-stats {
+      margin-top: 30px;
+      font-size: 16px;
       color: #00e676;
+    }
+    .timer {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #f44336;
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <img src="/banner-canada-900x900.jpg" alt="Casino Bonus Banner" style="width: 100%; max-width: 300px; border-radius: 12px; margin-bottom: 20px;">
+
     <h1>Get Casino Bonuses in CAD 🇨🇦</h1>
     <p>
       Fast crypto payouts • 180 free spins or up to 5 BTC • VIP status available<br>
       Withdraw in under 10 minutes
     </p>
 
-    <a id="cta-button" href="https://bzstarz.com/b6583691a" class="btn" target="_blank">CLAIM YOUR BONUS</a>
+    <a id="cta-button" href="https://bzstarz.com/b6583691a" class="btn" target="_blank">🎁 CLAIM YOUR BONUS</a>
+
+    <div class="live-stats">
+      💸 Last payout: CA$325 — 4 minutes ago<br>
+      🧑‍💻 Players online: 1,219<br>
+      🎰 4,912 players claimed bonuses today
+      <div class="timer" id="timer"></div>
+    </div>
 
     <div class="features">
       <h2>Why players choose us:</h2>
       <ul>
-        <li>Exclusive VIP program with personal manager</li>
+        <li>VIP program with personal manager</li>
         <li>Up to 5 BTC or 180 free spins for new users</li>
         <li>Withdrawals in under 10 minutes — no limits</li>
         <li>Fully crypto-compatible (BTC, ETH, USDT, etc.)</li>
         <li>Works flawlessly in Canada 🇨🇦</li>
-        <li>Consistently rated among the top online casinos</li>
+        <li>Top-rated trusted online casino</li>
         <li>100% welcome bonus in CAD</li>
       </ul>
     </div>
+
+    <a href="https://bzstarz.com/b6583691a" class="btn" target="_blank">GET YOUR BONUS NOW</a>
 
     <p style="margin-top: 60px; font-size:14px; color:#aaa;">
       18+ only. Gamble responsibly. Bonuses vary by deposit.<br>
@@ -103,11 +124,29 @@
     const urlParams = new URLSearchParams(window.location.search);
     const clickid = urlParams.get('clickid');
     if (clickid) {
-      const btn = document.getElementById('cta-button');
-      const url = new URL(btn.href);
-      url.searchParams.set('sub1', clickid);
-      btn.href = url.toString();
+      document.querySelectorAll('a[href*="bzstarz.com"]').forEach(link => {
+        const url = new URL(link.href);
+        url.searchParams.set('sub1', clickid);
+        link.href = url.toString();
+      });
     }
+
+    // Countdown timer
+    const deadline = new Date(Date.now() + 3 * 60 * 60 * 1000);
+    const timerEl = document.getElementById("timer");
+    function updateTimer() {
+      const diff = deadline - new Date();
+      if (diff <= 0) {
+        timerEl.textContent = "Offer expired";
+        return;
+      }
+      const h = Math.floor(diff / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+      timerEl.textContent = `🔥 Limited-time offer — expires in: ${h}h ${m}m ${s}s`;
+    }
+    updateTimer();
+    setInterval(updateTimer, 1000);
   </script>
 </body>
 </html>

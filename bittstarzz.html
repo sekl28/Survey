@@ -7,15 +7,13 @@
   <style>
     body {
       margin: 0;
-      background: #0d0d0d url('https://cdn.pixabay.com/photo/2019/07/31/13/45/poker-4370841_1280.jpg') no-repeat center top;
-      background-size: cover;
+      background-color: #0d0d0d;
       font-family: Arial, sans-serif;
       color: #fff;
       text-align: center;
     }
     .container {
       padding: 40px 20px;
-      background: rgba(0, 0, 0, 0.75);
       min-height: 100vh;
     }
     h1 {
@@ -30,12 +28,16 @@
       margin-top: 30px;
       flex-wrap: wrap;
     }
-    .bags img {
+    .bag {
       width: 100px;
+      height: 100px;
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABXklEQVR4nO3bMQrCQBAF0T/FsXtscEEsNodxHa5sHC6K6IUd+0kFRO5Z2rPl2gYeWYJgAAAAAAAAAAAHCP8tA98LdXZKY4rL/Wr+Rl2EGuUopxHXcQtZ+uKcePPdz3Txv8o1zXtwb7TYDHWArl9dU1Xd3O2FTfK+2FlWYqxVe9Tmd0Xk5kQz7vpyqepZ2SO82WeYmDAAAAAAAAAAAAj3q3Cbdvn4bZAAAAAElFTkSuQmCC');
+      background-size: cover;
       cursor: pointer;
+      border-radius: 12px;
       transition: transform 0.2s ease;
     }
-    .bags img:hover {
+    .bag:hover {
       transform: scale(1.1);
     }
     #result {
@@ -63,9 +65,9 @@
   <div class="container">
     <h1>🎁 Угадай, в каком мешке спрятаны фриспины!</h1>
     <div class="bags">
-      <img src="https://i.postimg.cc/k4YXspCZ/bag1.png" onclick="revealPrize(this)" alt="Мешок 1" />
-      <img src="https://i.postimg.cc/k4YXspCZ/bag1.png" onclick="revealPrize(this)" alt="Мешок 2" />
-      <img src="https://i.postimg.cc/k4YXspCZ/bag1.png" onclick="revealPrize(this)" alt="Мешок 3" />
+      <div class="bag" onclick="revealPrize(this)"></div>
+      <div class="bag" onclick="revealPrize(this)"></div>
+      <div class="bag" onclick="revealPrize(this)"></div>
     </div>
     <div id="result"></div>
     <div id="cta" style="display: none;">

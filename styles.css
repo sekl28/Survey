@@ -1,90 +1,74 @@
-// pages/index.tsx (using Next.js Pages directory for example)
-import { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
+/* =====  Variables  ===== */
+:root{
+  --bg-dark: #0e0e0e;
+  --bg-darker:#080808;
+  --text-light:#f6f6f6;
+  --primary:#00c76f;           /* ярко‑зелёный акцент */
+  --primary-hover:#00e283;
+  --font-main:'Open Sans',sans-serif;
+}
 
-const HomePage: NextPage = () => {
-  return (
-    <>
-      <Head>
-        <title>Best Online Casinos & Sportsbooks 2025 | SiteName</title>
-        <meta name="description" content="Discover top online casinos, sportsbooks, and affiliate programs. Expert reviews, ratings, and exclusive bonuses for 2025." />
-      </Head>
+/* =====  Reset / Base  ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg-dark);color:var(--text-light);font-family:var(--font-main);line-height:1.6}
+a{color:var(--primary);text-decoration:none}
+img{max-width:100%;display:block}
 
-      <header className="sticky top-0 bg-white shadow z-50">
-        <nav className="max-w-7xl mx-auto flex items-center justify-between p-4">
-          <Link href="/" className="text-2xl font-bold text-red-600">SiteName</Link>
-          <div className="hidden md:flex space-x-6">
-            <Link href="/top-casinos" className="hover:text-red-600">Top Casinos</Link>
-            <Link href="/top-sportsbooks" className="hover:text-red-600">Top Sportsbooks</Link>
-            <Link href="/top-affiliates" className="hover:text-red-600">Affiliate Programs</Link>
-            <Link href="/contact" className="hover:text-red-600">Contact</Link>
-          </div>
-          {/* Hamburger for mobile */}
-          <button className="md:hidden p-2" onClick={/* toggle mobile menu */}>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
-          </button>
-        </nav>
-        {/* Mobile menu drawer (render conditionally when open) */}
-        {/* ... */}
-      </header>
+/* =====  Containers  ===== */
+.container{width:90%;max-width:1200px;margin-inline:auto}
+.flex-between{display:flex;justify-content:space-between;align-items:center}
 
-      <main className="max-w-7xl mx-auto p-4">
-        {/* Hero Section */}
-        <section className="bg-[url('/images/casino-bg.jpg')] bg-cover bg-center text-center text-white py-12 px-4 rounded-lg">
-          <h1 className="text-4xl sm:text-5xl font-bold">Find the Best Online Casinos & Sportsbooks</h1>
-          <p className="mt-4 text-lg sm:text-xl text-gray-100">Up-to-date reviews and rankings of gambling sites you can trust.</p>
-          <Link href="/top-casinos" className="inline-block mt-6 bg-red-600 hover:bg-red-500 text-white text-lg font-semibold py-3 px-8 rounded-md">
-            View Top Casinos
-          </Link>
-        </section>
+/* =====  Header / Nav  ===== */
+.site-header{background:var(--bg-darker);position:sticky;top:0;z-index:1000}
+.logo img{height:40px}
+.main-nav{display:flex}
+.nav-list{display:flex;gap:1.5rem}
+.nav-list a{font-weight:600;padding:1rem 0;display:block}
+.nav-list a.active,.nav-list a:hover{color:var(--primary)}
+/* Burger */
+.burger{display:none;background:none;border:0;flex-direction:column;gap:4px}
+.burger span{width:24px;height:3px;background:#fff;border-radius:2px;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-        {/* Top 3 Casinos Preview */}
-        <section className="mt-12">
-          <h2 className="text-2xl font-semibold mb-6">🏆 Top 3 Casinos</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Example card */}
-            <div className="border rounded-xl p-4 shadow hover:shadow-lg transition">
-              <div className="flex items-center space-x-4">
-                <img src="/logos/casino1.png" alt="Casino 1" className="w-12 h-12"/>
-                <h3 className="text-xl font-bold">Casino 1</h3>
-              </div>
-              <p className="mt-2 text-sm text-gray-600">100% up to $500 & 100 Free Spins</p>
-              <p className="mt-1">Rating: <span className="text-yellow-500 font-semibold">4.8/5 ⭐</span></p>
-              <div className="mt-4 flex space-x-2">
-                <a href="https://casino1-affiliate-link" target="_blank" rel="nofollow noreferrer"
-                   className="flex-1 bg-green-600 hover:bg-green-500 text-white text-center text-sm font-medium py-2 px-4 rounded">
-                  Play Now
-                </a>
-                <Link href="/casinos/casino1" 
-                   className="flex-1 border border-green-600 text-green-600 text-center text-sm font-medium py-2 px-4 rounded hover:bg-green-50">
-                  Review
-                </Link>
-              </div>
-            </div>
-            {/* ...more cards for top 2 and 3... */}
-          </div>
-          <div className="text-right mt-2">
-            <Link href="/top-casinos" className="text-blue-600 hover:underline text-sm">View all casinos &raquo;</Link>
-          </div>
-        </section>
+/* =====  Hero  ===== */
+.hero{background:url('assets/hero-bg.jpg') center/cover no-repeat;min-height:60vh;display:flex;align-items:center;position:relative}
+.hero-overlay{background:linear-gradient(180deg,rgba(8,8,8,.4),rgba(8,8,8,.9));width:100%}
+.hero-content{text-align:center;padding:4rem 1rem}
+.hero-title{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;margin-bottom:.75rem}
+.hero-sub{font-size:1.2rem;margin-bottom:2rem}
+.btn{display:inline-block;padding:.9rem 2rem;border-radius:6px;font-weight:700;transition:.2s}
+.btn-primary{background:var(--primary);color:#000}
+.btn-primary:hover{background:var(--primary-hover)}
+.btn-secondary{background:#222;color:var(--text-light)}
+.btn-secondary:hover{background:#333}
 
-        {/* Similar sections for Top Sportsbooks, Top Affiliate Programs... */}
+/* =====  Features  ===== */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.25rem;margin-top:3rem}
+.feature{text-align:center;padding:1.2rem;background:#1a1a1a;border-radius:8px}
+.feature i{font-size:1.7rem;margin-bottom:.6rem;color:var(--primary)}
+.feature h3{font-size:1.1rem;margin-bottom:.45rem}
 
-      </main>
+/* =====  About / Trust  ===== */
+.about{margin-top:4rem;text-align:center}
+.about h2{font-size:2rem;margin-bottom:1rem}
+.about p{max-width:750px;margin-inline:auto 1.5rem;margin-bottom:2rem}
+.trust{margin:3rem auto;text-align:center}
 
-      <footer className="bg-gray-800 text-gray-300 text-sm mt-12">
-        <div className="max-w-7xl mx-auto p-6 flex flex-col sm:flex-row justify-between">
-          <p>&copy; 2025 SiteName. All rights reserved.</p>
-          <div className="flex space-x-4 mt-2 sm:mt-0">
-            <Link href="/about" className="hover:text-white">About Us</Link>
-            <Link href="/terms" className="hover:text-white">Terms & Conditions</Link>
-            <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
-          </div>
-        </div>
-      </footer>
-    </>
-  );
-};
+/* =====  Footer  ===== */
+.site-footer{background:var(--bg-darker);margin-top:4rem;font-size:.9rem}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;padding:2.5rem 0}
+.footer-grid h4{margin-bottom:.6rem}
+.footer-bottom{text-align:center;padding:1rem;background:#000;font-size:.8rem}
+.disclaimer{display:block;margin-top:.4rem;color:#999}
 
-export default HomePage;
+/* =====  Responsive  ===== */
+@media(max-width: 860px){
+  .main-nav{position:fixed;inset:0 0 auto auto;background:var(--bg-dark);height:100vh;width:60%;max-width:260px;transform:translateX(100%);transition:.3s;padding-top:4rem}
+  .main-nav.open{transform:none}
+  .nav-list{flex-direction:column;gap:0}
+  .nav-list li{border-bottom:1px solid #222}
+  .nav-list a{padding:1rem 1.5rem}
+  .burger{display:flex}
+}

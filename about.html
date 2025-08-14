@@ -1,388 +1,117 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Партнёрская программа для скаутов стрим-моделей</title>
-  <!-- FontAwesome (иконки) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  <!-- Google Fonts (шрифты) -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    /* Сброс и общие настройки */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Open Sans', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f9f9f9;
-    }
-    h1, h2, h3 {
-      font-family: 'Montserrat', sans-serif;
-    }
-    h1 { font-size: 2.5em; line-height: 1.2; margin-bottom: 0.5em; color: #222; }
-    h2 { font-size: 1.5em; margin-bottom: 0.5em; color: #222; text-align: center; }
-    h3 { font-size: 1.1em; margin: 1em 0 0.5em; color: #222; }
-    p { margin-bottom: 1em; }
-    a { text-decoration: none; color: #fff; }
-    /* Верхняя объявляющая плашка */
-    .announcement {
-      background: #ffc107;
-      color: #000;
-      text-align: center;
-      padding: 0.5em 1em;
-      font-weight: 600;
-    }
-    /* Hero (первый экран) */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 2em 1em;
-      background: #e9f7fe;
-    }
-    .hero-content {
-      flex: 1 1 500px;
-      max-width: 600px;
-      padding: 1em;
-    }
-    .hero h1 {
-      color: #0d6efd;
-    }
-    .hero .subtitle {
-      font-size: 1.2em;
-      margin-bottom: 1em;
-      font-weight: 600;
-      color: #333;
-    }
-    .hero .tagline {
-      font-size: 1em;
-      color: #555;
-      margin-bottom: 1.5em;
-    }
-    .hero-image {
-      flex: 1 1 400px;
-      text-align: center;
-      padding: 1em;
-    }
-    .hero-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    /* Блок преимуществ */
-    .advantages {
-      background: #fff;
-      padding: 2em 1em;
-    }
-    .advantages-list {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-width: 800px;
-      margin: 0 auto;
-      gap: 1em;
-    }
-    .advantages-list li {
-      background: #f1f7fd;
-      border: 1px solid #dbe9f5;
-      border-radius: 8px;
-      padding: 1em;
-      flex: 1 1 calc(50% - 2em);
-      display: flex;
-      align-items: flex-start;
-      font-size: 0.95em;
-    }
-    .advantages-list li i {
-      color: #0d6efd;
-      margin-right: 0.5em;
-      font-size: 1.2em;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .advantages-list strong {
-      font-weight: 600;
-    }
-    .advantages-list li small {
-      font-size: 0.9em;
-      color: #555;
-    }
-    /* Описание программы / Как это работает */
-    .how-it-works {
-      padding: 2em 1em;
-      background: #f9f9f9;
-    }
-    .how-it-works .content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .how-it-works p {
-      margin-bottom: 1em;
-    }
-    /* Отзывы (истории успеха) */
-    .testimonials {
-      background: #fff;
-      padding: 2em 1em;
-      text-align: center;
-    }
-    .testimonials .testimonial-list {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .testimonial {
-      background: #f1f1f1;
-      border-radius: 8px;
-      padding: 1em;
-      margin: 1em 0;
-      font-style: italic;
-      position: relative;
-    }
-    .testimonial::before {
-      content: "“";
-      font-size: 2em;
-      color: #ccc;
-      position: absolute;
-      top: -10px;
-      left: -5px;
-    }
-    .testimonial::after {
-      content: "”";
-      font-size: 2em;
-      color: #ccc;
-      position: absolute;
-      bottom: -10px;
-      right: -5px;
-    }
-    .testimonial-author {
-      margin-top: 0.5em;
-      font-weight: 600;
-      font-style: normal;
-      text-align: right;
-    }
-    /* FAQ (частые вопросы) */
-    .faq {
-      padding: 2em 1em;
-      background: #f9f9f9;
-    }
-    .faq .faq-list {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .faq h3 {
-      font-size: 1em;
-      font-weight: 600;
-      margin-top: 1.5em;
-      margin-bottom: 0.3em;
-      color: #0d6efd;
-    }
-    .faq p {
-      margin-bottom: 1em;
-    }
-    /* Завершающий CTA блок */
-    .cta-section {
-      background: #0d6efd;
-      color: #fff;
-      text-align: center;
-      padding: 2em 1em;
-    }
-    .cta-section .cta-content {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .cta-section h2 {
-      color: #fff;
-      margin-bottom: 0.5em;
-    }
-    .cta-section p {
-      margin-bottom: 1.5em;
-      font-size: 1.1em;
-    }
-    .cta-button {
-      display: inline-block;
-      background: #28a745;
-      color: #fff;
-      font-size: 1.1em;
-      font-weight: 600;
-      text-decoration: none;
-      padding: 0.75em 1.5em;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .cta-button:hover {
-      background: #218838;
-    }
-    .cta-section .telegram-link {
-      display: block;
-      margin-top: 1em;
-      font-size: 0.95em;
-      color: #ccefff;
-    }
-    .cta-section .telegram-link i {
-      margin-right: 0.3em;
-    }
-    /* Footer (подвал) */
-    footer {
-      background: #222;
-      color: #aaa;
-      font-size: 0.8em;
-      text-align: center;
-      padding: 1em 0;
-    }
-    footer a {
-      color: #aaa;
-      text-decoration: none;
-      margin: 0 0.5em;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    /* Адаптивность */
-    @media (max-width: 600px) {
-      .advantages-list {
-        flex-direction: column;
-      }
-      .advantages-list li {
-        flex: 1 1 auto;
-      }
-      .hero {
-        padding: 1.5em 1em;
-      }
-      .hero h1 {
-        font-size: 2em;
-      }
-      .hero .subtitle {
-        font-size: 1.1em;
-      }
-      .cta-button {
-        width: 100%;
-      }
-    }
-  </style>
-  <!-- Код пикселя Facebook (плейсхолдер) 
-  <script>
-    !function(f,b,e,v,n,t,s){
-      if(f.fbq) return; n = f.fbq = function(){ n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
-      if(!f._fbq) f._fbq = n;
-      n.push = n; n.loaded = true; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = true;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s);
-    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img alt="" height="1" width="1" style="display:none"
-       src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-  /></noscript>
-  -->
-  <!-- Google Analytics (плейсхолдер) 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
-  -->
-</head>
-<body>
-  <!-- Ограниченное предложение / акция -->
-  <div class="announcement">
-    Идёт набор ограниченного числа скаутов по специальным условиям – успейте занять своё место и начать зарабатывать!
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Станьте партнёром-скаутом: 20% доля с каждой модели на постоянной основе</h1>
+    <p class="subtitle">Вы рекомендуете кандидата — мы обучаем и сопровождаем. Выплаты раз в месяц, прозрачно.</p>
+    <p class="hero-ctas">
+      <a href="#" class="btn btn-primary">Стать партнёром</a>
+      <a href="https://t.me/YourTelegramLink" class="btn btn-secondary">Написать в Telegram</a>
+    </p>
   </div>
+  <div class="hero-image">
+    <!-- Illustrative image of a scout recommending a candidate (not a model's photo) -->
+    <img src="illustration-scout.png" alt="Скаут рекомендует кандидата" />
+  </div>
+</section>
 
-  <!-- Hero: заголовок и первый экран -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Монетизируй своё окружение – 20% с дохода модели, пожизненно!</h1>
-      <p class="subtitle">Ищем талантливых скаутов в Армении: помоги знакомым начать карьеру стрим-модели и получай стабильный пассивный доход от $500 в месяц за каждую!</p>
-      <p class="tagline">Приведи подругу на международные стриминговые платформы – мы обучим и раскрутим, а ты будешь получать свой процент постоянно.</p>
+<!-- Benefits Section -->
+<section class="benefits">
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <!-- icon for 20% share -->
+      <h3>20% доля</h3>
+      <p>Постоянная доля с дохода каждой приведённой модели.</p>
     </div>
-    <div class="hero-image">
-      <img src="https://cdn.pixabay.com/photo/2021/04/07/06/38/work-from-home-6158202_1280.jpg" alt="Девушка работает на ноутбуке из дома" />
+    <div class="benefit-card">
+      <!-- icon for no cost -->
+      <h3>Без стартовых затрат</h3>
+      <p>Рекомендация и первичный контакт — остальное берём на себя.</p>
     </div>
-  </header>
-
-  <!-- Блок преимуществ -->
-  <section class="advantages">
-    <ul class="advantages-list">
-      <li><i class="fas fa-percent"></i> <strong>20% навсегда:</strong> Пожизненная комиссия с дохода каждой модели.</li>
-      <li><i class="fas fa-dollar-sign"></i> <strong>$500+ ежемесячно:</strong> Минимальный доход с одной активной модели <small>(≈ 192&nbsp;500 драм)</small>.</li>
-      <li><i class="fas fa-coins"></i> <strong>Пассивный заработок:</strong> Мы работаем – вы получаете выплату.</li>
-      <li><i class="fas fa-rocket"></i> <strong>Обучение и продвижение:</strong> Мы сами обучаем и продвигаем привлечённых вами моделей.</li>
-      <li><i class="fas fa-shield-alt"></i> <strong>Без риска и вложений:</strong> Никаких затрат или сложных обязанностей для вас.</li>
-      <li><i class="fas fa-circle-check"></i> <strong>Прозрачные выплаты:</strong> Ежемесячная комиссия 20% выплачивается стабильно в долларах США.</li>
-    </ul>
-  </section>
-
-  <!-- Описание программы / Как это работает -->
-  <section class="how-it-works">
-    <div class="content">
-      <h2>Как это работает</h2>
-      <p>Мы – профессиональная команда, помогающая новым стрим-моделям выйти на высокий доход. Если у тебя есть знакомая, которая ищет возможность заработать онлайн (например, через видеостриминг), ты можешь стать её скаутом и получить долю от её успеха. Всё просто: ты рекомендуешь нам кандидатуру, мы проводим с ней интервью и обучение, подключаем к топовым стриминговым платформам и обеспечиваем продвижение. Как только модель начинает зарабатывать, ты получаешь 20% от её дохода каждый месяц на постоянной основе.</p>
-      <p>Тебе не нужно разбираться во всех нюансах – мы берём всю работу на себя: от профессионального обучения до технической поддержки. Таким образом, твоя знакомая получает отличный старт в новой карьере, а ты – стабильный доход без дополнительных усилий. Минимальная ежемесячная выплата с одной модели составляет $500, и это только начало – ведь чем больше она зарабатывает, тем больше твои 20%. К примеру, две привлечённые модели могут приносить около $1000 в месяц, а пять моделей — $2500 и более пассивного дохода.</p>
-      <p>Кроме того, мы гарантируем полную конфиденциальность: твоё участие остаётся между нами, а все данные моделей не разглашаются. На каждом этапе наша команда на связи 24/7 – отвечаем на вопросы и поддерживаем и тебя, и привлечённую тобой модель.</p>
+    <div class="benefit-card">
+      <!-- icon for training -->
+      <h3>Обучение и сопровождение</h3>
+      <p>Команда обучает и ведёт модели до стабильных эфиров.</p>
     </div>
-  </section>
-
-  <!-- Отзывы партнёров (истории успеха) -->
-  <section class="testimonials">
-    <h2>Отзывы партнёров</h2>
-    <div class="testimonial-list">
-      <div class="testimonial">
-        <p>Я пригласила 3 подруг и теперь получаю более $1500 пассивно. Девочки довольны работой, а я – своим доходом!</p>
-        <p class="testimonial-author">— Ани, г. Ереван</p>
-      </div>
-      <div class="testimonial">
-        <p>Привлёк двух своих знакомых – теперь получаю около $1000 пассивно каждый месяц. Девушки довольны работой, а я – регулярными выплатами!</p>
-        <p class="testimonial-author">— Армен, г. Гюмри</p>
-      </div>
+    <div class="benefit-card">
+      <!-- icon for payouts -->
+      <h3>Выплаты раз в месяц</h3>
+      <p>Карта/банк/крипто. Отчёт в кабинете.</p>
     </div>
-  </section>
-
-  <!-- Частые вопросы (FAQ) -->
-  <section class="faq">
-    <h2>Частые вопросы</h2>
-    <div class="faq-list">
-      <h3>Что нужно делать скауту?</h3>
-      <p>Ваша задача – только порекомендовать нам кандидата. Далее мы сами связываемся с девушкой, проводим интервью, обучаем и подключаем к платформам. Вам не нужно лично заниматься обучением или контролировать процесс – всё это на нас. Вы просто один раз привели знакомую, а дальше пожизненно получаете свой процент с её заработков.</p>
-
-      <h3>Как я буду получать свои 20%?</h3>
-      <p>Мы выплачиваем вашу комиссию ежемесячно в стабильной валюте – долларах США (можем перевести эквивалент удобным вам способом). Расчёт полностью прозрачный: вы всегда видите доходы модели и свой процент. Выплаты приходят вовремя, каждый месяц.</p>
-
-      <h3>Есть ли ограничения по времени или количеству привлечённых моделей?</h3>
-      <p>Вы можете рекомендовать любое количество моделей – чем больше успешных девушек вы привлечёте, тем выше будет ваш доход. Программа партнёрства действует на постоянной основе. Однако набор новых скаутов по текущим выгодным условиям ограничен, поэтому лучше начать сотрудничество как можно раньше.</p>
-
-      <h3>Какие требования к моделям?</h3>
-      <p>Вы можете пригласить любую знакомую девушку старше 18 лет, которая заинтересована в заработке через онлайн-трансляции. Опыт работы не обязателен – мы обучим с нуля. Важно лишь, чтобы кандидат была мотивирована работать и развиваться на стриминговых платформах.</p>
-
-      <h3>Гарантируется ли конфиденциальность моего участия?</h3>
-      <p>Да, конфиденциальность полностью гарантируется. Мы не афишируем, кто именно является партнёром (скаутом) у модели – ваше участие остаётся между нами. Также мы бережно относимся к данным всех привлечённых моделей: никакая личная информация не попадёт в открытый доступ.</p>
+    <div class="benefit-card">
+      <!-- icon for confidentiality -->
+      <h3>Конфиденциальность</h3>
+      <p>Мы не раскрываем, кто привёл модель.</p>
     </div>
-  </section>
-
-  <!-- Призыв к действию (CTA) -->
-  <section class="cta-section">
-    <div class="cta-content">
-      <h2>Готовы начать зарабатывать?</h2>
-      <p>Свяжитесь с нами прямо сейчас и получите подробную консультацию. Никаких сложных анкет – всего один шаг до пассивного дохода!</p>
-      <a class="cta-button" href="https://t.me/cammanager9" target="_blank">
-        <i class="fab fa-telegram-plane"></i> Узнать детали и начать
-      </a>
-      <p class="telegram-link">
-        Или напишите нам в Telegram: <strong>@cammanager9</strong><br />
-        <small>Достаточно отправить сообщение: «Здравствуйте, хочу узнать подробнее» – и наш менеджер расскажет, как стать скаутом и получить первые выплаты уже в этом месяце.</small>
-      </p>
+    <div class="benefit-card">
+      <!-- icon for analytics -->
+      <h3>Прозрачная аналитика</h3>
+      <p>Видно доход модели и вашу долю по каждому месяцу.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Подвал с юридической информацией -->
-  <footer>
-    18+ (только для совершеннолетних).
-    <a href="#">Политика конфиденциальности</a> | <a href="#">Пользовательское соглашение</a>
-  </footer>
-</body>
-</html>
+<!-- Earnings/Potential Income Section -->
+<section class="earnings">
+  <h2>Сколько можно зарабатывать?</h2>
+  <p>По результатам наших кейсов с активной моделью, партнёры получают от ~$500/мес с каждой модели. Сумма зависит от активности и графика модели.</p>
+  <p><small>Все суммы — ориентировочные и не являются гарантией дохода. Итог зависит от активности модели и графика.</small></p>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works">
+  <h2>Как это работает</h2>
+  <ol class="steps">
+    <li>Оставляете заявку или пишете в Telegram.</li>
+    <li>Передаёте контакт кандидата (18+).</li>
+    <li>Мы берём на себя обучение и запуск модели.</li>
+    <li>Раз в месяц получаете 20% от чистого дохода модели (в отчёте видно расчёт).</li>
+  </ol>
+</section>
+
+<!-- Mid-page Call to Action (CTA) -->
+<section class="cta-section">
+  <a href="#" class="btn btn-primary">Стать партнёром</a>
+  <a href="https://t.me/YourTelegramLink" class="btn btn-secondary">Написать в Telegram</a>
+</section>
+
+<!-- Testimonials/Cases Section -->
+<section class="testimonials">
+  <h2>Отзывы партнёров</h2>
+  <blockquote>
+    <p>«Привёл одну модель, сейчас получаю ~$700/мес»</p>
+    <footer>— Алексей, Краснодар <small>(имя изменено; фото стоковое)</small></footer>
+  </blockquote>
+  <blockquote>
+    <p>«За год пригласила 4 модели, в среднем ~$1500/мес»</p>
+    <footer>— Ирина, Минск <small>(имя изменено; фото стоковое)</small></footer>
+  </blockquote>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq">
+  <h2>FAQ</h2>
+  <dl>
+    <dt>Кого можно рекомендовать?</dt>
+    <dd>Любую девушку 18+ (с техникой или готовностью её приобрести).</dd>
+    <dt>Когда начинаются выплаты партнёру?</dt>
+    <dd>С того месяца, когда модель начала стабильно выходить в эфиры и сформировался доход.</dd>
+    <dt>Как отслеживается моя доля?</dt>
+    <dd>В личном кабинете доступен отчёт с данными по каждой модели.</dd>
+    <dt>Конфиденциальность гарантируется?</dt>
+    <dd>Имя скаута не раскрывается модели и третьим лицам. Отчёты доступны только вам.</dd>
+  </dl>
+</section>
+
+<!-- Final Call to Action -->
+<section class="cta-final">
+  <h2>Готовы начать?</h2>
+  <p>
+    <a href="#" class="btn btn-primary">Стать партнёром</a>
+    <a href="https://t.me/YourTelegramLink" class="btn btn-secondary">Написать в Telegram</a>
+  </p>
+</section>
+
+<!-- Footer (Legal and Moderation Info) -->
+<footer class="legal">
+  <p>18+. Доход не гарантируется. <a href="/privacy">Политика конфиденциальности</a>. <a href="/offer">Публичная оферта</a>.</p>
+</footer>

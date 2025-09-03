@@ -1,0 +1,254 @@
+/* ==========================================================================
+   THE LIQUID LIGHTBOX - FULL STYLESHEET
+   Analysis: This file contains the complete and structured CSS for the
+   entire experience, from the design system to the final component styles.
+========================================================================== */
+
+/* * -------------------------------------------
+ * Section I: CORE SETUP & DESIGN SYSTEM
+ * ------------------------------------------- */
+:root {
+    /* Colors */
+    --color-background: #0c0c0f;
+    --color-text-primary: #e0e0e0;
+    --color-text-secondary: #888;
+    --color-accent-1: hsl(340, 100%, 60%);
+    --color-accent-2: hsl(190, 100%, 60%);
+    --color-glass-bg: rgba(20, 20, 25, 0.4);
+    --color-glass-border: rgba(255, 255, 255, 0.1);
+    --color-glow: rgba(255, 255, 255, 0.8);
+
+    /* Typography */
+    --font-display: 'Lora', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-size-base: clamp(16px, 1.1vw, 18px);
+    --line-height-base: 1.7;
+
+    /* Fluid Typographic Scale */
+    --text-sm: clamp(0.8rem, 0.8vw, 0.9rem);
+    --text-md: clamp(1rem, 1.1vw, 1.1rem);
+    --text-lg: clamp(1.25rem, 1.5vw, 1.5rem);
+    --text-xl: clamp(1.5rem, 2.5vw, 2.25rem);
+    --text-xxl: clamp(2rem, 4vw, 3.5rem);
+
+    /* Spacing */
+    --space-xs: clamp(0.5rem, 1vw, 1rem);
+    --space-s: clamp(1rem, 2vw, 2rem);
+    --space-m: clamp(2rem, 3vw, 3rem);
+    --space-l: clamp(3rem, 5vw, 4rem);
+
+    /* Animation */
+    --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --duration-fast: 0.4s;
+    --duration-normal: 0.8s;
+
+    /* Borders & Shadows */
+    --radius-md: 16px;
+    --shadow-glow: 0 0 30px -5px var(--color-glow);
+}
+
+/* * -------------------------------------------
+ * Section II: GLOBAL RESETS & SCENE
+ * ------------------------------------------- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed; /* Prevents any scrolling */
+}
+
+body {
+    background-color: var(--color-background);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    cursor: none; /* Custom cursor will be implemented */
+}
+
+.loading-screen {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--color-background);
+    z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
+    color: var(--color-text-secondary);
+    transition: opacity 0.5s;
+}
+
+#fluid-canvas {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+}
+
+.lightbox-world {
+    position: relative;
+    width: 100%; height: 100%;
+    z-index: 1;
+    perspective: 1500px;
+}
+
+/* * -------------------------------------------
+ * Section III: UI LAYER & CUSTOM CURSOR
+ * ------------------------------------------- */
+.ui-layer {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 24px; height: 24px;
+    border: 1px solid var(--color-glow);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+    will-change: width, height, transform;
+    mix-blend-mode: difference;
+    z-index: 9999;
+}
+
+.custom-cursor.is-interacting {
+    width: 48px; height: 48px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: transparent;
+}
+
+.instructions {
+    position: absolute;
+    bottom: var(--space-s);
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity var(--duration-normal);
+}
+
+.back-button {
+    position: absolute;
+    top: var(--space-s); left: var(--space-s);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    padding: var(--space-xs);
+    cursor: none;
+    pointer-events: all;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--duration-fast), color var(--duration-fast);
+}
+.back-button:hover { color: var(--color-text-primary); }
+.back-button.is-visible { opacity: 1; visibility: visible; }
+
+/* * -------------------------------------------
+ * Section IV: GLOBAL TYPOGRAPHY & COMPONENTS
+ * ------------------------------------------- */
+h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--color-text-primary);
+    line-height: 1.2;
+}
+h1 { font-size: var(--text-xxl); }
+h2 { font-size: var(--text-xl); margin-top: var(--space-m); }
+h3 { font-size: var(--text-lg); margin-top: var(--space-m); }
+p { font-size: var(--text-md); margin-bottom: var(--space-s); }
+blockquote {
+    padding-left: var(--space-s);
+    border-left: 2px solid var(--color-accent-1);
+    margin: var(--space-s) 0;
+    font-style: italic;
+    color: var(--color-text-secondary);
+}
+.panel-button {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-background);
+    background-color: var(--color-accent-1);
+    padding: var(--space-xs) var(--space-s);
+    border-radius: 30px;
+    margin-top: var(--space-s);
+    transition: transform var(--duration-fast) var(--ease-out-quart), background-color var(--duration-fast);
+}
+.panel-button:hover {
+    background-color: var(--color-accent-2);
+    transform: scale(1.05);
+}
+
+/* * -------------------------------------------
+ * Section V: LIGHTBOX CONTAINER
+ * ------------------------------------------- */
+.lightbox {
+    position: absolute;
+    width: clamp(320px, 40vw, 600px);
+    height: 60vh;
+    max-height: 650px;
+    z-index: 10;
+    will-change: transform, opacity;
+    background: var(--color-glass-bg);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(25px) saturate(150%);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-out-quart);
+}
+.lightbox.is-visible { opacity: 1; }
+
+/* * -------------------------------------------
+ * Section VI: LIGHTBOX HEADER & HANDLE
+ * ------------------------------------------- */
+.lightbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-xs) var(--space-s);
+    background: rgba(0,0,0,0.2);
+    flex-shrink: 0;
+}
+.header-title { font-size: var(--text-sm); color: var(--color-text-secondary); font-weight: 500; }
+.header-handle { width: 100px; height: 20px; position: relative; cursor: none; }
+.header-handle::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px; height: 4px;
+    background: var(--color-glass-border);
+    border-radius: 4px;
+}
+
+/* * -------------------------------------------
+ * Section VII: LIGHTBOX CONTENT AREA
+ * ------------------------------------------- */
+.lightbox-content {
+    padding: var(--space-s) var(--space-l);
+    overflow-y: auto;
+    flex-grow: 1;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--duration-normal) var(--ease-out-quart), transform var(--duration-normal) var(--ease-out-quart);
+    transition-delay: 0.2s;
+}
+.lightbox.is-focused .lightbox-content { opacity: 1; transform: translateY(0); }
+.lightbox-content::-webkit-scrollbar { width: 6px; }
+.lightbox-content::-webkit-scrollbar-track { background: transparent; }
+.lightbox-content::-webkit-scrollbar-thumb { background-color: var(--color-glass-border); border-radius: 6px; }

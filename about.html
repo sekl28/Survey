@@ -1,125 +1,79 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>20% доля с каждой модели – Партнёр-скаут</title>
-<style>
-    body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; color: #333; }
-    h1, h2, h3, h4, h5, h6, p { margin: 0; padding: 0; }
-    a { color: #0d6efd; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { width: 90%; max-width: 1000px; margin: 0 auto; padding: 20px; }
-    .hero { text-align: center; padding: 60px 20px; }
-    .hero h1 { font-size: 2em; line-height: 1.2; margin-bottom: 20px; }
-    .hero .hero-sub { font-size: 1.2em; line-height: 1.5; margin-bottom: 30px; }
-    .hero .hero-sub strong { font-weight: bold; }
-    .btn { display: inline-block; background: #0d6efd; color: #fff; padding: 15px 30px; border-radius: 5px; font-size: 1em; font-weight: bold; text-decoration: none; }
-    .btn:hover { background: #0b5ed7; }
-    .advantages-section { background: #f8f9fa; }
-    .advantages-section h2 { text-align: center; font-size: 1.8em; margin-bottom: 20px; }
-    .advantages-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px 20px; }
-    .advantages-list li { padding: 5px 0; position: relative; padding-left: 20px; }
-    .advantages-list li::before { content: "✓"; color: #0d6efd; position: absolute; left: 0; }
-    .steps-section { background: #fff; }
-    .steps-section h2 { text-align: center; font-size: 1.8em; margin-bottom: 20px; }
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .step { font-size: 1em; line-height: 1.5; background: #f8f9fa; padding: 15px; border-radius: 5px; }
-    .step-number { width: 30px; height: 30px; background: #0d6efd; color: #fff; border-radius: 50%; display: inline-block; text-align: center; line-height: 30px; font-weight: bold; font-size: 1.1em; margin-right: 10px; }
-    .cases-section { background: #f8f9fa; }
-    .cases-section h2 { text-align: center; font-size: 1.8em; margin-bottom: 20px; }
-    .case { font-size: 1em; line-height: 1.5; margin-bottom: 15px; }
-    .case strong { font-weight: bold; }
-    .faq-section { background: #fff; }
-    .faq-section h2 { text-align: center; font-size: 1.8em; margin-bottom: 20px; }
-    .faq-section details { margin-bottom: 10px; }
-    .faq-section summary { cursor: pointer; font-weight: bold; }
-    .faq-section p { margin: 5px 0 15px 20px; }
-    .cta-section { background: #f8f9fa; text-align: center; padding: 40px 0; }
-    .cta-section h2 { font-size: 1.8em; margin-bottom: 20px; }
-    footer { background: #000; color: #aaa; text-align: center; font-size: 14px; padding: 20px; }
-    footer a { color: #aaa; text-decoration: none; margin: 0 5px; }
-    footer a:hover { text-decoration: underline; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ehotlovea - The Liquid Experience</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 </head>
-<body>
-<!-- Hero Section -->
-<header class="hero">
-    <div class="container">
-        <h1>Станьте партнёром-скаутом:<br>20% доля с каждой модели на постоянной основе</h1>
-        <p class="hero-sub">Вы рекомендуете кандидата — мы обучаем и сопровождаем. Выплаты раз в месяц, прозрачно. <strong>Доход от $500/мес с одной модели.</strong></p>
-        <!-- cta_click_primary -->
-        <a href="https://t.me/cammanager9" class="btn">Стать партнёром</a>
-    </div>
-</header>
-<!-- Advantages Section -->
-<section class="advantages-section">
-    <div class="container">
-        <h2>Преимущества</h2>
-        <ul class="advantages-list">
-            <li>20% доля</li>
-            <li>Без стартовых затрат</li>
-            <li>Обучение и сопровождение</li>
-            <li>Выплаты раз в месяц</li>
-            <li>Конфиденциальность</li>
-            <li>Прозрачная аналитика</li>
-        </ul>
-    </div>
-</section>
-<!-- How it works Section -->
-<section class="steps-section">
-    <div class="container">
-        <h2>Как это работает</h2>
-        <div class="steps">
-            <div class="step"><span class="step-number">1</span> Напишите нам в Telegram <!-- cta_click_telegram --> <a href="https://t.me/cammanager9">@cammanager9</a></div>
-            <div class="step"><span class="step-number">2</span> Мы заключаем договор и выдаём вам реферальную ссылку</div>
-            <div class="step"><span class="step-number">3</span> Модель начинает работать на платформе и зарабатывать</div>
-            <div class="step"><span class="step-number">4</span> Вы получаете 20% от дохода модели каждый месяц</div>
+<body class="is-loading">
+
+    <div class="loading-screen">Loading Experience...</div>
+
+    <canvas id="fluid-canvas"></canvas>
+
+    <div class="lightbox-world">
+
+        <div class="lightbox is-interactive" id="lightbox-acquaintance" data-view-id="acquaintance">
+            <div class="lightbox-header">
+                <div class="header-title">The Acquaintance</div>
+                <div class="header-handle"></div>
+            </div>
+            <div class="lightbox-content">
+                <h1>Let’s get acquainted!</h1>
+                <p>Hi! Let’s get to know each other better. I have something to surprise and delight you with. Don’t believe it? Just take a look at least for 5–10 seconds of my real live stream and see for yourself. 😉</p>
+                
+                <h2>Who I am and my experience</h2>
+                <p>I am a webcam model with 9 years of experience. With me you don’t just watch a broadcast — you dive into a special world. I love to experiment and delight you with new emotions every time.</p>
+                
+                <h2>What you will get</h2>
+                <p>In my Telegram channel you will get access to: Free videos, Fun streams with other models, and an Open fan chat (coming soon). And this is just the beginning...</p>
+                
+                <h2>Social proof: 13,000+</h2>
+                <p>Thousands of people have already become part of our private club. Don’t miss your chance — join and feel yourself in the company of like-minded people!</p>
+                 <a href="#" target="_blank" class="panel-button">Join Telegram</a>
+            </div>
+        </div>
+
+        <div class="lightbox is-interactive" id="lightbox-rumors" data-view-id="rumors">
+             <div class="lightbox-header">
+                <div class="header-title">The Rumors</div>
+                <div class="header-handle"></div>
+            </div>
+            <div class="lightbox-content">
+                <h1>Rumors About Me</h1>
+                <p>On the internet, there is a whole sect of amateur detectives who invent incredible stories about me. Here’s a brief overview:</p>
+                
+                <h3>[RUMOR_01]: I am a prisoner.</h3>
+                <p>Yes, according to the forum “experts,” I’m a hostage, kept by force and starved. <blockquote>“Is ehotlovea a hostage and is she being starved?”</blockquote></p>
+
+                <h3>[RUMOR_02]: I am “controlled by a monster.”</h3>
+                <p>According to the rumors, there’s some villain who forces me to work on camera against my will.</p>
+
+                <h3>And now – to the facts.</h3>
+                <p><strong>There is no villain, no captivity, and no drama whatsoever.</strong> There is me – an ordinary girl who set a goal and works hard to achieve it. Everything I have achieved is the result of my own effort, a well-thought-out strategy, and hard work. 🎓</p>
+                <p>No one controls me. I want to mention the Chaturbate support team. These guys are true pros. 💙</p>
+                <p>We have already uncovered the identity of that very storyteller (thanks to my clever Eric 😉). Legal steps will not take long.</p>
+                <p>So what’s the bottom line? I continue to do my work and reach new heights. Thank you to all my true fans for your support and common sense. You are the best. ❤️</p>
+                <a href="#" target="_blank" class="panel-button">Join The Real World</a>
+            </div>
         </div>
     </div>
-</section>
-<!-- Cases/Testimonials Section -->
-<section class="cases-section">
-    <div class="container">
-        <h2>Отзывы партнёров</h2>
-        <p class="case"><strong>Анна</strong> (имя изменено) – пригласила 2 модели, теперь её пассивный доход $1200+ в месяц.</p>
-        <p class="case"><strong>Иван</strong> (имя изменено) – привёл 5 моделей, зарабатывает $3000+ в месяц.</p>
+
+    <div class="ui-layer">
+        <div class="custom-cursor"></div>
+        <div class="instructions">Click & Drag to Interact</div>
+        <div class="back-button">← BACK</div>
     </div>
-</section>
-<!-- FAQ Section -->
-<section class="faq-section">
-    <div class="container">
-        <h2>FAQ</h2>
-        <!-- faq_open -->
-        <details>
-            <summary>Кто может стать партнёром-скаутом?</summary>
-            <p>Любой совершеннолетний (18+) может стать партнёром-скаутом. Специальный опыт не требуется.</p>
-        </details>
-        <details>
-            <summary>Нужно ли вкладывать деньги на старт?</summary>
-            <p>Нет, для партнёра-скаута не требуется никаких финансовых вложений. Вы рекомендуете кандидатов, мы берём расходы на себя.</p>
-        </details>
-        <details>
-            <summary>Как и когда я получу свои деньги?</summary>
-            <p>Выплаты партнёрам поступают раз в месяц на ваш банковский счёт. Вы будете получать 20% от дохода каждой привлечённой модели на постоянной основе.</p>
-        </details>
-        <details>
-            <summary>Сколько моделей я могу рекомендовать?</summary>
-            <p>Сколько угодно. Ограничений по количеству моделей нет: чем больше кандидатов вы приведёте, тем выше ваш доход.</p>
-        </details>
-    </div>
-</section>
-<!-- Final CTA Section -->
-<section class="cta-section">
-    <div class="container">
-        <h2>Готовы начать?</h2>
-        <!-- cta_click_telegram -->
-        <a href="https://t.me/cammanager9" class="btn">Стать партнёром</a>
-    </div>
-</section>
-<!-- Footer -->
-<footer>
-    18+ | <a href="#">Политика конфиденциальности</a> | <a href="#">Публичная оферта</a>
-</footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

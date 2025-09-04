@@ -3,491 +3,587 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinnacle Landing Page - Innovative 2025 Edition</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <title>Pinnacle Elite Landing - 2025 Pro Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <style>
         :root {
-            --primary-color: #001F3F; /* Navy blue from Pinnacle style */
-            --accent-color: #ED1703; /* Red-orange accent */
-            --secondary-accent: #FFFFFF; /* White for text */
-            --bg-gradient: linear-gradient(135deg, #001F3F, #003366);
-            --neon-glow: rgba(237, 23, 3, 0.5);
+            --primary-bg: #001F3F; /* Navy blue from Pinnacle branding */
+            --accent-red: #ED1703; /* Signature red-orange */
+            --text-white: #FFFFFF;
+            --text-secondary: #A9B7C6;
+            --neon-glow: rgba(237, 23, 3, 0.6);
+            --gradient-bg: linear-gradient(135deg, var(--primary-bg), #003366);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            color: var(--secondary-accent);
-            background: var(--primary-color);
-            line-height: 1.6;
+            color: var(--text-white);
+            background: var(--primary-bg);
             overflow-x: hidden;
+            line-height: 1.5;
         }
 
         section {
-            padding: 80px 20px;
-            max-width: 1400px;
+            padding: 100px 20px;
+            max-width: 1440px;
             margin: 0 auto;
             position: relative;
         }
 
         h1, h2, h3 {
-            font-weight: 800;
-            letter-spacing: -0.03em;
+            font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: -0.02em;
         }
 
-        /* Hero Section with Parallax and Particles */
+        /* Hero with Advanced 3D Particles and Parallax */
         .hero {
-            background: var(--bg-gradient);
-            text-align: center;
-            padding: 150px 20px;
-            position: relative;
-            overflow: hidden;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+            background: var(--gradient-bg);
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
+        #hero-canvas {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://via.placeholder.com/1920x1080?text=Pinnacle+Hero+BG') center/cover no-repeat fixed;
-            opacity: 0.3;
             z-index: 0;
         }
 
-        #particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
         .hero-content {
-            position: relative;
             z-index: 2;
+            text-align: center;
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 4em;
+            font-size: 4.5rem;
             margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--neon-glow);
         }
 
         .hero p {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-            color: #A9B7C6;
+            font-size: 1.6rem;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
 
         .cta {
-            background: var(--accent-color);
-            color: var(--secondary-accent);
-            border: none;
-            padding: 20px 50px;
-            font-size: 1.3em;
+            background: var(--accent-red);
+            color: var(--text-white);
+            padding: 20px 60px;
+            font-size: 1.4rem;
             font-weight: 700;
+            border: none;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px var(--neon-glow);
+            box-shadow: 0 0 20px var(--neon-glow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .cta:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px var(--neon-glow);
+            transform: scale(1.08);
+            box-shadow: 0 0 40px var(--neon-glow);
             background: #FF4500;
         }
 
-        /* Interactive Calculator with Animation */
+        /* Interactive Margin Calculator with GSAP Animation */
         .calculator {
-            max-width: 500px;
-            margin: 40px auto;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(10px);
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .calculator input {
             width: 100%;
             padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid var(--accent-color);
+            margin-bottom: 20px;
             background: transparent;
-            color: var(--secondary-accent);
-            font-size: 1.2em;
+            border: 2px solid var(--accent-red);
+            color: var(--text-white);
+            font-size: 1.2rem;
             border-radius: 10px;
         }
 
         .calculator button {
             width: 100%;
             padding: 15px;
-            background: var(--accent-color);
-            color: var(--secondary-accent);
+            background: var(--accent-red);
+            color: var(--text-white);
             border: none;
-            font-size: 1.2em;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        #profit-result {
-            font-size: 1.5em;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        /* Advantages with 3D Cards */
-        .advantages {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            perspective: 1000px;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.5s ease;
-            transform-style: preserve-3d;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .card:hover {
-            transform: rotateY(15deg) rotateX(10deg) scale(1.05);
-            box-shadow: 0 0 30px var(--neon-glow);
-        }
-
-        .card i {
-            font-size: 3em;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            display: block;
-            transition: color 0.3s;
-        }
-
-        .card:hover i {
-            color: #FF4500;
-        }
-
-        /* Steps with Timeline Animation */
-        .steps {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .step {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 15px;
-            width: 80%;
-            max-width: 600px;
-            position: relative;
-        }
-
-        .step::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            width: 2px;
-            height: 30px;
-            background: var(--accent-color);
-        }
-
-        .step:first-child::before {
-            display: none;
-        }
-
-        .step i {
-            font-size: 2.5em;
-            color: var(--accent-color);
-            background: rgba(237, 23, 3, 0.2);
-            padding: 15px;
-            border-radius: 50%;
-        }
-
-        /* Facts with Counters */
-        .facts {
-            text-align: center;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .fact {
-            font-size: 3em;
-            font-weight: 700;
-            color: var(--accent-color);
-        }
-
-        /* Pro Section with Infographics */
-        .pro-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .pro-block {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        /* FAQ with Accordions */
-        .faq {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq details {
-            background: rgba(255, 255, 255, 0.05);
-            margin-bottom: 15px;
-            padding: 20px;
+            font-size: 1.2rem;
             border-radius: 10px;
             cursor: pointer;
             transition: background 0.3s;
         }
 
-        .faq details[open] {
-            background: rgba(255, 255, 255, 0.15);
+        .calculator button:hover {
+            background: #FF4500;
+        }
+
+        #profit-result {
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--accent-red);
+        }
+
+        /* Advantages with 3D Flip Cards and Parallax */
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            perspective: 1500px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease-out;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+        .card i {
+            font-size: 4rem;
+            color: var(--accent-red);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* Steps with Timeline and Motion Path */
+        .steps {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .step {
+            flex: 1 1 300px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .step i {
+            font-size: 3rem;
+            color: var(--accent-red);
+            margin-bottom: 20px;
+            background: rgba(237, 23, 3, 0.15);
+            padding: 20px;
+            border-radius: 50%;
+        }
+
+        /* Facts with Animated Counters */
+        .facts {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+            text-align: center;
+        }
+
+        .fact {
+            flex: 1 1 200px;
+        }
+
+        .fact-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--accent-red);
+        }
+
+        /* Pro Section with Infographics */
+        .pro-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .pro-block {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+        }
+
+        .pro-block svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        /* FAQ with Smooth Accordions */
+        .faq {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq details {
+            background: rgba(255, 255, 255, 0.08);
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
         .faq summary {
+            padding: 20px;
             font-weight: 700;
-            font-size: 1.2em;
-        }
-
-        /* Final CTA with Motion */
-        .final-cta {
-            text-align: center;
-            background: var(--bg-gradient);
-            padding: 100px 20px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            list-style: none;
             position: relative;
         }
 
-        .final-cta h2 {
-            font-size: 3em;
-            margin-bottom: 30px;
+        .faq summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 20px;
+            transition: transform 0.3s;
         }
 
-        /* Footer */
-        footer {
+        .faq details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .faq p {
+            padding: 0 20px 20px;
+            font-weight: 300;
+        }
+
+        /* Final CTA with Parallax Effect */
+        .final-cta {
+            background: var(--gradient-bg);
             text-align: center;
-            padding: 30px;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(237, 23, 3, 0.2), transparent);
+            z-index: 0;
+        }
+
+        .final-cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer Minimalist */
+        footer {
             background: #000;
-            color: #A9B7C6;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
         }
 
         footer a {
-            color: var(--accent-color);
+            color: var(--accent-red);
             text-decoration: none;
             margin: 0 15px;
+            transition: color 0.3s;
         }
 
-        /* Mobile Adjustments */
+        footer a:hover {
+            color: #FF4500;
+        }
+
+        /* Mobile First Optimizations */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5em; }
-            .hero p { font-size: 1.2em; }
-            .step { width: 100%; }
-            .facts { flex-direction: column; }
+            .hero h1 { font-size: 3rem; }
+            .hero p { font-size: 1.2rem; }
+            .calculator { padding: 30px; }
+            .card, .step, .pro-block { padding: 25px; }
+            .fact-number { font-size: 3rem; }
+            section { padding: 60px 15px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.5rem; }
+            .cta { padding: 15px 40px; font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section with Particles and Parallax -->
-    <section class="hero" data-aos="fade-in">
-        <div id="particles"></div>
+    <!-- Hero Section with 3D Canvas Background -->
+    <section class="hero" data-aos="fade-in" data-aos-duration="1500">
+        <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
-            <h1>Выигрывайте по-крупному с Pinnacle</h1>
-            <p>Низкая маржа 2%, лимиты до $50,000, доверие с 1998 года</p>
-            <button class="cta">Зарегистрироваться</button>
-            <div class="calculator" data-aos="zoom-in">
-                <h3>Калькулятор выгоды от низкой маржи</h3>
+            <h1>Элита Ставок: Pinnacle</h1>
+            <p>Низкая маржа 2%, лимиты до $50,000, выбор профессионалов с 1998 года<grok-card data-id="7786d0" data-type="citation_card"></grok-card><grok-card data-id="dc6b52" data-type="citation_card"></grok-card>.</p>
+            <button class="cta">Присоединиться Сейчас</button>
+            <div class="calculator" data-aos="zoom-in" data-aos-delay="300">
+                <h3>Калькулятор Выгоды от Низкой Маржи</h3>
                 <input type="number" id="bet-amount" placeholder="Сумма ставки, $">
-                <button onclick="calculateProfit()">Рассчитать экономию</button>
-                <p id="profit-result">Экономия: $0</p>
+                <button onclick="calculateProfit()">Рассчитать</button>
+                <div id="profit-result">Экономия: $0</div>
             </div>
         </div>
     </section>
 
     <!-- Advantages Section -->
     <section class="advantages" data-aos="fade-up">
-        <h2 data-aos="fade-in">Сильные стороны Pinnacle</h2>
-        <div class="card" data-aos="flip-left">
-            <i class="fas fa-percentage"></i>
-            <h3>Низкая маржа ~2%</h3>
-            <p>Лучшие коэффициенты в индустрии. Инфографика сравнения с анимацией.</p>
+        <h2 data-aos="fade-down">Сильные Стороны Pinnacle</h2>
+        <div class="card">
+            <div class="card-front">
+                <i class="fas fa-percentage"></i>
+                <h3>Низкая Маржа ~2%</h3>
+                <p>Лучшие коэффициенты в индустрии<grok-card data-id="ba4cf7" data-type="citation_card"></grok-card>.</p>
+            </div>
+            <div class="card-back">
+                <p>Инфографика сравнения с анимацией роста прибыли.</p>
+            </div>
         </div>
-        <div class="card" data-aos="flip-left" data-aos-delay="150">
-            <i class="fas fa-dollar-sign"></i>
-            <h3>Высокие лимиты до $50k</h3>
-            <p>Ставки без ограничений для профи. Анимированный график роста.</p>
+        <div class="card">
+            <div class="card-front">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Высокие Лимиты до $50k</h3>
+                <p>Ставки без ограничений для профи<grok-card data-id="9b0ea0" data-type="citation_card"></grok-card>.</p>
+            </div>
+            <div class="card-back">
+                <p>Анимированный счётчик лимитов с 3D-эффектом.</p>
+            </div>
         </div>
-        <div class="card" data-aos="flip-left" data-aos-delay="300">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Доверие с 1998 года</h3>
-            <p>Лицензии Curacao и Malta. Щит с 3D-анимацией.</p>
+        <div class="card">
+            <div class="card-front">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Доверие с 1998</h3>
+                <p>Лицензии Curacao и Malta<grok-card data-id="2d9ab9" data-type="citation_card"></grok-card>.</p>
+            </div>
+            <div class="card-back">
+                <p>Иконка щита с микроанимацией защиты.</p>
+            </div>
         </div>
-        <div class="card" data-aos="flip-left" data-aos-delay="450">
-            <i class="fas fa-rocket"></i>
-            <h3>Быстрые выплаты</h3>
-            <p>От мгновенных до 5 дней. Счётчик с микроанимацией.</p>
+        <div class="card">
+            <div class="card-front">
+                <i class="fas fa-rocket"></i>
+                <h3>Быстрые Выплаты</h3>
+                <p>Надёжные и быстрые<grok-card data-id="eb125f" data-type="citation_card"></grok-card>.</p>
+            </div>
+            <div class="card-back">
+                <p>Прогресс-бар скорости выплат.</p>
+            </div>
         </div>
-        <div class="card" data-aos="flip-left" data-aos-delay="600">
-            <i class="fas fa-tools"></i>
-            <h3>Для профессионалов</h3>
-            <p>API, esports, арбитраж. Инфографика инструментов с hover-эффектами.</p>
+        <div class="card">
+            <div class="card-front">
+                <i class="fas fa-tools"></i>
+                <h3>Для Профессионалов</h3>
+                <p>API, esports с 2010, арбитраж<grok-card data-id="8f4ed3" data-type="citation_card"></grok-card>.</p>
+            </div>
+            <div class="card-back">
+                <p>Интерактивная инфографика инструментов.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Steps Section -->
+    <!-- How to Start Section -->
     <section class="steps" data-aos="fade-up">
-        <h2 data-aos="fade-in">Как начать: 3 шага</h2>
-        <div class="step" data-aos="slide-up">
-            <i class="fas fa-user-check"></i>
-            <p>Регистрация — быстро и безопасно</p>
+        <h2 data-aos="fade-down">Как Начать: 3 Шага</h2>
+        <div class="step" data-aos="slide-right" data-aos-delay="100">
+            <i class="fas fa-user-plus"></i>
+            <h3>Регистрация</h3>
+            <p>Быстро и просто, без лишних проверок.</p>
         </div>
-        <div class="step" data-aos="slide-up" data-aos-delay="200">
-            <i class="fas fa-credit-card"></i>
-            <p>Депозит — множество методов</p>
+        <div class="step" data-aos="slide-right" data-aos-delay="300">
+            <i class="fas fa-wallet"></i>
+            <h3>Депозит</h3>
+            <p>Множество методов, мгновенное пополнение.</p>
         </div>
-        <div class="step" data-aos="slide-up" data-aos-delay="400">
-            <i class="fas fa-play"></i>
-            <p>Ставки — лучшие коэффициенты</p>
+        <div class="step" data-aos="slide-right" data-aos-delay="500">
+            <i class="fas fa-trophy"></i>
+            <h3>Игра</h3>
+            <p>Наслаждайтесь лучшими коэффициентами.</p>
         </div>
     </section>
 
     <!-- Facts Section -->
     <section class="facts" data-aos="fade-up">
-        <h2 data-aos="fade-in">Факты доверия</h2>
-        <div class="fact" data-aos="zoom-in" id="year-fact">1998</div>
-        <div class="fact" data-aos="zoom-in" data-aos-delay="200" id="countries-fact">100+</div>
-        <div class="fact" data-aos="zoom-in" data-aos-delay="400" id="payout-fact">99%</div>
+        <h2 data-aos="fade-down">Факты Доверия и Стабильности</h2>
+        <div class="fact" data-aos="zoom-in">
+            <div class="fact-number" id="year-counter">0</div>
+            <p>Год основания<grok-card data-id="c7d7f9" data-type="citation_card"></grok-card></p>
+        </div>
+        <div class="fact" data-aos="zoom-in" data-aos-delay="200">
+            <div class="fact-number" id="countries-counter">0+</div>
+            <p>Стран</p>
+        </div>
+        <div class="fact" data-aos="zoom-in" data-aos-delay="400">
+            <div class="fact-number" id="payout-counter">0%</div>
+            <p>Выплат в срок</p>
+        </div>
     </section>
 
-    <!-- Pro Section -->
+    <!-- Pro Players Section -->
     <section class="pro-section" data-aos="fade-up">
-        <h2 data-aos="fade-in">Для продвинутых игроков</h2>
+        <h2 data-aos="fade-down">Для Продвинутых Игроков</h2>
         <div class="pro-block" data-aos="zoom-in">
-            <h3>Низкая маржа</h3>
-            <p>Экономьте на каждой ставке — инфографика 2% vs 7%.</p>
+            <svg viewBox="0 0 24 24" fill="var(--accent-red)"><path d="M12 2L2 22h20L12 2z"/></svg>
+            <h3>Низкая Маржа</h3>
+            <p>2% vs 7% industry average – инфографика экономии<grok-card data-id="9ae0d4" data-type="citation_card"></grok-card>.</p>
         </div>
-        <div class="pro-block" data-aos="zoom-in" data-aos-delay="150">
-            <h3>Высокие лимиты</h3>
-            <p>До $50k — график с анимацией.</p>
+        <div class="pro-block" data-aos="zoom-in" data-aos-delay="200">
+            <svg viewBox="0 0 24 24" fill="var(--accent-red)"><path d="M12 2L2 22h20L12 2z"/></svg>
+            <h3>Высокие Лимиты</h3>
+            <p>До $50k на топ-матчи – график лимитов<grok-card data-id="de2d54" data-type="citation_card"></grok-card>.</p>
         </div>
-        <div class="pro-block" data-aos="zoom-in" data-aos-delay="300">
-            <h3>Про-инструменты</h3>
-            <p>API и аналитика — динамические иконки.</p>
+        <div class="pro-block" data-aos="zoom-in" data-aos-delay="400">
+            <svg viewBox="0 0 24 24" fill="var(--accent-red)"><path d="M12 2L2 22h20L12 2z"/></svg>
+            <h3>Про-Инструменты</h3>
+            <p>API, esports, арбитраж – динамические инструменты<grok-card data-id="927441" data-type="citation_card"></grok-card>.</p>
         </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq" data-aos="fade-up">
-        <h2 data-aos="fade-in">FAQ</h2>
-        <details data-aos="fade-up">
-            <summary>Что такое низкая маржа?</summary>
-            <p>Это лучшие коэффициенты, экономия до 60% по сравнению с конкурентами.<grok-card data-id="ff4e7f" data-type="citation_card"></grok-card></p>
-        </details>
+        <h2 data-aos="fade-down">FAQ</h2>
         <details data-aos="fade-up" data-aos-delay="100">
-            <summary>Какие лимиты ставок?</summary>
-            <p>До $50,000 на топ-матчи.<grok-card data-id="fb1a4c" data-type="citation_card"></grok-card></p>
+            <summary>Что такое низкая маржа?</summary>
+            <p>Это лучшие коэффициенты, экономия до 60% по сравнению с конкурентами<grok-card data-id="3a4993" data-type="citation_card"></grok-card><grok-card data-id="c9778b" data-type="citation_card"></grok-card>.</p>
         </details>
         <details data-aos="fade-up" data-aos-delay="200">
-            <summary>Насколько надёжны выплаты?</summary>
-            <p>Стабильные, 99% в срок, от мгновенных до 5 дней.<grok-card data-id="cebf53" data-type="citation_card"></grok-card></p>
+            <summary>Какие лимиты ставок?</summary>
+            <p>Высокие лимиты до $50,000 на популярные события<grok-card data-id="403563" data-type="citation_card"></grok-card><grok-card data-id="d0672e" data-type="citation_card"></grok-card>.</p>
         </details>
         <details data-aos="fade-up" data-aos-delay="300">
-            <summary>Есть ли инструменты для профи?</summary>
-            <p>Да, API, esports, арбитраж разрешён.<grok-card data-id="495a15" data-type="citation_card"></grok-card></p>
+            <summary>Насколько надежны выплаты?</summary>
+            <p>Быстрые и стабильные выплаты, доверие с 1998 года<grok-card data-id="c92553" data-type="citation_card"></grok-card><grok-card data-id="e18bac" data-type="citation_card"></grok-card>.</p>
         </details>
         <details data-aos="fade-up" data-aos-delay="400">
-            <summary>Сколько лет на рынке?</summary>
-            <p>С 1998 года, лицензии Curacao и Malta.<grok-card data-id="cc4245" data-type="citation_card"></grok-card></p>
+            <summary>Есть ли API для профессионалов?</summary>
+            <p>Да, профессиональные инструменты включая API<grok-card data-id="44dd1c" data-type="citation_card"></grok-card>.</p>
         </details>
         <details data-aos="fade-up" data-aos-delay="500">
             <summary>Поддержка esports?</summary>
-            <p>Да, один из лидеров в этой области.<grok-card data-id="0cbb26" data-type="citation_card"></grok-card></p>
+            <p>Пионер esports betting с 2010 года<grok-card data-id="63a930" data-type="citation_card"></grok-card><grok-card data-id="98f66d" data-type="citation_card"></grok-card><grok-card data-id="57da9f" data-type="citation_card"></grok-card>.</p>
         </details>
         <details data-aos="fade-up" data-aos-delay="600">
+            <summary>Где лицензировано?</summary>
+            <p>Лицензии Curacao и другие, доступно в 100+ странах<grok-card data-id="693913" data-type="citation_card"></grok-card>.</p>
+        </details>
+        <details data-aos="fade-up" data-aos-delay="700">
             <summary>Как зарегистрироваться?</summary>
-            <p>Просто и быстро через форму на сайте.</p>
+            <p>Просто заполните форму – быстро и безопасно.</p>
         </details>
     </section>
 
     <!-- Final CTA -->
-    <section class="final-cta" data-aos="fade-up">
-        <h2>Присоединяйтесь к элите ставок</h2>
-        <button class="cta">Начать сейчас</button>
+    <section class="final-cta" data-aos="fade-in">
+        <h2>Готовы к Профессиональным Ставкам?</h2>
+        <button class="cta">Зарегистрироваться в Pinnacle</button>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2025 Pinnacle. Все права защищены.</p>
-        <a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a>
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Условия</a>
+        <a href="#">Контакты</a>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1200, easing: 'ease-out-quart' });
+        AOS.init({ duration: 1200, easing: 'ease-out-cubic', once: false });
 
-        // Particles Background with Three.js
+        // Advanced 3D Canvas with Three.js - Constellation Effect
+        const canvas = document.getElementById('hero-canvas');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('particles').appendChild(renderer.domElement);
+        renderer.setPixelRatio(window.devicePixelRatio);
 
-        const particles = new THREE.BufferGeometry();
-        const particleCount = 5000;
-        const posArray = new Float32Array(particleCount * 3);
-        for (let i = 0; i < particleCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 5;
+        const stars = new THREE.Group();
+        for (let i = 0; i < 2000; i++) {
+            const geometry = new THREE.SphereGeometry(0.05, 24, 24);
+            const material = new THREE.MeshBasicMaterial({ color: 0xFFFFFF });
+            const star = new THREE.Mesh(geometry, material);
+            star.position.set((Math.random() - 0.5) * 200, (Math.random() - 0.5) * 200, (Math.random() - 0.5) * 200);
+            stars.add(star);
         }
-        particles.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        scene.add(stars);
 
-        const material = new THREE.PointsMaterial({ color: 0xED1703, size: 0.005 });
-        const particleSystem = new THREE.Points(particles, material);
-        scene.add(particleSystem);
+        camera.position.z = 50;
 
-        camera.position.z = 1;
-
-        function animate() {
-            requestAnimationFrame(animate);
-            particleSystem.rotation.y += 0.0005;
+        function animateStars() {
+            requestAnimationFrame(animateStars);
+            stars.rotation.y += 0.0002;
             renderer.render(scene, camera);
         }
-        animate();
+        animateStars();
 
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
@@ -495,20 +591,60 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
-        // Calculator
+        // Calculator with GSAP
         function calculateProfit() {
             const bet = parseFloat(document.getElementById('bet-amount').value) || 0;
-            const savings = (bet * (0.07 - 0.02)).toFixed(2); // 7% industry vs 2% Pinnacle
-            gsap.to('#profit-result', { duration: 0.5, opacity: 0, y: -10, onComplete: () => {
-                document.getElementById('profit-result').innerText = `Экономия: $${savings}`;
-                gsap.to('#profit-result', { duration: 0.5, opacity: 1, y: 0 });
-            }});
+            const savings = (bet * 0.05).toFixed(2); // Assuming 5% savings vs industry
+            gsap.to('#profit-result', {
+                duration: 0.8,
+                opacity: 0,
+                scale: 0.8,
+                ease: 'back.in',
+                onComplete: () => {
+                    document.getElementById('profit-result').textContent = `Экономия: $${savings}`;
+                    gsap.to('#profit-result', { duration: 0.8, opacity: 1, scale: 1, ease: 'back.out' });
+                }
+            });
         }
 
-        // GSAP Animations for Facts
-        gsap.from('#year-fact', { text: '0', duration: 2, ease: 'power1.out', snap: { text: 1 }, delay: 1 });
-        gsap.from('#countries-fact', { text: '0', duration: 2, ease: 'power1.out', snap: { text: 1 }, delay: 1.5 });
-        gsap.from('#payout-fact', { text: '0%', duration: 2, ease: 'power1.out', snap: { text: 1 }, delay: 2 });
+        // Animated Counters with GSAP and ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to('#year-counter', {
+            innerText: 1998,
+            duration: 2,
+            snap: { innerText: 1 },
+            ease: 'none',
+            scrollTrigger: { trigger: '.facts', start: 'top 80%' }
+        });
+
+        gsap.to('#countries-counter', {
+            innerText: 100,
+            duration: 2,
+            snap: { innerText: 1 },
+            ease: 'none',
+            scrollTrigger: { trigger: '.facts', start: 'top 80%' },
+            onUpdate: function() { this.targets()[0].innerText = Math.ceil(this.targets()[0].innerText) + '+'; }
+        });
+
+        gsap.to('#payout-counter', {
+            innerText: 99,
+            duration: 2,
+            snap: { innerText: 1 },
+            ease: 'none',
+            scrollTrigger: { trigger: '.facts', start: 'top 80%' },
+            onUpdate: function() { this.targets()[0].innerText = Math.ceil(this.targets()[0].innerText) + '%'; }
+        });
+
+        // Parallax for Sections
+        gsap.utils.toArray('section').forEach(section => {
+            gsap.from(section, {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: { trigger: section, start: 'top 90%', toggleActions: 'play none none reverse' }
+            });
+        });
     </script>
 </body>
 </html>

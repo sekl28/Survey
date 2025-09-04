@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinnacle Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #001F3F; /* Navy blue */
+            --accent-color: #ED1703; /* Orange-red */
+            --text-color: #FFFFFF;
+            --secondary-text: #A9B7C6;
+            --bg-gradient: linear-gradient(135deg, #001F3F, #003366);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background: var(--primary-color);
+            overflow-x: hidden;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+        }
+
+        .hero {
+            background: var(--bg-gradient);
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .cta {
+            background: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px rgba(237, 23, 3, 0.5);
+        }
+
+        .cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(237, 23, 3, 0.8);
+        }
+
+        .counter {
+            font-size: 2em;
+            margin: 20px 0;
+            animation: countUp 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .advantages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 5px;
+            width: 80%;
+        }
+
+        .facts {
+            text-align: center;
+        }
+
+        .fact {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        .pro-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .pro-block {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq details {
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .final-cta {
+            text-align: center;
+            background: var(--bg-gradient);
+            padding: 60px 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+        }
+
+        /* Mobile first adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2em; }
+            .card { width: 100%; }
+            .step { width: 100%; }
+            .pro-block { width: 100%; }
+        }
+
+        /* Parallax effect */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* 3D accent example */
+        .three-d {
+            perspective: 1000px;
+        }
+
+        .three-d .card {
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .three-d .card:hover {
+            transform: rotateY(10deg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero parallax" style="background-image: url('https://via.placeholder.com/1920x1080?text=Hero+Background');">
+        <h1>Лучшие коэффициенты и высокие лимиты с Pinnacle</h1>
+        <p>С 1998 года — выбор профессионалов в спортивных ставках</p>
+        <button class="cta">Зарегистрироваться сейчас</button>
+        <div class="counter" id="margin-counter">Низкая маржа: 2%</div>
+        <script>
+            // Simple counter animation
+            let count = 0;
+            const counter = setInterval(() => {
+                if (count < 2) {
+                    count += 0.1;
+                    document.getElementById('margin-counter').innerText = `Низкая маржа: ${count.toFixed(1)}%`;
+                } else {
+                    clearInterval(counter);
+                }
+            }, 100);
+        </script>
+    </section>
+
+    <!-- Strong Points Section -->
+    <section class="advantages three-d">
+        <h2>Сильные стороны Pinnacle</h2>
+        <div class="card">
+            <div class="icon">📉</div>
+            <h3>Низкая маржа</h3>
+            <p>Самая низкая маржа в индустрии — до 60% лучше, чем у конкурентов. Отображено инфографикой сравнения.</p>
+        </div>
+        <div class="card">
+            <div class="icon">💰</div>
+            <h3>Высокие лимиты</h3>
+            <p>Ставки до $50,000 на топ-матчи. Иконка с анимацией роста стека.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🛡️</div>
+            <h3>Доверие и стабильность</h3>
+            <p>С 1998 года, лицензии Curacao и Malta. Щит с микроанимацией.</p>
+        </div>
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Быстрые выплаты</h3>
+            <p>Выводы от мгновенных до 5 дней. Счетчик скорости.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🧰</div>
+            <h3>Для профессионалов</h3>
+            <p>API, esports, ресурсы для ставок. Инфографика инструментов.</p>
+        </div>
+    </section>
+
+    <!-- How to Start Section -->
+    <section class="steps">
+        <h2>Как начать: 3 шага</h2>
+        <div class="step">
+            <div class="icon">1️⃣</div>
+            <p>Регистрация — быстро и просто</p>
+        </div>
+        <div class="step">
+            <div class="icon">2️⃣</div>
+            <p>Депозит — множество методов</p>
+        </div>
+        <div class="step">
+            <div class="icon">3️⃣</div>
+            <p>Игра — лучшие коэффициенты ждут</p>
+        </div>
+    </section>
+
+    <!-- Facts Section -->
+    <section class="facts">
+        <h2>Факты доверия</h2>
+        <div class="fact">Год основания: 1998</div>
+        <div class="fact">Игроки: >100 стран</div>
+        <div class="fact">Выплаты: Быстрые и надежные</div>
+    </section>
+
+    <!-- Pro Players Section -->
+    <section class="pro-section">
+        <h2>Для продвинутых игроков</h2>
+        <div class="pro-block">
+            <h3>Низкая маржа</h3>
+            <p>Инфографика: 2% vs 7% industry</p>
+        </div>
+        <div class="pro-block">
+            <h3>Высокие лимиты</h3>
+            <p>График: до $50k</p>
+        </div>
+        <div class="pro-block">
+            <h3>Инструменты</h3>
+            <p>API и аналитика</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2>FAQ</h2>
+        <details>
+            <summary>Что такое низкая маржа?</summary>
+            <p>Это означает лучшие коэффициенты для вас.</p>
+        </details>
+        <details>
+            <summary>Каковы лимиты ставок?</summary>
+            <p>До $50,000 на популярные события.</p>
+        </details>
+        <details>
+            <summary>Безопасны ли выплаты?</summary>
+            <p>Да, стабильные и быстрые.</p>
+        </details>
+        <details>
+            <summary>Есть ли API?</summary>
+            <p>Да, для профессионалов.</p>
+        </details>
+        <details>
+            <summary>Где лицензировано?</summary>
+            <p>Curacao и Malta.</p>
+        </details>
+        <details>
+            <summary>Поддержка esports?</summary>
+            <p>Да, один из лидеров.</p>
+        </details>
+        <details>
+            <summary>Как зарегистрироваться?</summary>
+            <p>Просто заполните форму.</p>
+        </details>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Готовы к лучшим ставкам?</h2>
+        <button class="cta">Присоединиться к Pinnacle</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Pinnacle. Все права защищены.</p>
+        <a href="#">Политика конфиденциальности</a> | <a href="#">Условия</a>
+    </footer>
+
+</body>
+</html>

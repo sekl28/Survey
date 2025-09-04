@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinnacle | Выбор профессионалов. Лучшие коэффициенты.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- 1. Глобальные стили и переменные (Брендинг Pinnacle и Эстетика 2025) --- */
+        :root {
+            --color-primary-blue: #002D62; /* Pinnacle Dark Blue */
+            --color-accent-orange: #FF6600; /* Pinnacle Orange (CTA) */
+            --color-accent-tech: #00BFFF; /* Дополнительный цвет для технологичности */
+            --color-bg-dark: #0A0A1E;
+            --color-bg-medium: #1A1A3A;
+            --color-text: #FFFFFF;
+            --color-text-muted: #A0A0C0;
+            --transition-fast: 0.3s; /* Скорость анимации ≤300 мс */
+            --font-main: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-bg-dark);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- 2. Типографика и Кнопки (UX/UI) --- */
+        h1, h2, h3 {
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem; /* Mobile first size */
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Декоративный элемент под заголовком */
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-accent-orange);
+            margin: 15px auto 50px;
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+        }
+
+        /* Инновационный стиль кнопок: Свечение (Glow) и Подъём (Lift) */
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: var(--color-accent-orange);
+            color: var(--color-text);
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: transform var(--transition-fast) ease, box-shadow var(--transition-fast) ease, background-color var(--transition-fast) ease;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background-color: #e65c00;
+            /* Усиленный эффект Glow */
+            box-shadow: 0 8px 30px rgba(255, 102, 0, 0.6);
+        }
+
+        /* --- 3. Структура и Секции --- */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .bg-medium {
+            background-color: var(--color-bg-medium);
+        }
+
+        /* --- 4. Hero-секция (УТП, Динамика, Motion-design) --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        /* Динамический фон */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            /* Градиент для ощущения глубины */
+            background: radial-gradient(circle at top left, rgba(0, 45, 98, 0.8) 0%, var(--color-bg-dark) 60%);
+        }
+        
+        /* Анимированная сетка данных (Motion-design) */
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            /* Тонкие линии, имитирующие поток данных */
+            background-image: linear-gradient(rgba(0, 191, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 191, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: bg-pan 40s linear infinite;
+        }
+
+        @keyframes bg-pan {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50px, -50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* Интерактивный элемент: Индикатор низкой маржи (Glassmorphism) */
+        .margin-indicator {
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--color-accent-orange);
+            /* Glassmorphism */
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .margin-indicator p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .margin-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-accent-orange);
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* --- 5. Сильные стороны Pinnacle (Карточки, 3D-акценты, Микроанимации) --- */
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        /* Стиль карточек: Glassmorphism */
+        .strength-card {
+            border-radius: 15px;
+            padding: 30px;
+            text-align: left;
+            transition: all var(--transition-fast) ease;
+            /* Glassmorphism */
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            /* Подготовка к 3D эффекту */
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        /* Hover-эффект: 3D наклон и свечение (Инновация) */
+        .strength-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border-color: var(--color-accent-tech);
+        }
+
+        .card-icon svg {
+            width: 48px;
+            height: 48px;
+            color: var(--color-accent-orange);
+            margin-bottom: 20px;
+            transition: transform var(--transition-fast) ease;
+        }
+
+        /* Микроанимация иконки */
+        .strength-card:hover .card-icon svg {
+             transform: scale(1.1) translateZ(20px);
+        }
+
+        .strength-card p {
+            color: var(--color-text-muted);
+        }
+
+        /* --- 6. Как начать (3 шага, Инфографика) --- */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--color-primary-blue);
+            color: var(--color-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            /* Акцентная обводка */
+            border: 3px solid var(--color-accent-orange);
+            flex-shrink: 0;
+        }
+
+        /* --- 7. Факты доверия и стабильности (Счётчики) --- */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--color-bg-dark);
+            border-radius: 10px;
+        }
+
+        .counter {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--color-accent-tech);
+            display: block;
+            margin-bottom: 10px;
+            /* Неоновое свечение текста */
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+        }
+
+        /* --- 8. Секция для продвинутых игроков (Инфографика) --- */
+        .advanced-content {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .advanced-feature {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-direction: column;
+        }
+
+        .advanced-visual {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        /* Визуал высоких лимитов (Градиент/Инфографика) */
+        .visual-limits {
+            background-image: linear-gradient(to top, var(--color-primary-blue) 0%, var(--color-accent-orange) 100%);
+            color: white;
+            font-weight: bold;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.4);
+        }
+
+        /* Визуал API (Стиль кода/Терминала) */
+        .visual-api {
+            background-color: #001529;
+            color: #00FF00; /* Green color for code */
+            font-family: monospace;
+            text-align: left;
+            border: 1px solid var(--color-accent-tech);
+        }
+
+
+        /* --- 9. FAQ (Аккордеоны, Минимализм) --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--color-bg-medium);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background-color var(--transition-fast) ease;
+        }
+
+        .faq-question:hover, .faq-item.active .faq-question {
+            background-color: var(--color-primary-blue);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform var(--transition-fast) ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            /* Плавное раскрытие (≤300 мс) */
+            transition: max-height 0.3s ease-out;
+            color: var(--color-text-muted);
+        }
+        
+        .faq-answer-content {
+             padding: 0 20px 20px 20px;
+        }
+
+        /* Анимация иконки FAQ */
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+            color: var(--color-accent-orange);
+        }
+
+        /* --- 10. Final CTA-блок --- */
+        .final-cta {
+            text-align: center;
+            padding: 120px 0;
+            /* Градиентный фон для привлечения внимания */
+            background: linear-gradient(135deg, var(--color-primary-blue) 0%, var(--color-bg-dark) 100%);
+        }
+
+        .final-cta h2 {
+            margin-bottom: 30px;
+        }
+
+        .final-cta .btn {
+            font-size: 1.3rem;
+            padding: 18px 45px;
+        }
+
+        /* --- 11. Footer (Минимализм) --- */
+        footer {
+            background-color: #000010;
+            padding: 50px 0 30px;
+            text-align: center;
+            color: var(--color-text-muted);
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--color-text);
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+            transition: color var(--transition-fast) ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent-orange);
+        }
+
+        .footer-copy {
+            margin-top: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* --- 12. Анимации при скролле (Motion Design) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* --- 13. Адаптивность (Mobile First) --- */
+        
+        /* Планшеты (768px+) */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            h2 {
+                font-size: 2.5rem;
+            }
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .strengths-grid {
+                /* 3 колонки на больших экранах */
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .steps-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .step {
+                flex-direction: column;
+                text-align: center;
+                max-width: 250px;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .trust-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .advanced-feature {
+                /* Расположение текста и визуала в ряд */
+                flex-direction: row;
+            }
+            
+            /* Чередование расположения блоков для визуального ритма */
+            .advanced-feature:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+            
+            .advanced-visual, .advanced-text {
+                flex: 1;
+            }
+        }
+
+        /* Десктоп (1024px+) */
+        @media (min-width: 1024px) {
+            .hero {
+                min-height: 90vh;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <h1 class="reveal">Ставки без компромиссов. <span style="color: var(--color-accent-orange);">Выбор профессионалов.</span></h1>
+            <p class="reveal">Pinnacle предлагает самые высокие лимиты и самую низкую маржу в индустрии. Мы не режем счета успешным игрокам. Добро пожаловать победителям.</p>
+            <a href="#register" class="btn reveal">Присоединиться сейчас</a>
+            
+            <div class="margin-indicator reveal">
+                <p>Средняя маржа Pinnacle:</p>
+                <span class="margin-value">≈2.0%</span>
+                <p>В то время как у конкурентов до 8%.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="strengths" class="container">
+        <h2>Преимущество Pinnacle</h2>
+        <div class="strengths-grid">
+            <div class="strength-card reveal">
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+                </div>
+                <h3>Минимальная маржа</h3>
+                <p>Наши коэффициенты — лучшие на рынке. Мы зарабатываем на объёмах, а не на высокой марже, давая вам максимальную выгоду на дистанции.</p>
+            </div>
+            <div class="strength-card reveal" style="transition-delay: 0.2s;">
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                </div>
+                <h3>Высочайшие лимиты</h3>
+                <p>Ставьте столько, сколько считаете нужным. Мы предлагаем самые высокие лимиты для крупных игроков и профессионалов на основные рынки.</p>
+            </div>
+            <div class="strength-card reveal" style="transition-delay: 0.4s;">
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                </div>
+                <h3>Победителям рады (Winners Welcome)</h3>
+                <p>Мы никогда не блокируем и не ограничиваем успешных игроков. Ваша стратегия — это ваше дело. Добро пожаловать в клуб победителей.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to-start" class="bg-medium">
+        <div class="container">
+            <h2>Начать играть за 3 минуты</h2>
+            <div class="steps-container">
+                <div class="step reveal">
+                    <div class="step-number">1</div>
+                    <div class="step-text">
+                        <h3>Регистрация</h3>
+                        <p>Быстрое создание аккаунта без лишних сложностей.</p>
+                    </div>
+                </div>
+                <div class="step reveal" style="transition-delay: 0.2s;">
+                    <div class="step-number">2</div>
+                    <div class="step-text">
+                        <h3>Депозит</h3>
+                        <p>Мгновенное пополнение счета удобным способом.</p>
+                    </div>
+                </div>
+                <div class="step reveal" style="transition-delay: 0.4s;">
+                    <div class="step-number">3</div>
+                    <div class="step-text">
+                        <h3>Игра</h3>
+                        <p>Делайте ставки с лучшими коэффициентами на рынке.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trust">
+        <div class="container">
+            <h2>Надёжность, проверенная временем</h2>
+            <div class="trust-grid">
+                <div class="trust-item reveal">
+                    <span class="counter" data-target="1998">0</span>
+                    <p>Год основания компании</p>
+                </div>
+                <div class="trust-item reveal" style="transition-delay: 0.2s;">
+                    <span class="counter" data-target="100" data-suffix="+">0+</span>
+                    <p>Стран присутствия</p>
+                </div>
+                <div class="trust-item reveal" style="transition-delay: 0.4s;">
+                    <span class="counter" data-target="15" data-prefix="<" data-suffix=" мин"><15 мин</span>
+                    <p>Средняя скорость вывода средств</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advanced" class="bg-medium">
+        <div class="container">
+            <h2>Инструменты для профессионалов</h2>
+            <div class="advanced-content">
+                <div class="advanced-feature reveal">
+                    <div class="advanced-visual visual-limits">
+                        <span>Лимиты до $50,000+ на событие</span>
+                    </div>
+                    <div class="advanced-text">
+                        <h3>Неограниченные возможности и Арбитраж</h3>
+                        <p>Мы не боимся крупных ставок. Наши лимиты позволяют вам реализовывать любые стратегии. Мы лояльны к арбитражным игрокам (вилочникам) и не препятствуем их деятельности.</p>
+                    </div>
+                </div>
+                <div class="advanced-feature reveal">
+                    <div class="advanced-visual visual-api">
+                        <code>
+                            GET /v1/odds <br>
+                            Authorization: Basic ... <br>
+                            { "sportId": 29, "oddsFormat": "DECIMAL", "status": "OK" }
+                        </code>
+                    </div>
+                    <div class="advanced-text">
+                        <h3>Мощный доступ к API</h3>
+                        <p>Автоматизируйте свои стратегии и получайте данные в реальном времени с помощью нашего стабильного API. Идеально для профессиональных трейдеров и разработчиков.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <h2>Часто задаваемые вопросы</h2>
+            <div class="faq-container reveal">
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Почему у Pinnacle такие высокие коэффициенты?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                             <p>Мы придерживаемся модели с низкой маржой (около 2%). Вместо того чтобы тратить бюджет на маркетинг и бонусы, мы вкладываемся в предоставление лучших коэффициентов, что выгоднее для игроков на дистанции.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Правда ли, что вы не блокируете успешных игроков?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                         <div class="faq-answer-content">
+                            <p>Абсолютно верно. Наша политика "Победителям рады" (Winners Welcome) означает, что мы никогда не закроем ваш счет и не снизим лимиты из-за ваших успехов. Мы ценим профессиональных игроков.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Подходит ли Pinnacle для арбитражных ставок (вилок)?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Да, мы лояльно относимся к арбитражным игрокам. Наши высокие лимиты и точные линии делают Pinnacle идеальным выбором для этой стратегии.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Как быстро происходит вывод средств?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Мы гордимся скоростью наших выплат. Большинство запросов обрабатывается в течение 15 минут, в зависимости от выбранной платежной системы.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Предоставляете ли вы бонусы на первый депозит?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Мы не предлагаем традиционных бонусов. Наш главный бонус — это стабильно низкая маржа, которая на дистанции приносит гораздо больше выгоды, чем любой приветственный бонус.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta" id="register">
+        <div class="container reveal">
+            <h2>Готовы играть по-крупному?</h2>
+            <p>Присоединяйтесь к элите беттинга и получите доступ к лучшим условиям в мире.</p>
+            <a href="#register" class="btn">Зарегистрироваться сейчас</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">PINNACLE</div>
+            <div class="footer-links">
+                <a href="#">О нас</a>
+                <a href="#">Правила ставок</a>
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">API</a>
+                <a href="#">Ответственная игра</a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2025 Pinnacle. Все права защищены. 18+.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Анимация при скролле (Scroll Reveal) - Использование Intersection Observer
+            const reveals = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        revealObserver.unobserve(entry.target); // Оптимизация: прекращаем следить после появления
+                    }
+                });
+            }, {
+                threshold: 0.1 // Элемент появляется, когда виден на 10%
+            });
+
+            reveals.forEach(reveal => {
+                revealObserver.observe(reveal);
+            });
+
+            // 2. FAQ Аккордеон
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const answer = item.querySelector('.faq-answer');
+                    const isActive = item.classList.contains('active');
+
+                    // Закрыть все остальные
+                    faqItems.forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-answer').style.maxHeight = 0;
+                    });
+
+                    // Открыть текущий, если он был закрыт
+                    if (!isActive) {
+                        item.classList.add('active');
+                        // Устанавливаем высоту для плавной анимации, основываясь на высоте контента
+                        const content = item.querySelector('.faq-answer-content');
+                        answer.style.maxHeight = content.scrollHeight + 40 + "px"; // + padding
+                    }
+                });
+            });
+
+            // 3. Анимированные счётчики (Counters)
+            const counters = document.querySelectorAll('.counter');
+             const animationDuration = 2000; // Длительность анимации в мс
+
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const suffix = counter.getAttribute('data-suffix') || '';
+                const prefix = counter.getAttribute('data-prefix') || '';
+                
+                // Если цель не число, просто показываем финальное значение
+                if (isNaN(target)) {
+                     counter.innerText = prefix + counter.getAttribute('data-target') + suffix;
+                     return;
+                }
+
+                const startTime = performance.now();
+
+                const updateCount = (currentTime) => {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / animationDuration, 1);
+                    // Функция Ease-out для плавности
+                    const easedProgress = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.floor(easedProgress * target);
+
+                    counter.innerText = prefix + current + suffix;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        // Гарантируем точное финальное значение
+                        counter.innerText = prefix + target + suffix;
+                    }
+                };
+                
+                // Начинаем анимацию
+                requestAnimationFrame(updateCount);
+            };
+
+
+            // Используем Intersection Observer для запуска счётчиков при появлении
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        });
+    </script>
+</body>
+</html>

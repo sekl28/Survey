@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinnacle Landing Page 2025</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Pinnacle Landing Page - Innovative 2025 Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <style>
         :root {
-            --primary-color: #0A1A3A; /* Deep navy */
-            --accent-color: #FF2E63; /* Neon pink */
-            --secondary-accent: #00DDEB; /* Neon cyan */
-            --text-color: #E0E7FF;
-            --secondary-text: #A1B1C9;
-            --bg-gradient: linear-gradient(135deg, #0A1A3A 0%, #1E3A8A 100%);
+            --primary-color: #001F3F; /* Navy blue from Pinnacle style */
+            --accent-color: #ED1703; /* Red-orange accent */
+            --secondary-accent: #FFFFFF; /* White for text */
+            --bg-gradient: linear-gradient(135deg, #001F3F, #003366);
+            --neon-glow: rgba(237, 23, 3, 0.5);
         }
 
         * {
@@ -24,31 +25,37 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-accent);
             background: var(--primary-color);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         section {
-            padding: 60px 20px;
-            max-width: 1200px;
+            padding: 80px 20px;
+            max-width: 1400px;
             margin: 0 auto;
+            position: relative;
         }
 
         h1, h2, h3 {
             font-weight: 800;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
         }
 
-        /* Hero Section */
+        /* Hero Section with Parallax and Particles */
         .hero {
             background: var(--bg-gradient);
             text-align: center;
-            padding: 100px 20px;
+            padding: 150px 20px;
             position: relative;
             overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero::before {
@@ -58,344 +65,450 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 46, 99, 0.2), transparent);
+            background: url('https://via.placeholder.com/1920x1080?text=Pinnacle+Hero+BG') center/cover no-repeat fixed;
+            opacity: 0.3;
             z-index: 0;
         }
 
-        .hero h1 {
-            font-size: 3.5em;
-            animation: fadeInDown 1s ease-in;
-            position: relative;
+        #particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 1;
         }
 
-        .hero p {
-            font-size: 1.3em;
-            margin: 15px 0;
-            color: var(--secondary-text);
+        .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #A9B7C6;
         }
 
         .cta {
             background: var(--accent-color);
-            color: var(--text-color);
+            color: var(--secondary-accent);
             border: none;
-            padding: 15px 40px;
-            font-size: 1.2em;
-            font-weight: 600;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            font-weight: 700;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(255, 46, 99, 0.5);
-            position: relative;
-            z-index: 1;
+            box-shadow: 0 0 15px var(--neon-glow);
         }
 
         .cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(255, 46, 99, 0.8);
-            background: var(--secondary-accent);
+            transform: scale(1.1);
+            box-shadow: 0 0 30px var(--neon-glow);
+            background: #FF4500;
         }
 
+        /* Interactive Calculator with Animation */
         .calculator {
-            margin: 30px auto;
-            max-width: 400px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            position: relative;
-            z-index: 1;
+            max-width: 500px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
         }
 
-        .calculator input, .calculator button {
-            padding: 10px;
-            margin: 10px;
-            border-radius: 5px;
-            border: none;
-            font-size: 1em;
+        .calculator input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid var(--accent-color);
+            background: transparent;
+            color: var(--secondary-accent);
+            font-size: 1.2em;
+            border-radius: 10px;
         }
 
         .calculator button {
-            background: var(--secondary-accent);
-            color: var(--text-color);
+            width: 100%;
+            padding: 15px;
+            background: var(--accent-color);
+            color: var(--secondary-accent);
+            border: none;
+            font-size: 1.2em;
+            border-radius: 10px;
             cursor: pointer;
         }
 
-        /* Advantages Section */
+        #profit-result {
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Advantages with 3D Cards */
         .advantages {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            perspective: 1000px;
         }
 
         .card {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 20px;
+            border-radius: 20px;
+            padding: 30px;
             text-align: center;
-            transition: transform 0.3s ease;
-            backdrop-filter: blur(10px);
+            transition: transform 0.5s ease;
+            transform-style: preserve-3d;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .card:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 221, 235, 0.3);
+            transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+            box-shadow: 0 0 30px var(--neon-glow);
         }
 
         .card i {
-            font-size: 2.5em;
+            font-size: 3em;
             color: var(--accent-color);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            display: block;
+            transition: color 0.3s;
         }
 
-        /* Steps Section */
+        .card:hover i {
+            color: #FF4500;
+        }
+
+        /* Steps with Timeline Animation */
         .steps {
+            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 50px;
         }
 
         .step {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
             background: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 500px;
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            width: 2px;
+            height: 30px;
+            background: var(--accent-color);
+        }
+
+        .step:first-child::before {
+            display: none;
         }
 
         .step i {
-            font-size: 2em;
-            color: var(--secondary-accent);
+            font-size: 2.5em;
+            color: var(--accent-color);
+            background: rgba(237, 23, 3, 0.2);
+            padding: 15px;
+            border-radius: 50%;
         }
 
-        /* Facts Section */
+        /* Facts with Counters */
         .facts {
             text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
         }
 
         .fact {
-            font-size: 2.5em;
-            font-weight: 600;
-            margin: 20px 0;
-            color: var(--secondary-accent);
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--accent-color);
         }
 
-        /* Pro Players Section */
+        /* Pro Section with Infographics */
         .pro-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
 
         .pro-block {
             background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 25px;
+            border-radius: 15px;
             text-align: center;
             backdrop-filter: blur(10px);
         }
 
-        /* FAQ Section */
+        /* FAQ with Accordions */
         .faq {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .faq details {
             background: rgba(255, 255, 255, 0.05);
-            margin-bottom: 10px;
-            padding: 15px;
+            margin-bottom: 15px;
+            padding: 20px;
             border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .faq summary {
-            font-weight: 600;
-            padding: 10px;
+            transition: background 0.3s;
         }
 
         .faq details[open] {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
         }
 
-        /* Final CTA */
+        .faq summary {
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        /* Final CTA with Motion */
         .final-cta {
             text-align: center;
             background: var(--bg-gradient);
-            padding: 80px 20px;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .final-cta h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             background: #000;
-            color: var(--secondary-text);
+            color: #A9B7C6;
         }
 
         footer a {
-            color: var(--secondary-accent);
+            color: var(--accent-color);
             text-decoration: none;
-            margin: 0 10px;
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+            margin: 0 15px;
         }
 
         /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2em; }
-            .hero p { font-size: 1em; }
-            .card, .pro-block { width: 100%; }
-            .step { width: 90%; }
+            .hero h1 { font-size: 2.5em; }
+            .hero p { font-size: 1.2em; }
+            .step { width: 100%; }
+            .facts { flex-direction: column; }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero" data-aos="fade-up">
-        <h1>Побеждайте с Pinnacle</h1>
-        <p>Низкая маржа, высокие лимиты, выбор профессионалов с 1998 года</p>
-        <button class="cta">Начать выигрывать</button>
-        <div class="calculator">
-            <h3>Калькулятор выгоды</h3>
-            <input type="number" id="bet-amount" placeholder="Сумма ставки, $">
-            <button onclick="calculateProfit()">Рассчитать</button>
-            <p id="profit-result">Экономия: $0</p>
+
+    <!-- Hero Section with Particles and Parallax -->
+    <section class="hero" data-aos="fade-in">
+        <div id="particles"></div>
+        <div class="hero-content">
+            <h1>Выигрывайте по-крупному с Pinnacle</h1>
+            <p>Низкая маржа 2%, лимиты до $50,000, доверие с 1998 года</p>
+            <button class="cta">Зарегистрироваться</button>
+            <div class="calculator" data-aos="zoom-in">
+                <h3>Калькулятор выгоды от низкой маржи</h3>
+                <input type="number" id="bet-amount" placeholder="Сумма ставки, $">
+                <button onclick="calculateProfit()">Рассчитать экономию</button>
+                <p id="profit-result">Экономия: $0</p>
+            </div>
         </div>
-        <script>
-            function calculateProfit() {
-                const bet = document.getElementById('bet-amount').value;
-                const margin = 0.02; // 2% Pinnacle margin
-                const industryMargin = 0.07; // 7% industry average
-                const savings = (bet * (industryMargin - margin)).toFixed(2);
-                document.getElementById('profit-result').innerText = `Экономия: $${savings}`;
-            }
-        </script>
     </section>
 
     <!-- Advantages Section -->
     <section class="advantages" data-aos="fade-up">
-        <h2 data-aos="fade-in">Почему Pinnacle?</h2>
-        <div class="card" data-aos="zoom-in">
-            <i class="fas fa-chart-line"></i>
-            <h3>Низкая маржа</h3>
-            <p>2% против 7% у конкурентов.</p>
+        <h2 data-aos="fade-in">Сильные стороны Pinnacle</h2>
+        <div class="card" data-aos="flip-left">
+            <i class="fas fa-percentage"></i>
+            <h3>Низкая маржа ~2%</h3>
+            <p>Лучшие коэффициенты в индустрии. Инфографика сравнения с анимацией.</p>
         </div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="100">
-            <i class="fas fa-money-bill-wave"></i>
-            <h3>Высокие лимиты</h3>
-            <p>Ставки до $50,000.</p>
+        <div class="card" data-aos="flip-left" data-aos-delay="150">
+            <i class="fas fa-dollar-sign"></i>
+            <h3>Высокие лимиты до $50k</h3>
+            <p>Ставки без ограничений для профи. Анимированный график роста.</p>
         </div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card" data-aos="flip-left" data-aos-delay="300">
             <i class="fas fa-shield-alt"></i>
-            <h3>Доверие</h3>
-            <p>Лицензии Curacao и Malta.</p>
+            <h3>Доверие с 1998 года</h3>
+            <p>Лицензии Curacao и Malta. Щит с 3D-анимацией.</p>
         </div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="300">
-            <i class="fas fa-bolt"></i>
+        <div class="card" data-aos="flip-left" data-aos-delay="450">
+            <i class="fas fa-rocket"></i>
             <h3>Быстрые выплаты</h3>
-            <p>От мгновенных до 5 дней.</p>
+            <p>От мгновенных до 5 дней. Счётчик с микроанимацией.</p>
+        </div>
+        <div class="card" data-aos="flip-left" data-aos-delay="600">
+            <i class="fas fa-tools"></i>
+            <h3>Для профессионалов</h3>
+            <p>API, esports, арбитраж. Инфографика инструментов с hover-эффектами.</p>
         </div>
     </section>
 
     <!-- Steps Section -->
     <section class="steps" data-aos="fade-up">
-        <h2 data-aos="fade-in">3 шага к победе</h2>
-        <div class="step" data-aos="slide-right">
-            <i class="fas fa-user-plus"></i>
-            <p>Зарегистрируйтесь за минуту</p>
+        <h2 data-aos="fade-in">Как начать: 3 шага</h2>
+        <div class="step" data-aos="slide-up">
+            <i class="fas fa-user-check"></i>
+            <p>Регистрация — быстро и безопасно</p>
         </div>
-        <div class="step" data-aos="slide-right" data-aos-delay="100">
-            <i class="fas fa-wallet"></i>
-            <p>Пополните счёт любым способом</p>
+        <div class="step" data-aos="slide-up" data-aos-delay="200">
+            <i class="fas fa-credit-card"></i>
+            <p>Депозит — множество методов</p>
         </div>
-        <div class="step" data-aos="slide-right" data-aos-delay="200">
-            <i class="fas fa-trophy"></i>
-            <p>Делайте ставки и побеждайте</p>
+        <div class="step" data-aos="slide-up" data-aos-delay="400">
+            <i class="fas fa-play"></i>
+            <p>Ставки — лучшие коэффициенты</p>
         </div>
     </section>
 
     <!-- Facts Section -->
     <section class="facts" data-aos="fade-up">
-        <h2 data-aos="fade-in">Факты о нас</h2>
-        <div class="fact" data-aos="zoom-in">С 1998 года</div>
-        <div class="fact" data-aos="zoom-in" data-aos-delay="100">Игроки из 100+ стран</div>
-        <div class="fact" data-aos="zoom-in" data-aos-delay="200">99% выплат в срок</div>
+        <h2 data-aos="fade-in">Факты доверия</h2>
+        <div class="fact" data-aos="zoom-in" id="year-fact">1998</div>
+        <div class="fact" data-aos="zoom-in" data-aos-delay="200" id="countries-fact">100+</div>
+        <div class="fact" data-aos="zoom-in" data-aos-delay="400" id="payout-fact">99%</div>
     </section>
 
-    <!-- Pro Players Section -->
+    <!-- Pro Section -->
     <section class="pro-section" data-aos="fade-up">
-        <h2 data-aos="fade-in">Для профи</h2>
+        <h2 data-aos="fade-in">Для продвинутых игроков</h2>
         <div class="pro-block" data-aos="zoom-in">
             <h3>Низкая маржа</h3>
-            <p>Экономия на каждой ставке.</p>
+            <p>Экономьте на каждой ставке — инфографика 2% vs 7%.</p>
         </div>
-        <div class="pro-block" data-aos="zoom-in" data-aos-delay="100">
-            <h3>Лимиты</h3>
-            <p>До $50k на топ-игры.</p>
+        <div class="pro-block" data-aos="zoom-in" data-aos-delay="150">
+            <h3>Высокие лимиты</h3>
+            <p>До $50k — график с анимацией.</p>
         </div>
-        <div class="pro-block" data-aos="zoom-in" data-aos-delay="200">
-            <h3>Инструменты</h3>
-            <p>API и аналитика для профи.</p>
+        <div class="pro-block" data-aos="zoom-in" data-aos-delay="300">
+            <h3>Про-инструменты</h3>
+            <p>API и аналитика — динамические иконки.</p>
         </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq" data-aos="fade-up">
-        <h2 data-aos="fade-in">Часто задаваемые вопросы</h2>
+        <h2 data-aos="fade-in">FAQ</h2>
         <details data-aos="fade-up">
             <summary>Что такое низкая маржа?</summary>
-            <p>Это лучшие коэффициенты для вас.</p>
+            <p>Это лучшие коэффициенты, экономия до 60% по сравнению с конкурентами.<grok-card data-id="ff4e7f" data-type="citation_card"></grok-card></p>
         </details>
         <details data-aos="fade-up" data-aos-delay="100">
             <summary>Какие лимиты ставок?</summary>
-            <p>До $50,000 на популярные события.</p>
+            <p>До $50,000 на топ-матчи.<grok-card data-id="fb1a4c" data-type="citation_card"></grok-card></p>
         </details>
         <details data-aos="fade-up" data-aos-delay="200">
-            <summary>Безопасны ли выплаты?</summary>
-            <p>Да, 99% выплат в срок.</p>
+            <summary>Насколько надёжны выплаты?</summary>
+            <p>Стабильные, 99% в срок, от мгновенных до 5 дней.<grok-card data-id="cebf53" data-type="citation_card"></grok-card></p>
         </details>
         <details data-aos="fade-up" data-aos-delay="300">
-            <summary>Есть ли API?</summary>
-            <p>Да, для профессионалов.</p>
+            <summary>Есть ли инструменты для профи?</summary>
+            <p>Да, API, esports, арбитраж разрешён.<grok-card data-id="495a15" data-type="citation_card"></grok-card></p>
         </details>
         <details data-aos="fade-up" data-aos-delay="400">
-            <summary>Где лицензировано?</summary>
-            <p>Curacao и Malta.</p>
+            <summary>Сколько лет на рынке?</summary>
+            <p>С 1998 года, лицензии Curacao и Malta.<grok-card data-id="cc4245" data-type="citation_card"></grok-card></p>
+        </details>
+        <details data-aos="fade-up" data-aos-delay="500">
+            <summary>Поддержка esports?</summary>
+            <p>Да, один из лидеров в этой области.<grok-card data-id="0cbb26" data-type="citation_card"></grok-card></p>
+        </details>
+        <details data-aos="fade-up" data-aos-delay="600">
+            <summary>Как зарегистрироваться?</summary>
+            <p>Просто и быстро через форму на сайте.</p>
         </details>
     </section>
 
     <!-- Final CTA -->
     <section class="final-cta" data-aos="fade-up">
-        <h2>Готовы к лучшим ставкам?</h2>
-        <button class="cta">Присоединиться к Pinnacle</button>
+        <h2>Присоединяйтесь к элите ставок</h2>
+        <button class="cta">Начать сейчас</button>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2025 Pinnacle. Все права защищены.</p>
-        <a href="#">Политика конфиденциальности</a> | <a href="#">Условия</a>
+        <a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-out',
-            once: true
+        AOS.init({ duration: 1200, easing: 'ease-out-quart' });
+
+        // Particles Background with Three.js
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('particles').appendChild(renderer.domElement);
+
+        const particles = new THREE.BufferGeometry();
+        const particleCount = 5000;
+        const posArray = new Float32Array(particleCount * 3);
+        for (let i = 0; i < particleCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 5;
+        }
+        particles.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+        const material = new THREE.PointsMaterial({ color: 0xED1703, size: 0.005 });
+        const particleSystem = new THREE.Points(particles, material);
+        scene.add(particleSystem);
+
+        camera.position.z = 1;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            particleSystem.rotation.y += 0.0005;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
         });
+
+        // Calculator
+        function calculateProfit() {
+            const bet = parseFloat(document.getElementById('bet-amount').value) || 0;
+            const savings = (bet * (0.07 - 0.02)).toFixed(2); // 7% industry vs 2% Pinnacle
+            gsap.to('#profit-result', { duration: 0.5, opacity: 0, y: -10, onComplete: () => {
+                document.getElementById('profit-result').innerText = `Экономия: $${savings}`;
+                gsap.to('#profit-result', { duration: 0.5, opacity: 1, y: 0 });
+            }});
+        }
+
+        // GSAP Animations for Facts
+        gsap.from('#year-fact', { text: '0', duration: 2, ease: 'power1.out', snap: { text: 1 }, delay: 1 });
+        gsap.from('#countries-fact', { text: '0', duration: 2, ease: 'power1.out', snap: { text: 1 }, delay: 1.5 });
+        gsap.from('#payout-fact', { text: '0%', duration: 2, ease: 'power1.out', snap: { text: 1 }, delay: 2 });
     </script>
 </body>
 </html>

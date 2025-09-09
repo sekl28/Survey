@@ -3,112 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Education Hub — Knowledge for Everyone</title>
-  <meta name="description" content="Education Hub provides learning tips, study methods, and useful guides for students and lifelong learners." />
+  <title>Education Hub — Articles, Guides, Study Plans & Glossary</title>
+  <meta name="description" content="Extensive educational hub: study methods, long-form articles, practical guides, weekly plans, and a glossary for learners." />
+  <meta name="robots" content="index,follow" />
   <style>
-    body {
-      margin:0; font-family:system-ui, sans-serif; line-height:1.6;
-      background:#f5f6fa; color:#222;
+    :root{
+      --bg:#0f172a; --panel:#111827; --ink:#e5e7eb; --muted:#9ca3af;
+      --line:rgba(148,163,184,.18); --accent:#38bdf8; --accent2:#22c55e;
+      --radius:14px;
     }
-    header {
-      background:#2b3d52; color:#fff; padding:15px 25px;
-      position:sticky; top:0;
+    *{box-sizing:border-box} html,body{margin:0}
+    body{font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;color:var(--ink);
+      background:linear-gradient(160deg,#0b1224 0%,#0f172a 35%,#0a0f1f 100%) fixed;}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    header{position:sticky;top:0;z-index:10;backdrop-filter:saturate(140%) blur(10px);
+      background:rgba(15,23,42,.65); border-bottom:1px solid var(--line)}
+    .wrap{max-width:1150px;margin:0 auto;padding:0 18px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .badge{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#0ea5e9)}
+    .nav a{color:var(--ink);opacity:.92;margin-left:18px}
+    .hero{padding:68px 0 28px}
+    .hero h1{margin:0 0 10px;font-size:40px;line-height:1.12}
+    .hero p{margin:0;color:var(--muted);max-width:820px}
+    .grid{display:grid;gap:18px;margin:26px 0 44px;grid-template-columns:repeat(12,1fr)}
+    .card{
+      background:
+        radial-gradient(1200px 600px at -10% -20%,rgba(56,189,248,.12),transparent 40%),
+        radial-gradient(800px 600px at 120% 10%,rgba(34,197,94,.10),transparent 45%),
+        var(--panel);
+      border:1px solid var(--line); border-radius:var(--radius);
+      padding:20px; min-height:160px; transition:transform .18s ease,border-color .18s ease;
     }
-    header nav a {
-      color:#fff; margin-right:20px; text-decoration:none; font-weight:500;
-    }
-    header nav a:hover { text-decoration:underline; }
-    main { max-width:900px; margin:0 auto; padding:20px; }
-    section { margin:50px 0; }
-    h1,h2 { color:#2b3d52; }
-    .card {
-      background:#fff; border:1px solid #ddd; border-radius:8px;
-      padding:20px; margin:15px 0;
-    }
-    .btn {
-      display:inline-block; padding:10px 16px; margin-top:10px;
-      background:#2b3d52; color:#fff; border-radius:6px; text-decoration:none;
-    }
-    .btn:hover { background:#1e2b3a; }
-    footer {
-      text-align:center; color:#777; font-size:14px; padding:25px 0;
-    }
+    .card:hover{transform:translateY(-2px);border-color:rgba(56,189,248,.35)}
+    .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#a7f3d0}
+    .card h3{margin:6px 0 8px;font-size:20px}
+    .card p{margin:0;color:var(--ink);opacity:.92}
+    .span-3{grid-column:span 3} .span-4{grid-column:span 4}
+    .span-6{grid-column:span 6} .span-8{grid-column:span 8} .span-12{grid-column:span 12}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(56,189,248,.14),rgba(56,189,248,.06));color:var(--ink);margin-top:10px}
+    .btn:hover{border-color:rgba(56,189,248,.45)}
+    .muted{color:var(--muted)}
+    ul,ol{margin:10px 0 0 18px}
+    details{margin-top:10px}
+    details summary{cursor:pointer;color:var(--accent2);font-weight:600}
+    .table{width:100%;border-collapse:collapse;margin-top:8px}
+    .table th,.table td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left}
+    .pill{display:inline-block;padding:.2rem .55rem;border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--muted)}
+    footer{margin:40px 0 28px;color:var(--muted);font-size:14px;text-align:center}
+    @media (max-width:950px){.hero h1{font-size:32px}.span-3,.span-4,.span-6,.span-8,.span-12{grid-column:span 12}}
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <a href="#articles">Articles</a>
-      <a href="#guides">Guides</a>
-      <a href="#resources">Resources</a>
-      <a href="#faq">FAQ</a>
-    </nav>
+    <div class="wrap nav">
+      <div class="brand"><span class="badge"></span>Education Hub</div>
+      <nav>
+        <a href="#articles">Articles</a>
+        <a href="#guides">Guides</a>
+        <a href="#plans">Study Plans</a>
+        <a href="#resources">Resources</a>
+        <a href="#glossary">Glossary</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="home">
-      <h1>Welcome to Education Hub</h1>
-      <p>Clear articles and guides about learning, study strategies, and lifelong education. Everything here is free and easy to use.</p>
+  <main class="wrap">
+    <section class="hero" id="home">
+      <h1>Deep Learning (the studying kind): methods that actually work</h1>
+      <p>Long-form articles, practical guides, weekly and monthly study plans, resource lists, and a concise glossary. Everything is informational and free to read.</p>
     </section>
 
-    <section id="articles">
-      <h2>Articles</h2>
-      <div class="card">
-        <h3>How to Focus Better</h3>
-        <p>Learn how to manage distractions and create an effective study environment.</p>
-        <a class="btn" href="#guides">Read More</a>
-      </div>
-      <div class="card">
-        <h3>Why Spaced Repetition Works</h3>
-        <p>Understand the science of memory and how repetition at intervals improves learning.</p>
-        <a class="btn" href="#resources">Explore</a>
-      </div>
+    <!-- ARTICLES -->
+    <section id="articles" class="grid">
+      <article class="card span-8">
+        <div class="kicker">Long Article</div>
+        <h3>Active Recall & Spaced Repetition — Evidence and Practical Setup</h3>
+        <p><strong>Key idea:</strong> testing yourself (recall) + revisiting on a schedule (spacing) builds durable memory far better than re-reading.</p>
+        <ul>
+          <li><strong>Why recall:</strong> It strengthens retrieval pathways. Reading recognizes; recall reconstructs.</li>
+          <li><strong>Why spacing:</strong> Slight forgetting triggers deeper reconsolidation during review.</li>
+          <li><strong>How to start:</strong> Create a deck (paper or app). After learning, quiz yourself before checking notes.</li>
+        </ul>
+        <details>
+          <summary>Read more: scheduling examples</summary>
+          <ul>
+            <li>Day 0: learn → quick self-test.</li>
+            <li>Day 1: review 10–15 min; flag hard items.</li>
+            <li>Day 3 & 7: short quizzes; retire mastered items.</li>
+            <li>Day 14+: weekly maintenance quiz.</li>
+          </ul>
+          <p class="muted">Tip: Use 30–45 min focus blocks with 5–10 min breaks. One deep session beats hours of shallow reading.</p>
+        </details>
+        <a class="btn" href="#guides">Open companion guide</a>
+      </article>
+
+      <article class="card span-4">
+        <div class="kicker">Long Article</div>
+        <h3>Note-Taking That Survives Exams</h3>
+        <p>Cornell for lectures, outline for textbooks, and question-driven prompts for review. Notes should cue thinking, not transcribe audio.</p>
+        <details><summary>Read more: Cornell in 3 steps</summary>
+          <ol>
+            <li>Split page: cues (left), notes (right), summary (bottom).</li>
+            <li>Write questions in cue column, not statements.</li>
+            <li>Cover notes and answer your own questions during review.</li>
+          </ol>
+        </details>
+        <a class="btn" href="#resources">See templates</a>
+      </article>
+
+      <article class="card span-4">
+        <div class="kicker">Article</div>
+        <h3>Time Blocking vs. To-Do Lists</h3>
+        <p>To-do lists drift; time blocks protect attention. Plan the week; adjust daily; leave buffer time.</p>
+        <a class="btn" href="#plans">View study plans</a>
+      </article>
+
+      <article class="card span-4">
+        <div class="kicker">Article</div>
+        <h3>Input → Output in Language Learning</h3>
+        <p>Pair comprehensible input (listening/reading) with short daily speaking drills. Output cements grammar.</p>
+        <a class="btn" href="#guides">Language guide</a>
+      </article>
+
+      <article class="card span-4">
+        <div class="kicker">Article</div>
+        <h3>Exam Strategy: Mock, Review, Fix 3</h3>
+        <p>Simulate exam conditions, grade with a rubric, and fix your top 3 errors each cycle.</p>
+        <a class="btn" href="#faq">FAQ</a>
+      </article>
     </section>
 
-    <section id="guides">
-      <h2>Guides</h2>
-      <div class="card">
-        <h3>Note-Taking Methods</h3>
-        <p>Cornell, mind maps, outlines — see which style matches your learning habits.</p>
-        <a class="btn" href="#faq">Check FAQ</a>
-      </div>
-      <div class="card">
-        <h3>Time Management</h3>
-        <p>Build a simple weekly schedule that balances work, study, and rest.</p>
+    <!-- GUIDES -->
+    <section id="guides" class="grid">
+      <article class="card span-6">
+        <div class="kicker">Guide</div>
+        <h3>Build Your Personal Learning System</h3>
+        <p>Keep it simple: collect → distill → practice → teach.</p>
+        <ul>
+          <li><span class="pill">Collect</span> One inbox for ideas (notes app or paper).</li>
+          <li><span class="pill">Distill</span> Daily 10-minute summaries: headings + bullets.</li>
+          <li><span class="pill">Practice</span> Spaced repetition + weekly problem sets.</li>
+          <li><span class="pill">Teach</span> Explain concepts to a friend or write a short post.</li>
+        </ul>
+        <details><summary>Read more: weekly cadence</summary>
+          <table class="table">
+            <thead><tr><th>Day</th><th>Focus</th><th>Outcome</th></tr></thead>
+            <tbody>
+              <tr><td>Mon</td><td>Plan + new material</td><td>Clear goals, 2 concepts learned</td></tr>
+              <tr><td>Tue</td><td>Practice + recall</td><td>10–20 questions answered</td></tr>
+              <tr><td>Wed</td><td>Project work</td><td>Small deliverable done</td></tr>
+              <tr><td>Thu</td><td>Review + fix</td><td>Top 3 errors addressed</td></tr>
+              <tr><td>Fri</td><td>Mock test</td><td>Score + notes</td></tr>
+              <tr><td>Sat</td><td>Light review</td><td>Maintain memory</td></tr>
+              <tr><td>Sun</td><td>Rest + plan</td><td>Energy reset</td></tr>
+            </tbody>
+          </table>
+        </details>
+        <a class="btn" href="#plans">Open study plans</a>
+      </article>
+
+      <article class="card span-6">
+        <div class="kicker">Guide</div>
+        <h3>Research Reading Without Overwhelm</h3>
+        <p>Skim for structure, then read for claims, then evaluate evidence. Take structured notes.</p>
+        <ol>
+          <li>Preview: abstract → headings → figures → conclusion.</li>
+          <li>Questions: what is the claim? method? evidence?</li>
+          <li>Notes: bullet insights + open questions; link to sources.</li>
+        </ol>
+        <details><summary>Read more: bias checklist</summary>
+          <ul>
+            <li>Is the sample representative?</li>
+            <li>Any confounders not controlled?</li>
+            <li>Do conclusions match the data?</li>
+          </ul>
+        </details>
+        <a class="btn" href="#resources">Resource list</a>
+      </article>
+    </section>
+
+    <!-- STUDY PLANS -->
+    <section id="plans" class="grid">
+      <article class="card span-8">
+        <div class="kicker">Planner</div>
+        <h3>4-Week Study Plan (General)</h3>
+        <ol>
+          <li><strong>Week 1:</strong> Foundations — key concepts, light recall, set up tools.</li>
+          <li><strong>Week 2:</strong> Practice — problem sets, mini-projects, feedback.</li>
+          <li><strong>Week 3:</strong> Integration — combine topics, teach someone else.</li>
+          <li><strong>Week 4:</strong> Assessment — mocks, review, fix top 3 issues.</li>
+        </ol>
+        <details><summary>Read more: daily time blocks</summary>
+          <ul>
+            <li>Deep work: 2 × 45 min focus + 10 min breaks.</li>
+            <li>Review: 15–20 min spaced recall in evening.</li>
+            <li>Admin: 10 min plan next day.</li>
+          </ul>
+        </details>
         <a class="btn" href="#articles">Back to Articles</a>
-      </div>
+      </article>
+
+      <article class="card span-4">
+        <div class="kicker">Checklist</div>
+        <h3>Exam Week Survival</h3>
+        <ul>
+          <li>Sleep 7–8h; protect mornings.</li>
+          <li>One mock per subject; grade fast.</li>
+          <li>Fix your top 3 mistakes daily.</li>
+          <li>Light movement + hydration.</li>
+        </ul>
+        <a class="btn" href="#faq">See FAQ</a>
+      </article>
     </section>
 
-    <section id="resources">
-      <h2>Resources</h2>
-      <div class="card">
-        <h3>Free Tools</h3>
-        <p>Flashcards, open textbooks, and study planners curated for learners.</p>
-        <a class="btn" href="#home">Home</a>
-      </div>
+    <!-- RESOURCES -->
+    <section id="resources" class="grid">
+      <article class="card span-6">
+        <div class="kicker">Resources</div>
+        <h3>Free Tools for Learners</h3>
+        <ul>
+          <li>Open textbooks & course notes (universities publish many).</li>
+          <li>Flashcard apps (paper works great too).</li>
+          <li>Reference managers for citations.</li>
+          <li>Plain calendar or weekly planner.</li>
+        </ul>
+        <a class="btn" href="#glossary">Open Glossary</a>
+      </article>
+
+      <article class="card span-6">
+        <div class="kicker">Resources</div>
+        <h3>Template Starter Pack</h3>
+        <ul>
+          <li>Cornell Notes page (printable).</li>
+          <li>Weekly block schedule (blank).</li>
+          <li>Recall session tracker.</li>
+        </ul>
+        <a class="btn" href="#plans">Use with Study Plans</a>
+      </article>
     </section>
 
-    <section id="faq">
-      <h2>FAQ</h2>
-      <div class="card">
-        <h3>Is everything free?</h3>
-        <p>Yes. All articles and guides are free to access.</p>
-        <a class="btn" href="#home">Back Home</a>
-      </div>
-      <div class="card">
+    <!-- GLOSSARY -->
+    <section id="glossary" class="grid">
+      <article class="card span-12">
+        <div class="kicker">Glossary</div>
+        <h3>Key Terms</h3>
+        <table class="table">
+          <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Active Recall</td><td>Testing yourself from memory instead of re-reading.</td></tr>
+            <tr><td>Spaced Repetition</td><td>Reviewing information at increasing intervals.</td></tr>
+            <tr><td>Interleaving</td><td>Mixing problem types to improve discrimination.</td></tr>
+            <tr><td>Dual Coding</td><td>Combining words with visuals for stronger memory.</td></tr>
+            <tr><td>Time Blocking</td><td>Scheduling specific blocks for specific tasks.</td></tr>
+          </tbody>
+        </table>
+        <a class="btn" href="#faq">Go to FAQ</a>
+      </article>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="grid">
+      <article class="card span-6">
+        <div class="kicker">FAQ</div>
+        <h3>Is everything here free?</h3>
+        <p>Yes. All articles, plans, and guides on this page are free to read and use.</p>
+        <a class="btn" href="#home">Back to top</a>
+      </article>
+      <article class="card span-6">
+        <div class="kicker">FAQ</div>
         <h3>How often is content updated?</h3>
-        <p>New information is added regularly to keep the material fresh.</p>
-        <a class="btn" href="#resources">See Resources</a>
-      </div>
+        <p>We refresh and add content regularly. Check the Articles and Guides sections for new entries.</p>
+        <a class="btn" href="#articles">Open Articles</a>
+      </article>
     </section>
+
+    <footer>
+      © <span id="y"></span> Education Hub — Informational content only.
+    </footer>
   </main>
 
-  <footer>
-    © <span id="year"></span> Education Hub — All rights reserved.
-  </footer>
-
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
